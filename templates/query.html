@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery("div#p-logo a").attr("href","#");
+    });
+</script>
+
+<form method="get" >
+    <input type="hidden" name="token" value="{{token}}" />
+    <input type="hidden" name="execute" id="execute" value=0 />
+
+    <p>{{ wfMessage("fundraiserunsubscribe-query", email) }}</p>
+    <p>{{ wfMessage("fundraiserunsubscribe-info", help_email) }}</p>
+
+    <input type="submit" value="{{ wfMessage('fundraiserunsubscribe-submit') }}" onclick="$('#execute').attr('value',1);" />
+    <input type="submit" value="{{ wfMessage('fundraiserunsubscribe-cancel') }}" />
+</form>
