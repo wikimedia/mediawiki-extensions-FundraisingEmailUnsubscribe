@@ -182,7 +182,7 @@ class XmlTransactionProcessor {
 		if ( $status->isOK() ) {
 			return $req->getContent();
 		} else {
-			$errors = json_encode( $req->status->getErrorsArray() );
+			$errors = json_encode( array( 'curl' => $status->errors, 'request' => $req->status->getErrorsArray() ) );
 			Logger::log( "Communications failed with : $errors", LOG_ERR, 'XMLTransaction' );
 			return false;
 		}
