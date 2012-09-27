@@ -141,9 +141,7 @@ class FundraiserUnsubscribeSilverpop
 				// Get the jsessionid and validate it
 				$matches = array();
 				$sessionId = $nodes->item(0)->nodeValue;
-				if ( preg_match( '/^[0-9a-zA-Z]+$/', $sessionId, $matches )
-					 && ( $matches[0] !== '' )
-				) {
+				if ( preg_match( '/^[0-9a-zA-Z]+$/', $sessionId, $matches ) ) {
 					$sessionId =  $matches[0];
 				} else {
 					Logger::log( "Session ID failed validation! Provided was ($sessionId)", LOG_ALERT );

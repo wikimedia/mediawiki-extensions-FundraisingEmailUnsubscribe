@@ -81,6 +81,13 @@ $wgFundraiserUnsubscribeSilverpopTimeout = 5;
 $wgFundraiserUnsubscribeSilverpopURL = null;
 /**}*/
 
+/** @var $wgFundraiserUnsubscribeLogFacility What syslog facility to use when logging */
+$wgFundraiserUnsubscribeLogFacility = LOG_USER;
+
+/** @var $wgFundraiserUnsubscribeLogXmlTransactions When TRUE the XMLTransaction class will log outbound data */
+$wgFundraiserUnsubscribeLogXmlTransactions = false;
+
+
 // === Method Registration ===
 $mdir = $dir . 'methods';
 $wgAutoloadClasses['UnsubscribeMethod']                 = $mdir . '/UnsubscribeMethod.php';
