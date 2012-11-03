@@ -519,10 +519,42 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 */
 	private function getFilteredValue( $key, $filter, $expected = '' ) {
 		return $this->filterValue(
-			$this->getRequest()->getVal( $key, $expected ),
+			//$this->getRequest()->getVal( $key, $expected ), <--switch these back out when the mangled links stop
+			$this->getRequestVal_CleanKeys($key, $expected),
 			$filter,
 			$expected
 		);
+	}
+	
+	/**
+	 * Containment for a temporary fix, for the long tail on mangled unsub links
+	 * in emails that went out between 11/2 and 11/3, 2012. 
+	 * Once we stop seeing 'amp;' in the logs, we can whack this and go back to 
+	 * just using getVal in getFilteredValue().
+	 */
+	private function getRequestVal_CleanKeys( $key, $expected ){
+		static $vals = NULL;
+		if ( is_null($vals) ){
+			$vals = $this->getRequest()->getValues();
+			$mangled = false;
+			foreach ( $vals as $vk => $vv ){
+				if ( strpos( $vk, 'amp;' ) !== false ){
+					$mangled = true;
+					$rekey = str_replace( 'amp;', '', $vk ); //some have multiples.
+					$vals[$rekey] = $vv;
+					unset( $vals[$vk] );
+				}
+			}
+			if ($mangled) {
+				Logger::log( "Found another mangled URL.", LOG_INFO );
+			}
+		}
+		
+		if ( !array_key_exists( $key, $vals ) || is_null( $vals[$key] ) ){
+			return $expected;
+		}
+		
+		return $vals[$key];
 	}
 
 	/**
