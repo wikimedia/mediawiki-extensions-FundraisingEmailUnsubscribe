@@ -92,6 +92,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 				// Output page
 				$outContent = $mwt->render( 'query.html', array(
 						'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+						'uselang' => $this->getContext()->getLang()->getCode(),
 						'email' => $this->mEmail,
 						'token' => $this->mID,
 					) );

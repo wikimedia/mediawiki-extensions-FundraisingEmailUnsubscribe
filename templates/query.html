@@ -7,10 +7,11 @@
 <form method="get" >
     <input type="hidden" name="token" value="{{token}}" />
     <input type="hidden" name="execute" id="execute" value=0 />
+    <input type="hidden" name="uselang" id="uselang" value="{{uselang}}" />
 
-    <p>{{ wfMessage("fundraiserunsubscribe-query", email) }}</p>
-    <p>{{ wfMessage("fundraiserunsubscribe-info", help_email) }}</p>
+    <p>{{ wfMessage("donate_interface-email-unsub-confirm", email) }}</p>
+    <p>{{ wfMessage("donate_interface-email-unsub-delay", help_email) }}</p>
 
-    <input type="submit" value="{{ wfMessage('fundraiserunsubscribe-submit') }}" onclick="$('#execute').attr('value',1);" />
-    <input type="submit" value="{{ wfMessage('fundraiserunsubscribe-cancel') }}" />
+    <input type="submit" value="{{ wfMessage('donate_interface-email-unsub-button') }}" onclick="$('#execute').attr('value',1);" />
+    <input type="submit" value="{{ wfMessage('donate_interface-cancel') }}" />
 </form>
