@@ -1,6 +1,6 @@
 [gerrit]
 host=gerrit.wikimedia.org
 port=29418
-project=wikimedia/fundraising/DonationEmailUnsubscribe.git
+project=mediawiki/extensions/FundraisingEmailUnsubscribe.git
 defaultbranch=master
 defaultrebase=0
