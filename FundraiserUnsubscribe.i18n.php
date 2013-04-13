@@ -8,7 +8,7 @@
 $messages = array();
 
 $messages['en'] = array(
-	'fundraiserunsubscribe-desc' => 'Allows users to unsubscribe from configured fundraising mailing lists.',
+	'fundraiserunsubscribe-desc' => 'Allows users to unsubscribe from configured fundraising mailing lists',
 
 	'fundraiserunsubscribe' => 'Unsubscribe from Wikimedia Fundraising Email',
 
@@ -17,7 +17,7 @@ $messages['en'] = array(
 	'fundraiserunsubscribe-submit' => 'Unsubscribe',
 	'fundraiserunsubscribe-cancel' => 'Cancel',
 
-	'fundraiserunsubscribe-errormsg' => 'An error occured while attempting to process your request. Please contact [mailto:$1 $1].',
+	'fundraiserunsubscribe-errormsg' => 'An error occurred while attempting to process your request. Please contact [mailto:$1 $1].',
 
 	'fundraiserunsubscribe-success' => 'You have successfully been removed from our mailing list.',
 	'fundraiserunsubscribe-sucesswarning' => 'Please allow up to four (4) days for the changes to take effect. We apologize for any emails you receive during this time. If you have any questions, please contact [mailto:$1 $1].',
