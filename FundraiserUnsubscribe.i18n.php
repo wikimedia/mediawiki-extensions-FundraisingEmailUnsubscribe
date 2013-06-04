@@ -39,24 +39,16 @@ $messages['qqq'] = array(
 	'fundraiserunsubscribe-sucesswarning' => 'Notification to the user that there might be some manual operations or ongoing things that will take time to clear. Will always be shown with fundraiserunsubscribe-success. $1 is an email address for them to contact if they have further questions.',
 );
 
-/** tarandíne (tarandíne)
- * @author Joetaras
+/** Hebrew (עברית)
+ * @author YaronSh
  */
-$messages['roa-tara'] = array(
-	'fundraiserunsubscribe-cancel' => 'Annulle',
+$messages['he'] = array(
+	'fundraiserunsubscribe-cancel' => 'ביטול',
 );
 
-/** Ukrainian (українська)
- * @author Ата
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
  */
-$messages['uk'] = array(
-	'fundraiserunsubscribe-desc' => 'Дозволяє користувачам відписатися від налаштованих списків розсилки по збору коштів',
-	'fundraiserunsubscribe' => 'Відписатися від Wikimedia Fundraising Email',
-	'fundraiserunsubscribe-query' => "Ви впевнені, що хочете відписатись '''''$1'''''?",
-	'fundraiserunsubscribe-info' => "Це дозволить Вам відмовитися від листів, які Фонд Вікімедіа надсилає Вам, як одному зі своїх жертводавців. Ви все ще можете отримувати електронні повідомлення на цю адресу електронної пошти, якщо вона пов'язана з обліковим записом в одному з наших проектів. Якщо у Вас є які-небудь питання, будь ласка, зверніться за адресою [mailto:$1 $1].",
-	'fundraiserunsubscribe-submit' => 'Відписатися',
-	'fundraiserunsubscribe-cancel' => 'Скасувати',
-	'fundraiserunsubscribe-errormsg' => "Під час обробки Вашого запиту сталася помилка. Будь ласка, зв'яжіться з [mailto:$1 $1].",
-	'fundraiserunsubscribe-success' => 'Вас успішно вилучено з нашого списку розсилки',
-	'fundraiserunsubscribe-sucesswarning' => 'Будь ласка, врахуйте, що зміни наберуть силу протягом чотирьох (4) днів. Ми приносимо вибачення за будь-які листи, які Ви отримаєте за цей час. Якщо у Вас виникли питання, будь ласка, звертайтеся за адресою [mailto:$1 $1].',
+$messages['pt-br'] = array(
+	'fundraiserunsubscribe-cancel' => 'Cancelar',
 );
