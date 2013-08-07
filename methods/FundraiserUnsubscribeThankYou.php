@@ -90,6 +90,9 @@ class FundraiserUnsubscribeThankYou
 	 * @return string Decoded email
 	 */
 	public static function decodeEmail( array $params ) {
-		return urldecode( $params['e'] );
+		$email = urldecode( $params['e'] );
+		$email = str_replace( ' ', '+', $email );
+
+		return $email;
 	}
 }
