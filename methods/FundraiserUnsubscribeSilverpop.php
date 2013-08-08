@@ -182,21 +182,13 @@ class FundraiserUnsubscribeSilverpop
 	}
 
 	/**
-	 * Decodes an email address that has been sent to us from SilverPop. It turns out they don't
-	 * URL encode these things; so ... ugh...
-	 *
-	 * TODO: Handle crazy characters, you know, like # (which breaks PHP) grumble
-	 *
-	 * @static
+	 * Decodes an email address that has been sent to us from SilverPop.
 	 *
 	 * @param array $params
 	 *
 	 * @return mixed|string
 	 */
 	public static function decodeEmail( array $params ) {
-		$email = urldecode( $params['e'] );
-		$email = str_replace( ' ', '+', $email );
-
-		return $email;
+		return rawurldecode( $params['e'] );
 	}
 }
