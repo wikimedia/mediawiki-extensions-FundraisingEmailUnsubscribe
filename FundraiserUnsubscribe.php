@@ -27,7 +27,7 @@
 if ( !defined( 'MEDIAWIKI' ) ) {
 	echo <<<EOT
 To install the FundraiserUnsubscribe extension, put the following line in LocalSettings.php:
-require_once( "\$IP/extensions/FundraiserUnsubscribe/FundraiserUnsubscribe.php" );
+require_once "$IP/extensions/FundraisingEmailUnsubscribe/FundraiserUnsubscribe.php";
 EOT;
 	exit( 1 );
 }
@@ -38,12 +38,13 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => array( 'Matt Walker' ),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe',
 	'descriptionmsg' => 'fundraiserunsubscribe-desc',
-	'version' => '1.0.0',
+	'version' => '2.0.0',
 );
 
 // === Core Includes, Pages, and Autoload Registration ===
 $dir = __DIR__ . '/';
 
+$wgMessagesDirs['FundraiserUnsubscribe'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['FundraiserUnsubscribe']      = $dir . 'FundraiserUnsubscribe.i18n.php';
 
 $wgAutoloadClasses['SpecialFundraiserUnsubscribe']      = $dir . 'SpecialFundraiserUnsubscribe.php';
@@ -151,7 +152,7 @@ $wgResourceModules['fundraiserUnsubscribe.skinOverride'] = array(
 	'styles' => 'skinOverride.css',
 	'position' => 'top',
 	'localBasePath' => $dir . 'modules',
-	'remoteExtPath' => 'FundraiserUnsubscribe/modules',
+	'remoteExtPath' => 'FundraisingEmailUnsubscribe/modules',
 );
 
 // === LIBRARY CONFIGURATIONS ===
