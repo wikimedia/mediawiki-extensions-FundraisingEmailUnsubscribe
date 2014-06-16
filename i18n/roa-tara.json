@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras\r"
+		]
+	},
+	"fundraiserunsubscribe-desc": "Permette a l'utinde de scangellarse da 'a mailing list d'a raccolte de le funne 'mbostate",
+	"fundraiserunsubscribe": "Scangillate da le Email de Raccolte fonde de Uicchimedia",
+	"fundraiserunsubscribe-query": "Sì secure ca te vuè ccu scangille '''''$1'''''?",
+	"fundraiserunsubscribe-info": "Sta scelte no te face arrevà cchiù email de donatore da Wikimedia Foundation. Tu puè angore avè le email sus a ste indirizze email ce è associate cu 'nu cunde sus a une de le nostre pruggette. Ce tu tìne domande, pe piacere scrive a [mailto:$1 $1].",
+	"fundraiserunsubscribe-submit": "Scangillate",
+	"fundraiserunsubscribe-cancel": "Annulle",
+	"fundraiserunsubscribe-errormsg": "Ha assute 'n'errore mendre ste processamme 'a richiesta toje. Pe piacere condatte [mailto:$1 $1].",
+	"fundraiserunsubscribe-success": "E' state luate da 'a mailing list nostre.",
+	"fundraiserunsubscribe-sucesswarning": "Aspitte 'nzigne a quattre (4) sciurne pe fà ca le cangiaminde onne effette. Ne scusame pe ogne email ca tu puè ricevere durande stu tiembe. Ce tu tìne domande, pe piacere condatte [mailto:$1 $1]."
+}

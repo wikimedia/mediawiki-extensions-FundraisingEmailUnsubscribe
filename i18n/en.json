@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"fundraiserunsubscribe-desc": "Allows users to unsubscribe from configured fundraising mailing lists",
+	"fundraiserunsubscribe": "Unsubscribe from Wikimedia Fundraising Email",
+	"fundraiserunsubscribe-query": "Are you sure you want to unsubscribe '''''$1'''''?",
+	"fundraiserunsubscribe-info": "This will opt you out of emails from the Wikimedia Foundation sent to you as a donor. You may still receive emails to this email address if it is associated with an account on one of our projects. If you have any questions, please contact [mailto:$1 $1].",
+	"fundraiserunsubscribe-submit": "Unsubscribe",
+	"fundraiserunsubscribe-cancel": "Cancel",
+	"fundraiserunsubscribe-errormsg": "An error occurred while attempting to process your request. Please contact [mailto:$1 $1].",
+	"fundraiserunsubscribe-success": "You have successfully been removed from our mailing list.",
+	"fundraiserunsubscribe-sucesswarning": "Please allow up to four (4) days for the changes to take effect. We apologize for any emails you receive during this time. If you have any questions, please contact [mailto:$1 $1]."
+}
