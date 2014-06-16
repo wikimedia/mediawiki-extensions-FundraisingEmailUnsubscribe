@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cquoi\r",
+			"Metroitendo\r",
+			"Valystant\r"
+		]
+	},
+	"fundraiserunsubscribe-desc": "Autorise les utilisateurs à se désabonner des listes d'envoi de courriel pour des collectes de fonds.",
+	"fundraiserunsubscribe": "Se désabonner de Wikimedia Fundraising Email",
+	"fundraiserunsubscribe-query": "Êtes-vous sûr de vouloir vous désabonner de '''''$1''''' ?",
+	"fundraiserunsubscribe-info": "Cela vous désabonnera des courriels de la Fondation Wikimedia qui vous sont envoyés en tant que donateur. Vous pouvez encore recevoir des courriels à cette adresse si elle reste associée à un compte d’un de nos projets. Si vous avez des questions, veuillez adresser un mél à [mailto:$1 $1].",
+	"fundraiserunsubscribe-submit": "Se désabonner",
+	"fundraiserunsubscribe-cancel": "Annuler",
+	"fundraiserunsubscribe-errormsg": "Une erreur s'est produite lors de la tentative de traitement de votre demande. Veuillez contactez [mailto:$1 $1].",
+	"fundraiserunsubscribe-success": "Vous avez bien été retiré de notre liste de diffusion.",
+	"fundraiserunsubscribe-sucesswarning": "Veuillez nous accorder quatre (4) jours pour que les modifications deviennent effectives. Nous nous excusons pour tous les courriels que vous pourriez encore recevoir durant ce temps. Si vous avez des questions, veuillez contacter [mailto:$1 $1]."
+}

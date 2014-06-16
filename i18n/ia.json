@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie\r"
+		]
+	},
+	"fundraiserunsubscribe-desc": "Permitte que usatores se disabona de listas de diffusion pro collecta de fundos",
+	"fundraiserunsubscribe": "Disabonar se de e-mail de collecta de fundos de Wikimedia",
+	"fundraiserunsubscribe-query": "Es tu secur de voler disabonar te de '''''$1'''''?",
+	"fundraiserunsubscribe-info": "Isto te disabonara de messages de e-mail ab le Fundation Wikimedia que es inviate a te qua donator. Tu pote continuar a reciper e-mail a iste adresse si illo es associate con un conto sur un de nostre projectos. Si tu ha questiones, per favor contacta [mailto:$1 $1].",
+	"fundraiserunsubscribe-submit": "Disabonar me",
+	"fundraiserunsubscribe-cancel": "Cancellar",
+	"fundraiserunsubscribe-errormsg": "Un error occurreva durante le tentativa de processar tu requesta. Per favor contacta [mailto:$1 $1].",
+	"fundraiserunsubscribe-success": "Tu ha essite removite de nostre lista de diffusion.",
+	"fundraiserunsubscribe-sucesswarning": "Per favor permitte usque a quatro (4) dies pro effectuar le cambios. Nos nos excusa pro omne e-mail que tu pote reciper durante iste tempore. Si tu ha questiones, per favor contacta [mailto:$1 $1]."
+}
