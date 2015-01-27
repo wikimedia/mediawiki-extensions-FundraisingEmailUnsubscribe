@@ -49,10 +49,14 @@ $wgExtensionMessagesFiles['FundraiserUnsubscribe']      = $dir . 'FundraiserUnsu
 $wgAutoloadClasses['SpecialFundraiserUnsubscribe']      = $dir . 'SpecialFundraiserUnsubscribe.php';
 $wgSpecialPages['FundraiserUnsubscribe'] = 'SpecialFundraiserUnsubscribe';
 
-$wgAutoloadClasses['Logger']                            = $dir . 'includes/Logger.php';
-$wgAutoloadClasses['FundraiserUnsubscribeStompAdapter'] = $dir . 'includes/StompAdapter.php';
-$wgAutoloadClasses['XmlTransactionProcessor']           = $dir . 'includes/XmlTransactionProcessor.php';
-$wgAutoloadClasses['MediaWikiTwig']                     = $dir . 'includes/MediaWikiTwig.php';
+$wgAutoloadClasses['FundraiserUnsubscribePeclStompWrapper'] = $dir . 'includes/StompAdapter.php';
+$wgAutoloadClasses['FundraiserUnsubscribePhpStompWrapper']  = $dir . 'includes/StompAdapter.php';
+$wgAutoloadClasses['FundraiserUnsubscribeStompAdapter']     = $dir . 'includes/StompAdapter.php';
+$wgAutoloadClasses['IFundraiserUnsubscribeStompWrapper']    = $dir . 'includes/StompAdapter.php';
+$wgAutoloadClasses['Logger']                                = $dir . 'includes/Logger.php';
+$wgAutoloadClasses['MediaWikiTwig']                         = $dir . 'includes/MediaWikiTwig.php';
+$wgAutoloadClasses['MediaWikiTwigCallbacks']                = $dir . 'includes/MediaWikiTwig.php';
+$wgAutoloadClasses['XmlTransactionProcessor']               = $dir . 'includes/XmlTransactionProcessor.php';
 
 // === Configuration Parameters ===
 /** @var $wgFundraiserUnsubscribeSessionKey Root key to use in the $_SESSION array. */
@@ -93,6 +97,7 @@ $mdir = $dir . 'methods';
 $wgAutoloadClasses['UnsubscribeMethod']                 = $mdir . '/UnsubscribeMethod.php';
 $wgAutoloadClasses['FundraiserUnsubscribeThankYou']     = $mdir . '/FundraiserUnsubscribeThankYou.php';
 $wgAutoloadClasses['FundraiserUnsubscribeSilverpop']    = $mdir . '/FundraiserUnsubscribeSilverpop.php';
+$wgAutoloadClasses['IUnsubscribeValidator']             = $mdir . '/UnsubscribeMethod.php';
 
 /**
  * The $wgFundraiserUnsubscribeProcesses defines all valid unsubscribe 'p' processes and the classes
