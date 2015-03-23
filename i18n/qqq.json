@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki\r",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
-	"fundraiserunsubscribe-desc": "{{desc|name=Fundraiser Unsubscribe|url=http://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe}}",
+	"fundraiserunsubscribe-desc": "{{desc|name=Fundraiser Unsubscribe|url=https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe}}",
 	"fundraiserunsubscribe": "Unsubscribe page title",
 	"fundraiserunsubscribe-query": "Ask if the user wants to remove email address:$1 from the fundraising mail lists. Leave email as is; a different templating engine is being used.",
 	"fundraiserunsubscribe-info": "Unused at this time.\n\nInformation on how the unsubscribe request will be processed.\n\nParameters:\n* $1 - email address",
