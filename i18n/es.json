@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido\r",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
+	"fundraiserunsubscribe-query": "¿Seguro que quieres desuscribir a '''''$1'''''?",
 	"fundraiserunsubscribe-submit": "Cancelar la suscripción",
 	"fundraiserunsubscribe-cancel": "Cancelar",
 	"fundraiserunsubscribe-success": "Te has dado de baja de la lista de correo correctamente."
