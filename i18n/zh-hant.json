@@ -1,9 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Simon Shek\r",
-			"Cwlin0416",
-			"Simon Shek"
+			"Simon Shek",
+			"Cwlin0416"
 		]
 	},
 	"fundraiserunsubscribe-desc": "允許用者從籌款郵寄名單中取消訂閱。",

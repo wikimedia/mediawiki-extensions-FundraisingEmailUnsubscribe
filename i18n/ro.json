@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minisarm\r"
+			"Minisarm"
 		]
 	},
 	"fundraiserunsubscribe-query": "Sunteți sigur că doriți să dezabonați adresa '''''$1'''''?"
