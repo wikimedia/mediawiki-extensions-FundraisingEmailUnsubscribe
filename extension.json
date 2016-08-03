@@ -17,7 +17,6 @@
 	},
 	"AutoloadClasses": {
 		"SpecialFundraiserUnsubscribe": "SpecialFundraiserUnsubscribe.php",
-		"FundraiserUnsubscribePeclStompWrapper": "includes/StompAdapter.php",
 		"FundraiserUnsubscribePhpStompWrapper": "includes/StompAdapter.php",
 		"FundraiserUnsubscribeStompAdapter": "includes/StompAdapter.php",
 		"IFundraiserUnsubscribeStompWrapper": "includes/StompAdapter.php",

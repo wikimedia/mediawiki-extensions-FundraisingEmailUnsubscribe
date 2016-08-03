@@ -21,6 +21,8 @@
  * @file
  */
 
+use FuseSource\Stomp\Stomp;
+
 /**
  * Hides some of the nitty gritty of managing the two types of STOMP libraries we could be using.
  */
@@ -32,16 +34,7 @@ class FundraiserUnsubscribeStompAdapter {
 	protected function __construct() {
 		global $wgStompServer;
 
-		// Factory to create whatever wrapper we need
-		if ( class_exists( 'Stomp' ) ) {
-			if ( is_callable( 'Stomp', 'connect' ) ) {
-				$this->mConn = new FundraiserUnsubscribePhpStompWrapper( $wgStompServer );
-			} else {
-				$this->mConn = new FundraiserUnsubscribePeclStompWrapper( $wgStompServer );
-			}
-		} else {
-			throw new Exception( 'No STOMP class registered :(' );
-		}
+		$this->mConn = new FundraiserUnsubscribePhpStompWrapper( $wgStompServer );
 	}
 
 	/**
@@ -98,43 +91,7 @@ class FundraiserUnsubscribePhpStompWrapper implements IFundraiserUnsubscribeStom
 		$result = $this->mConn->send( "/queue/$queue", $msgText, $properties );
 
 		if ( !$result ) {
-			Logger::logEx( $ex, "Could not queue message to queue '$queue', msg->$msgText'" );
-			return false;
-		}
-
-		return true;
-	}
-}
-
-class FundraiserUnsubscribePeclStompWrapper implements IFundraiserUnsubscribeStompWrapper  {
-	private $mConn;
-	private $mTxCount = 0;
-
-	public function __construct( $serverURI ) {
-		$this->mConn = new Stomp( $serverURI );
-	}
-
-	public function __destruct() {
-		if ( $this->mConn->isConnected() ) {
-			$this->mConn->abort();
-		}
-	}
-
-	public function sendMessage( $message, $queue, $properties = array() ) {
-		$txid = $this->mConn->getSessionId() . '-' . ( $this->mTxCount++ );
-
-		if ( !array_key_exists( 'persistent', $properties ) ) {
-			$properties['persistent'] = 'true';
-		}
-
-		$msgText = json_encode( $message );
-
-		try {
-			$this->mConn->begin( $txid );
-			$this->mConn->send( "/queue/$queue", $msgText, $properties );
-			$this->mConn->commit( $txid );
-		} catch ( Exception $ex ) {
-			Logger::logEx( $ex, "Could not queue message to queue '$queue', msg->$msgText'", LOG_ERR, "PhpStomp" );
+			Logger::log( "Could not queue message to queue '{$queue}', msg = {$msgText}" );
 			return false;
 		}
 
