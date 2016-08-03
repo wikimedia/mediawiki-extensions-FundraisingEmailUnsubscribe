@@ -34,7 +34,7 @@
 	"ResourceModules": {
 		"fundraiserUnsubscribe.skinOverride": {
 			"styles": "skinOverride.css",
-			"position": "top"
+			"scripts": "skinOverride.js"
 		}
 	},
 	"ResourceFileModulePaths": {

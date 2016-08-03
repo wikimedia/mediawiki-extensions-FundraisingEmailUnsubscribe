@@ -1,9 +1,3 @@
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-        jQuery("div#p-logo a").attr("href","#");
-    });
-</script>
-
 <form method="get" >
     <input type="hidden" name="token" value="{{token}}" />
     <input type="hidden" name="execute" id="execute" value=0 />
@@ -12,6 +6,6 @@
     <p>{{ wfMessage("donate_interface-email-unsub-confirm", email) }}</p>
     <p>{{ wfMessage("donate_interface-email-unsub-delay", help_email) }}</p>
 
-    <input type="submit" value="{{ wfMessage('donate_interface-email-unsub-button') }}" onclick="$('#execute').attr('value',1);" />
+    <input type="submit" id="unsubscribe" value="{{ wfMessage('donate_interface-email-unsub-button') }}" />
     <input type="submit" value="{{ wfMessage('donate_interface-cancel') }}" />
 </form>
