@@ -38,7 +38,7 @@ class FundraiserUnsubscribeThankYou
 	}
 
 	public function validateRequest( array $params ) {
-		global $wgFundraiserUnsubscribeHashSecretKey;
+		global $wgFundraisingEmailUnsubscribeHashSecretKey;
 
 		Logger::pushLabel( 'UnsubThankYou' );
 
@@ -47,7 +47,7 @@ class FundraiserUnsubscribeThankYou
 		$hash = strtolower( $params['hash'] );
 
 		// We can only verify the hash
-		$computedHash = hash( 'sha1', $contributionId . $email . $wgFundraiserUnsubscribeHashSecretKey );
+		$computedHash = hash( 'sha1', $contributionId . $email . $wgFundraisingEmailUnsubscribeHashSecretKey );
 		if ( $computedHash != $hash ) {
 			Logger::log( "Hash verification failed! Expected '$computedHash' got '$hash'.", LOG_NOTICE );
 

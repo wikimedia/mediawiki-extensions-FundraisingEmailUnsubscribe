@@ -139,7 +139,7 @@ class Logger {
 	 * @param $pri
 	 */
 	private function logString( $msgText, $pri, $label = null ) {
-		global $wgFundraiserUnsubscribeLogFacility;
+		global $wgFundraisingEmailUnsubscribeLogFacility;
 
 		if ( static::$context != '' ) {
 			$msg[] = '(' . static::$context . ')';
@@ -154,7 +154,7 @@ class Logger {
 		}
 		$msg[] = $msgText;
 
-		openlog( static::$bucket, LOG_ODELAY, $wgFundraiserUnsubscribeLogFacility );
+		openlog( static::$bucket, LOG_ODELAY, $wgFundraisingEmailUnsubscribeLogFacility );
 		syslog( $pri, implode( ' ', $msg ) );
 		closelog();
 	}

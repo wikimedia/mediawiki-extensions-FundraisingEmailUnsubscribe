@@ -11,14 +11,14 @@
  *
  * URI Parameters
  *  - The verification stage requires, at a minimum, the following two parameters:
- *  -- 'p' - The process, as listed in $wgFundraiserUnsubscribeProcess to execute
+ *  -- 'p' - The process, as listed in $wgFundraisingEmailUnsubscribeProcess to execute
  *  -- 'email' - The email address of the user, this may be mapped through
- *                 $wgFundraiserUnsubscribeVarMap.
+ *                 $wgFundraisingEmailUnsubscribeVarMap.
  *
  *  - The action stage requires:
  *  -- 'token'   - An edit token generated in the verification stage
  *  -- 'execute' - Must evaluate to 'True' for the action to be taken. Otherwise it will redirect
- *                 to the URL specified in $wgFundraiserUnsubscribeCancelURI:
+ *                 to the URL specified in $wgFundraisingEmailUnsubscribeCancelURI:
  *
  * -- License --
  * This program is free software; you can redistribute it and/or modify
@@ -63,14 +63,19 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 * @param String $sub
 	 */
 	public function execute( $sub ) {
-		global $wgFundraiserUnsubscribeProcesses;
-		global $wgFundraiserUnsubscribeCancelUri;
-		global $wgFundraiserUnsubscribeHelpEmail;
-		global $wgTwigTemplatePath;
+		global $wgFundraisingEmailUnsubscribeProcesses;
+		global $wgFundraisingEmailUnsubscribeCancelUri;
+		global $wgFundraisingEmailUnsubscribeHelpEmail;
+
+		$templateDir = __DIR__ . '/templates';
+
+		if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+		    include_once( __DIR__ . '/vendor/autoload.php' );
+		}
 
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
 		// in loadSessionData() if it exists.
-		Logger::setBucket( 'FundraiserUnsubscribe' );
+		Logger::setBucket( 'FundraisingEmailUnsubscribe' );
 		$this->mID = rand( 1e12, 9e12 );
 		Logger::setContext( $this->mID );
 
@@ -83,7 +88,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		$this->mProcess = $this->getFilteredValue( static::KEY_PROCESS, static::FILT_PROCESS );
 		$execute = $this->getFilteredValue( static::KEY_EXECUTE, static::FILT_EXECUTE );
 
-		if ( array_key_exists( $this->mProcess, $wgFundraiserUnsubscribeProcesses ) ) {
+		if ( array_key_exists( $this->mProcess, $wgFundraisingEmailUnsubscribeProcesses ) ) {
 			// Stage 1: Asking if they really mean to do this. But we do have some setup to do first
 			Logger::log( "Starting process '$this->mProcess' with URI variables: " . json_encode( $_GET + $_POST ) );
 
@@ -91,7 +96,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			if ( $this->stashData() && $this->doVerify() ) {
 				// Output page
 				$outContent = $mwt->render( 'query.html', array(
-						'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+						'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 						'uselang' => $this->getLanguage()->getCode(),
 						'email' => $this->mEmail,
 						'token' => $this->mID,
@@ -99,7 +104,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			} else {
 				// yay; errors
 				$outContent = $mwt->render( 'error.html', array(
-						'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+						'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 					) );
 				$this->clearData();
 			}
@@ -112,14 +117,14 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 					// Sadness, we lost a donation person
 					Logger::log( 'Unsubscribe action success' );
 					$outContent = $mwt->render( 'unsubscribeSuccess.html', array(
-							'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+							'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 						) );
 					$this->clearData();
 				} else {
 					// Oh noes... errorz
 					Logger::log( 'Unsubscribe action failed' );
 					$outContent = $mwt->render( 'error.html', array(
-							'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+							'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 						) );
 					$this->clearData();
 				}
@@ -127,14 +132,14 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 				// Apparently they decided not to cancel, redirect somewhere else
 				Logger::log( 'User decided to cancel action!' );
 				$this->clearData();
-				$this->getOutput()->redirect( $wgFundraiserUnsubscribeCancelUri );
+				$this->getOutput()->redirect( $wgFundraisingEmailUnsubscribeCancelUri );
 				return;
 			}
 		} else {
 			// Well, we had an unexpected error. That's nice...
 			Logger::log( "Could not process '$this->mProcess' or execute pre-existing session." );
 			$outContent = $mwt->render( 'error.html', array(
-					'help_email' => $wgFundraiserUnsubscribeHelpEmail,
+					'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 				) );
 			$this->clearData();
 		}
@@ -153,9 +158,9 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 * @throws MWException
 	 */
 	private function instantiateObjects() {
-		global $wgFundraiserUnsubscribeProcesses;
+		global $wgFundraisingEmailUnsubscribeProcesses;
 
-		foreach ( $wgFundraiserUnsubscribeProcesses[$this->mProcess] as $className ) {
+		foreach ( $wgFundraisingEmailUnsubscribeProcesses[$this->mProcess] as $className ) {
 			if ( class_exists( $className, true ) ) {
 
 				$instance = new $className();
@@ -255,8 +260,8 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 * @return bool Returns true if operation was a success. False if something was missing.
 	 */
 	private function stashData() {
-		global $wgFundraiserUnsubscribeVarMap;
-		global $wgFundraiserUnsubscribeSessionKey;
+		global $wgFundraisingEmailUnsubscribeVarMap;
+		global $wgFundraisingEmailUnsubscribeSessionKey;
 
 		// This variable will store, at the end, all the parameters that passed through the
 		// variable map. This helps us process annoyingly derived parameters.
@@ -285,7 +290,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			$expectedParams = array_merge( $classObj->getRequiredParameters(), $expectedParams );
 
 			// Now get the parameters from the URI; then filter
-			$paramMap = $wgFundraiserUnsubscribeVarMap[$this->mProcess];
+			$paramMap = $wgFundraisingEmailUnsubscribeVarMap[$this->mProcess];
 			foreach ( $expectedParams as $paramName => $filtString ) {
 				// Variable in the variable map?
 				if ( array_key_exists( $paramName, $paramMap ) ) {  // Yes
@@ -365,15 +370,15 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			return false;
 		}
 
-		$_SESSION[$wgFundraiserUnsubscribeSessionKey]['process'] = $this->mProcess;
-		$_SESSION[$wgFundraiserUnsubscribeSessionKey]['email'] = $this->mEmail;
-		$_SESSION[$wgFundraiserUnsubscribeSessionKey]['id'] = $this->mID;
+		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['process'] = $this->mProcess;
+		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['email'] = $this->mEmail;
+		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['id'] = $this->mID;
 
 		foreach ( $this->mObjects as &$classObjArray ) {
 			$classObj = $classObjArray['instance'];
 			$params = $classObjArray['params'];
 
-			$_SESSION[$wgFundraiserUnsubscribeSessionKey]['class-data'][get_class( $classObj )] = $params;
+			$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['class-data'][get_class( $classObj )] = $params;
 		}
 
 		return true;
@@ -474,8 +479,8 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 * @return bool True if session could be successfully restored.
 	 */
 	private function loadSessionData() {
-		global $wgFundraiserUnsubscribeSessionKey;
-		$skey = $wgFundraiserUnsubscribeSessionKey;
+		global $wgFundraisingEmailUnsubscribeSessionKey;
+		$skey = $wgFundraisingEmailUnsubscribeSessionKey;
 
 		// For ease of code; we're going to assume that if the session key exists, everything else
 		// will as well. This might come back to bite me in the ass later...
@@ -502,10 +507,10 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	 * Clears unsubscribe data from the session
 	 */
 	private function clearData() {
-		global $wgFundraiserUnsubscribeSessionKey;
+		global $wgFundraisingEmailUnsubscribeSessionKey;
 
-		if ( isset( $_SESSION[$wgFundraiserUnsubscribeSessionKey] ) ) {
-			unset( $_SESSION[$wgFundraiserUnsubscribeSessionKey] );
+		if ( isset( $_SESSION[$wgFundraisingEmailUnsubscribeSessionKey] ) ) {
+			unset( $_SESSION[$wgFundraisingEmailUnsubscribeSessionKey] );
 		}
 	}
 

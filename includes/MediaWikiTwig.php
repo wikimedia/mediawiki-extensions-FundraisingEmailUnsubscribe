@@ -22,16 +22,6 @@
  * @file
  */
 
-// Alert the user that this is not a valid entry point to MediaWiki if they try to access the
-// special pages file directly.
-if ( !defined( 'MEDIAWIKI' ) ) {
-	echo <<<EOT
-To install the FundraiserUnsubscribe extension, put the following line in LocalSettings.php:
-require_once( "\$IP/extensions/FundraiserUnsubscribe/FundraiserUnsubscribe.php" );
-EOT;
-	exit( 1 );
-}
-
 // This is required here so tha the extension code that extends a Twig class below doesn't make PHP
 // barf. Not the most graceful thing in the world. But neither is needing Twig in the first place.
 global $wgTwigPath;

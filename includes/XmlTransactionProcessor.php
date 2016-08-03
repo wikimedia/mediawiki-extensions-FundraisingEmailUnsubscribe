@@ -82,7 +82,7 @@ class XmlTransactionProcessor {
 	 * @return bool If true, the transaction was completely successful.
 	 */
 	public function doTransaction( $txnName, $callbackObj, $outParams = array() ) {
-		global $wgFundraiserUnsubscribeLogXmlTransactions;
+		global $wgFundraisingEmailUnsubscribeLogXmlTransactions;
 
 		Logger::pushLabel( 'XMLTransaction' );
 		$retval = false;
@@ -116,7 +116,7 @@ class XmlTransactionProcessor {
 
 			// Send it!
 			Logger::log( "Sending transaction '$txnName'" );
-			if ( $wgFundraiserUnsubscribeLogXmlTransactions ) {
+			if ( $wgFundraisingEmailUnsubscribeLogXmlTransactions ) {
 				Logger::log( "Transaction content: " . $dom->saveXML() );
 			}
 			$retData = $this->doHttpTransaction( $dom->saveXML(), $this->mTimeout );

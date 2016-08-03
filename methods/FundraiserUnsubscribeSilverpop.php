@@ -64,23 +64,23 @@ class FundraiserUnsubscribeSilverpop
 	}
 
 	public function unsubscribe( $requestID, $process, array $params ) {
-		global $wgFundraiserUnsubscribeSilverpopUsername, $wgFundraiserUnsubscribeSilverpopPassword;
-		global $wgFundraiserUnsubscribeSilverpopTimeout, $wgFundraiserUnsubscribeSilverpopURL;
+		global $wgFundraisingEmailUnsubscribeSilverpopUsername, $wgFundraisingEmailUnsubscribeSilverpopPassword;
+		global $wgFundraisingEmailUnsubscribeSilverpopTimeout, $wgFundraisingEmailUnsubscribeSilverpopURL;
 
 		Logger::pushLabel( 'Silverpop' );
 		$retval = false;
 
 		// Create transaction object
 		$txnObj = new XmlTransactionProcessor();
-		$txnObj->setEndpointURL( $wgFundraiserUnsubscribeSilverpopURL );
-		$txnObj->setTimeout( $wgFundraiserUnsubscribeSilverpopTimeout );
+		$txnObj->setEndpointURL( $wgFundraisingEmailUnsubscribeSilverpopURL );
+		$txnObj->setTimeout( $wgFundraisingEmailUnsubscribeSilverpopTimeout );
 		$txnObj->setEnvelope( $this->remoteActionEnvelope );
 		$txnObj->setTransactionMap( $this->remoteActionMap );
 
 		// Do the transaction chain
 		$outParamsLogin = array(
-			'username' => $wgFundraiserUnsubscribeSilverpopUsername,
-			'password' => $wgFundraiserUnsubscribeSilverpopPassword,
+			'username' => $wgFundraisingEmailUnsubscribeSilverpopUsername,
+			'password' => $wgFundraisingEmailUnsubscribeSilverpopPassword,
 		);
 
 		if ( $txnObj->doTransaction( 'Login', $this, $outParamsLogin ) &&
@@ -116,7 +116,7 @@ class FundraiserUnsubscribeSilverpop
 		DOMDocument $dom,
 		XmlTransactionProcessor &$processObj
 	) {
-		global $wgFundraiserUnsubscribeSilverpopURL;
+		global $wgFundraisingEmailUnsubscribeSilverpopURL;
 
 		$retval = false;
 
@@ -150,7 +150,7 @@ class FundraiserUnsubscribeSilverpop
 				}
 
 				// Change the API endpoint URL to include the session ID
-				$url = $wgFundraiserUnsubscribeSilverpopURL . ';jsessionid=' . $sessionId;
+				$url = $wgFundraisingEmailUnsubscribeSilverpopURL . ';jsessionid=' . $sessionId;
 				Logger::log( "Changing URL to: $url" );
 				$processObj->setEndpointURL( $url );
 				$retval = true;
@@ -167,7 +167,7 @@ class FundraiserUnsubscribeSilverpop
 
 			case 'Logout':
 				// Remove the jsessionid from the API url.
-				$url = $wgFundraiserUnsubscribeSilverpopURL;
+				$url = $wgFundraisingEmailUnsubscribeSilverpopURL;
 				Logger::log( "Changing URL to: $url" );
 				$processObj->setEndpointURL( $url );
 				$retval = true;
