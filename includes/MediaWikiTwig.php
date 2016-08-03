@@ -22,18 +22,6 @@
  * @file
  */
 
-// This is required here so tha the extension code that extends a Twig class below doesn't make PHP
-// barf. Not the most graceful thing in the world. But neither is needing Twig in the first place.
-global $wgTwigPath;
-if ( !file_exists( $wgTwigPath . '/Autoloader.php' ) ) {
-	throw new MWException(
-		'The FundraiserUnsubscribe extension requires a valid path to the Twig Autoloader file.'
-	);
-} else {
-	require_once ( $wgTwigPath . '/Autoloader.php' );
-	Twig_Autoloader::register();
-}
-
 /**
  * Wrapper around the Twig templating engine that allows MW code to easily integrate HTML templates.
  * Those templates can also easily call MW templates and code in turn. This is not the safest thing

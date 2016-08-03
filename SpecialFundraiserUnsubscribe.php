@@ -67,11 +67,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		global $wgFundraisingEmailUnsubscribeCancelUri;
 		global $wgFundraisingEmailUnsubscribeHelpEmail;
 
-		$templateDir = __DIR__ . '/templates';
-
-		if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-		    include_once( __DIR__ . '/vendor/autoload.php' );
-		}
+	    require_once( __DIR__ . '/vendor/autoload.php' );
 
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
 		// in loadSessionData() if it exists.
@@ -80,7 +76,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		Logger::setContext( $this->mID );
 
 		// Prepare template environment
-		$mwt = new MediaWikiTwig( $wgTwigTemplatePath, $this->getContext() );
+		$mwt = new MediaWikiTwig( $templateDir, $this->getContext() );
 
 		// Walk through the steps of the process. If we have a 'p' parameter we're just starting,
 		// If we have data in the session, and the 'execute' parameter, we're finishing

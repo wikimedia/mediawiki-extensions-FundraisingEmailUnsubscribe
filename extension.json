@@ -83,10 +83,8 @@
 				"list-id": "l"
 			}
 		},
-		"TwigPath": "/usr/lib/twig/",
 		"TwigCachePath": "/tmp/twig",
-		"TwigCacheExpiry": 300,
-		"TwigTemplatePath": "templates"
+		"TwigCacheExpiry": 300
 	},
 	"manifest_version": 1
 }
