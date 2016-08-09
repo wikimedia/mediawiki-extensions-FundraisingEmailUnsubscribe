@@ -67,7 +67,9 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		global $wgFundraisingEmailUnsubscribeCancelUri;
 		global $wgFundraisingEmailUnsubscribeHelpEmail;
 
-	    require_once( __DIR__ . '/vendor/autoload.php' );
+		$templateDir = __DIR__ . '/templates';
+
+		require_once( __DIR__ . '/vendor/autoload.php' );
 
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
 		// in loadSessionData() if it exists.
