@@ -98,6 +98,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 						'uselang' => $this->getLanguage()->getCode(),
 						'email' => $this->mEmail,
 						'token' => $this->mID,
+						'action' => $this->getTitle()->getFullURL(),
 					) );
 			} else {
 				// yay; errors
