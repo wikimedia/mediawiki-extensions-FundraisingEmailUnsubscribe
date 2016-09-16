@@ -18,6 +18,7 @@
 	"AutoloadClasses": {
 		"SpecialFundraiserUnsubscribe": "SpecialFundraiserUnsubscribe.php",
 		"Logger": "includes/Logger.php",
+		"FundraiserEmailQueue": "includes/FundraiserEmailQueue.php",
 		"MediaWikiTwig": "includes/MediaWikiTwig.php",
 		"MediaWikiTwigCallbacks": "includes/MediaWikiTwig.php",
 		"XmlTransactionProcessor": "includes/XmlTransactionProcessor.php",
@@ -84,5 +85,6 @@
 		"TwigCachePath": "/tmp/twig",
 		"TwigCacheExpiry": 300
 	},
+	"load_composer_autoloader": true,
 	"manifest_version": 1
 }

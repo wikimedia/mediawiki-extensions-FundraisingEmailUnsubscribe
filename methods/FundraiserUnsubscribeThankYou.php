@@ -63,9 +63,6 @@ class FundraiserUnsubscribeThankYou
 	}
 
 	public function unsubscribe( $requestID, $process, array $params ) {
-		global $wgFundraisingEmailUnsubscribeQueueClass,
-			   $wgFundraisingEmailUnsubscribeQueueParameters;
-
 		Logger::pushLabel( 'UnsubThankYou' );
 
 		$email = $params['email'];
@@ -76,17 +73,10 @@ class FundraiserUnsubscribeThankYou
 			'email' => $email,
 			'contribution-id' => $contribId
 		);
+
 		// Send to the queue
 		Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );
-
-		if ( empty( $wgFundraisingEmailUnsubscribeQueueParameters['queue'] ) ) {
-			$wgFundraisingEmailUnsubscribeQueueParameters['queue'] = 'unsubscribe';
-		}
-		$queue = new $wgFundraisingEmailUnsubscribeQueueClass(
-			$wgFundraisingEmailUnsubscribeQueueParameters
-		);
-		// Throws exception if it is unsuccessful
-		$queue->push( $message );
+		FundraiserEmailQueue::get()->push( $message );
 
 		// Clean up and return
 		Logger::popLabel();
