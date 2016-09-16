@@ -7,5 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
+    'PHPQueue' => array($vendorDir . '/coderkungfu/php-queue/src'),
     'FuseSource' => array($vendorDir . '/stomp-php/stomp-php/src'),
+    'Clio' => array($vendorDir . '/clio/clio/src'),
 );
