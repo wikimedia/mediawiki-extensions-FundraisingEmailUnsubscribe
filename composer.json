@@ -8,13 +8,12 @@
 	"require": {
 		"coderkungfu/php-queue": "dev-master",
 		"predis/predis": "^1.1",
-		"twig/twig": "^1.24",
-		"stomp-php/stomp-php": "^2.2"
+		"twig/twig": "^1.24"
 	},
-        "repositories": [
-                {
-                        "type": "vcs",
-                        "url": "https://gerrit.wikimedia.org/r/p/wikimedia/fundraising/php-queue.git"
-                }
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://gerrit.wikimedia.org/r/p/wikimedia/fundraising/php-queue.git"
+		}
 	]
 }

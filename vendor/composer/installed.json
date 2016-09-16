@@ -1,59 +1,5 @@
 [
     {
-        "name": "stomp-php/stomp-php",
-        "version": "2.2.3",
-        "version_normalized": "2.2.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/stomp-php/stomp-php.git",
-            "reference": "f23a96e0083fcf1862799b3694fca5205ea1a9b5"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/stomp-php/stomp-php/zipball/f23a96e0083fcf1862799b3694fca5205ea1a9b5",
-            "reference": "f23a96e0083fcf1862799b3694fca5205ea1a9b5",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "replace": {
-            "fusesource/stomp-php": "2.1.*"
-        },
-        "time": "2016-02-06 13:36:29",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "FuseSource": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "authors": [
-            {
-                "name": "Dejan Bosnanac",
-                "email": "dejan@nighttale.net",
-                "homepage": "http://www.nighttale.net"
-            },
-            {
-                "name": "Sören Rohweder",
-                "email": "s.rohweder@blage.net",
-                "homepage": "http://www.monofone.de"
-            }
-        ],
-        "description": "stomp support for PHP",
-        "homepage": "http://github.com/dejanb/stomp-php",
-        "keywords": [
-            "activeMQ",
-            "jms",
-            "messaging",
-            "stomp"
-        ]
-    },
-    {
         "name": "twig/twig",
         "version": "v1.24.2",
         "version_normalized": "1.24.2.0",
