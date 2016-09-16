@@ -63,19 +63,36 @@ class FundraiserUnsubscribeThankYou
 	}
 
 	public function unsubscribe( $requestID, $process, array $params ) {
+		global $wgFundraisingEmailUnsubscribeQueueClass,
+			   $wgFundraisingEmailUnsubscribeQueueParameters;
+
 		Logger::pushLabel( 'UnsubThankYou' );
 
 		$email = $params['email'];
 		$contribId = $params['contribution-id'];
 
+		$message = array(
+			'process' => $process,
+			'email' => $email,
+			'contribution-id' => $contribId
+		);
 		// And now we attempt the STOMP transaction
 		Logger::log( 'Placing STOMP message in queue for email ' . json_encode( $email ) );
 		$result = FundraiserUnsubscribeStompAdapter::sendMessage(
-			array( 'process' => $process, 'email' => $email, 'contribution-id' => $contribId ),
+			$message,
 			'unsubscribe',
 			$requestID
 		);
-
+		if ( $wgFundraisingEmailUnsubscribeQueueClass ) {
+			if ( empty( $wgFundraisingEmailUnsubscribeQueueParameters['queue'] ) ) {
+				$wgFundraisingEmailUnsubscribeQueueParameters['queue'] = 'unsubscribe';
+			}
+			$queue = new $wgFundraisingEmailUnsubscribeQueueClass(
+				$wgFundraisingEmailUnsubscribeQueueParameters
+			);
+			// Throws exception if it is unsuccessful
+			$queue->push( $message );
+		}
 		// Clean up and return
 		Logger::popLabel();
 		return $result;

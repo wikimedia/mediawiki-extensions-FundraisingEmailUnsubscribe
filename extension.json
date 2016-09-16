@@ -51,6 +51,8 @@
 		"FundraisingEmailUnsubscribeSilverpopURL": null,
 		"FundraisingEmailUnsubscribeLogFacility": 8,
 		"FundraisingEmailUnsubscribeLogXmlTransactions": false,
+		"FundraisingEmailUnsubscribeQueueClass": "",
+		"FundraisingEmailUnsubscribeQueueParameters": {},
 		"FundraisingEmailUnsubscribeProcesses": {
 			"thankyou": [
 				"FundraiserUnsubscribeThankYou"
