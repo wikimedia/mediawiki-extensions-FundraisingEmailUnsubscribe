@@ -15,6 +15,9 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"FundraisingEmailUnsubscribeAlias": "FundraisingEmailUnsubscribe.alias.php"
+	},
 	"AutoloadClasses": {
 		"SpecialFundraiserUnsubscribe": "SpecialFundraiserUnsubscribe.php",
 		"Logger": "includes/Logger.php",
