@@ -10,10 +10,7 @@
 		"predis/predis": "^1.1",
 		"twig/twig": "^1.24"
 	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://gerrit.wikimedia.org/r/p/wikimedia/fundraising/php-queue.git"
-		}
-	]
+	"scripts": {
+		"test": []
+	}
 }

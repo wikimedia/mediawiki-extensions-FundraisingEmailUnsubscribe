@@ -4,15 +4,11 @@ namespace PHPQueue\Backend;
 use PHPQueue\Exception\BackendException;
 use PHPQueue\Interfaces\AtomicReadBuffer;
 use PHPQueue\Interfaces\FifoQueueStore;
-use PHPQueue\Interfaces\IndexedFifoQueueStore;
-use PHPQueue\Interfaces\KeyValueStore;
 
 class PDO
     extends Base
     implements AtomicReadBuffer,
-        FifoQueueStore,
-        IndexedFifoQueueStore,
-        KeyValueStore
+        FifoQueueStore
 {
     private $connection_string;
     private $db_user;
@@ -39,7 +35,8 @@ class PDO
             $this->db_table = $options['db_table'];
         }
         if (!empty($options['pdo_options']) && is_array($options['pdo_options'])) {
-            $this->pdo_options = array_merge($this->pdo_options, $options['pdo_options']);
+        	// Use + operator instead of array_merge to preserve integer keys
+            $this->pdo_options = $options['pdo_options'] + $this->pdo_options;
         }
     }
 
@@ -154,6 +151,12 @@ class PDO
         // Get oldest message.
         $sql = sprintf('SELECT `id`, `data` FROM `%s` WHERE 1 ORDER BY id ASC LIMIT 1', $this->db_table);
         $sth = $this->getConnection()->prepare($sql);
+
+        // This will be false if the table or collection does not exist
+        if ( ! $sth ) {
+            return null;
+        }
+
         $sth->execute();
 
         $result = $sth->fetch(\PDO::FETCH_ASSOC);

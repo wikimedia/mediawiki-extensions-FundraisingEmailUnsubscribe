@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8cdabc8ebe4372d8741ce78469836c0a",
-    "content-hash": "3adc65bd0805604d01cb5fddeea2f5f3",
+    "content-hash": "1c0373bbf4c873b02a35dcb9b211010c",
     "packages": [
         {
             "name": "clio/clio",
@@ -46,15 +45,21 @@
                 "console",
                 "daemon"
             ],
-            "time": "2014-06-22 14:49:41"
+            "time": "2014-06-22T14:49:41+00:00"
         },
         {
             "name": "coderkungfu/php-queue",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gerrit.wikimedia.org/r/p/wikimedia/fundraising/php-queue.git",
-                "reference": "14198ba1f7d4868933649a85621a3955965e83cd"
+                "url": "https://github.com/CoderKungfu/php-queue.git",
+                "reference": "dd8412f105632d31cdd77933ec40a08640752c99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CoderKungfu/php-queue/zipball/dd8412f105632d31cdd77933ec40a08640752c99",
+                "reference": "dd8412f105632d31cdd77933ec40a08640752c99",
+                "shasum": ""
             },
             "require": {
                 "clio/clio": "0.1.*",
@@ -62,15 +67,19 @@
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "jakub-onderka/php-parallel-lint": "0.9",
-                "phpunit/phpunit": "4.4.*"
+                "amazonwebservices/aws-sdk-for-php": "dev-master",
+                "aws/aws-sdk-php": "dev-master",
+                "ext-memcache": "*",
+                "iron-io/iron_mq": "dev-master",
+                "microsoft/windowsazure": "dev-master",
+                "mrpoundsign/pheanstalk-5.3": "dev-master",
+                "predis/predis": "1.*"
             },
             "suggest": {
                 "Respect/Rest": "For a REST server to post job data",
                 "amazonwebservices/aws-sdk-for-php": "For AWS SQS backend support (legacy version)",
                 "aws/aws-sdk-php": "For AWS SQS backend support",
                 "clio/clio": "Support for daemonizing PHP CLI runner",
-                "ext-memcache": "*",
                 "fusesource/stomp-php": "For the STOMP backend",
                 "iron-io/iron_mq": "For IronMQ backend support",
                 "microsoft/windowsazure": "For Windows Azure Service Bus backend support",
@@ -89,12 +98,7 @@
                     "PHPQueue": "src/"
                 }
             },
-            "scripts": {
-                "test": [
-                    "parallel-lint . --exclude vendor",
-                    "phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -110,7 +114,7 @@
                 "queue",
                 "transaction"
             ],
-            "time": "2016-08-05 19:16:32"
+            "time": "2017-04-17 14:11:55"
         },
         {
             "name": "monolog/monolog",
@@ -188,7 +192,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-07-29 03:23:52"
+            "time": "2016-07-29T03:23:52+00:00"
         },
         {
             "name": "predis/predis",
@@ -238,7 +242,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2016-06-16 16:22:20"
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "psr/log",
@@ -276,7 +280,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
         },
         {
             "name": "twig/twig",
@@ -337,7 +341,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-09-01 17:50:53"
+            "time": "2016-09-01T17:50:53+00:00"
         }
     ],
     "packages-dev": [],
