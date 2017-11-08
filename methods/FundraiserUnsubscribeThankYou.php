@@ -30,7 +30,7 @@ class FundraiserUnsubscribeThankYou
 	public function __construct() {
 		$this->addRequiredParameter( 'email', '/.*@.*/' );
 		$this->addRequiredParameter( 'hash', '/[a-zA-Z0-9]*/' );
-		$this->addRequiredParameter( 'contribution-id', '/[0-9]*/' );
+		$this->addRequiredParameter( 'contribution-id', '/-?[0-9]*/' );
 	}
 
 	public function getRequiredValidationParameters() {
@@ -68,16 +68,20 @@ class FundraiserUnsubscribeThankYou
 		$email = $params['email'];
 		$contribId = $params['contribution-id'];
 
-		$message = array(
-			'process' => $process,
-			'email' => $email,
-			'contribution-id' => $contribId
-		);
+		if ( intval( $contribId ) < 0 ) {
+			// Link is from test letter, don't actually send the queue message
+			Logger::log( 'Test link, will not queue message' );
+		} else {
+			$message = array(
+				'process' => $process,
+				'email' => $email,
+				'contribution-id' => $contribId
+			);
 
-		// Send to the queue
-		Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );
-		FundraiserEmailQueue::get()->push( $message );
-
+			// Send to the queue
+			Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );
+			FundraiserEmailQueue::get()->push( $message );
+		}
 		// Clean up and return
 		Logger::popLabel();
 		return true;
