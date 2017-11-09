@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ea5bccd3146d8780a41d511c0eeda55",
+    "content-hash": "825f0eb02c06d45d75919cf148da2ee6",
     "packages": [
         {
             "name": "clio/clio",
@@ -49,16 +49,16 @@
         },
         {
             "name": "coderkungfu/php-queue",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CoderKungfu/php-queue.git",
-                "reference": "dd8412f105632d31cdd77933ec40a08640752c99"
+                "reference": "a9baeb0ae3b05bbd0d2f9f56c8365ff63f64524a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CoderKungfu/php-queue/zipball/dd8412f105632d31cdd77933ec40a08640752c99",
-                "reference": "dd8412f105632d31cdd77933ec40a08640752c99",
+                "url": "https://api.github.com/repos/CoderKungfu/php-queue/zipball/a9baeb0ae3b05bbd0d2f9f56c8365ff63f64524a",
+                "reference": "a9baeb0ae3b05bbd0d2f9f56c8365ff63f64524a",
                 "shasum": ""
             },
             "require": {
@@ -68,10 +68,10 @@
             },
             "require-dev": {
                 "amazonwebservices/aws-sdk-for-php": "dev-master",
-                "aws/aws-sdk-php": "dev-master",
+                "aws/aws-sdk-php": ">=2.8",
                 "ext-memcache": "*",
                 "iron-io/iron_mq": "dev-master",
-                "microsoft/windowsazure": "dev-master",
+                "microsoft/windowsazure": ">=0.4.0",
                 "mrpoundsign/pheanstalk-5.3": "dev-master",
                 "predis/predis": "1.*"
             },
@@ -114,7 +114,7 @@
                 "queue",
                 "transaction"
             ],
-            "time": "2017-04-17T14:11:55+00:00"
+            "time": "2017-09-08T03:14:59+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -482,9 +482,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "coderkungfu/php-queue": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

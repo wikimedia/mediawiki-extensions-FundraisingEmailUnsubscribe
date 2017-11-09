@@ -9,7 +9,5 @@ return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'PHPQueue' => array($vendorDir . '/coderkungfu/php-queue/src'),
-    'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
-    'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'Clio' => array($vendorDir . '/clio/clio/src'),
 );
