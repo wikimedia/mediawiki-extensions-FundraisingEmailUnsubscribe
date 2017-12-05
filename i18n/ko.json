@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi"
+		]
+	},
+	"fundraiserunsubscribe-desc": "가입한 모금 메일링 리스트에서 탈퇴",
+	"fundraiserunsubscribe": "위키미디어 모금 이메일 구독 해제",
+	"fundraiserunsubscribe-query": "정말로 '''''$1'''''을 구독 해제하시겠습니까?"
+}
