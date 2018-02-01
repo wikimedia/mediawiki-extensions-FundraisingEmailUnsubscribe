@@ -6,7 +6,7 @@
 		"Elliott Eggleston",
 		"Adam Roses Wight"
 	],
-	"license-name": "GPL-2.0",
+	"license-name": "GPL-2.0-only",
 	"url": "https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe",
 	"descriptionmsg": "fundraiserunsubscribe-desc",
 	"type": "specialpage",

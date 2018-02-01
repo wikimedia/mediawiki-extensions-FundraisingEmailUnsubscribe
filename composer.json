@@ -1,7 +1,7 @@
 {
 	"name": "wikimedia/fundraiser-unsubscribe",
 	"description": "Wikimedia Foundation mailing list unsubscribe frontend",
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"support": {
 		"irc": "irc://irc.freenode.net/wikimedia-fundraising"
 	},
