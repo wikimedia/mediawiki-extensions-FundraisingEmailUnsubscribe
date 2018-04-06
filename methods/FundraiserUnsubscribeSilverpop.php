@@ -104,8 +104,8 @@ class FundraiserUnsubscribeSilverpop
 	/**
 	 * Callback function from doTransaction()
 	 *
-	 * @param                         $txnName
-	 * @param DOMDocument             $dom
+	 * @param string $txnName
+	 * @param DOMDocument $dom
 	 * @param XmlTransactionProcessor $processObj
 	 *
 	 * @return bool

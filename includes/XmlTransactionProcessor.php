@@ -32,7 +32,7 @@ class XmlTransactionProcessor {
 
 	/**
 	 * Set the remote server we will be connecting too
-	 * @param $url
+	 * @param string $url
 	 */
 	public function setEndpointURL( $url ) {
 		$this->mURL = $url;
@@ -40,7 +40,7 @@ class XmlTransactionProcessor {
 
 	/**
 	 * Maximum cURL operation time
-	 * @param $timeout
+	 * @param int $timeout
 	 */
 	public function setTimeout( $timeout ) {
 		$this->mTimeout = $timeout;
@@ -75,9 +75,9 @@ class XmlTransactionProcessor {
 	/**
 	 * Performs an XML transaction!
 	 *
-	 * @param       $txnName        Name of transaction in transaction map
-	 * @param       $callbackObj    Reference to class that holds the callback function
-	 * @param array $outParams      Map of parameter data
+	 * @param string $txnName Name of transaction in transaction map
+	 * @param mixed $callbackObj Reference to class that holds the callback function
+	 * @param array $outParams Map of parameter data
 	 *
 	 * @return bool If true, the transaction was completely successful.
 	 */
@@ -139,9 +139,9 @@ class XmlTransactionProcessor {
 	 * Helper function which will create a DOM tree based on an array tree. Will lookup key data
 	 * in the $data array.
 	 *
-	 * @param array $domArray   The starting DOM array -- which is not a DOM object
-	 * @param array $data       The source parameter data
-	 * @param       $dom        The resulting DOM object
+	 * @param array $domArray The starting DOM array -- which is not a DOM object
+	 * @param array $data The source parameter data
+	 * @param DOMElement|DOMNode $dom The resulting DOM object
 	 *
 	 * @throws MWException
 	 */
@@ -165,7 +165,7 @@ class XmlTransactionProcessor {
 	/**
 	 * Actually perform the HTTP transaction.
 	 *
-	 * @param        $data
+	 * @param string|array $data
 	 * @param string $timeout
 	 *
 	 * @return bool|String

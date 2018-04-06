@@ -31,7 +31,7 @@
  */
 class Logger {
 
-	/** @var The global instance of the Syslog class */
+	/** @var self The global instance of the Syslog class */
 	private static $inst = null;
 
 	/** @var string What process to tell syslog the message came from */

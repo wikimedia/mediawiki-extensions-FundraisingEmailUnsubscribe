@@ -34,10 +34,9 @@ class MediaWikiTwig {
 	protected $mCallbacks;
 
 	/**
-	 * @param                $templatePath  Absolute path to root of Twig templates directory. All
+	 * @param string $templatePath Absolute path to root of Twig templates directory. All
 	 * templates must include the relative path from this root.
-	 *
-	 * @param IContextSource $context       The page context. IE from a MW page $this->getContext()
+	 * @param IContextSource $context The page context. IE from a MW page $this->getContext()
 	 */
 	public function __construct( $templatePath, IContextSource $context ) {
 		global $wgTwigCachePath;
@@ -54,10 +53,10 @@ class MediaWikiTwig {
 	/**
 	 * Renders a Twig template and returns the processed HTML data.
 	 *
-	 * @param       $template   Relative path to the Twig template
-	 * @param array $params     Any key->value parameters that the template requires
+	 * @param string $template Relative path to the Twig template
+	 * @param array $params Any key->value parameters that the template requires
 	 *
-	 * @return string   Rendered HTML data
+	 * @return string Rendered HTML data
 	 */
 	public function render( $template, $params = array() ) {
 		return $this->mTwig->render( $template, $params );
@@ -88,10 +87,10 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	/**
 	 * Fully parses a MW i18n message into HTML
 	 *
-	 * @param       $message    Message name
-	 * @param array $params     Any parameters for the message; straight array, no K/V
+	 * @param string $message Message name
+	 * @param array $params Any parameters for the message; straight array, no K/V
 	 *
-	 * @return String   Parsed HTML string
+	 * @return string Parsed HTML string
 	 */
 	public function twig_wfMessage( $message, $params = array() ) {
 		return wfMessage( $message, $params )->parse();
@@ -101,9 +100,9 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 * Fully parses arbitrary wiki text; use for things like template inclusion. Message inclusion
 	 * should use wfMessage()
 	 *
-	 * @param $wikiText Arbitrary wiki text
+	 * @param string $wikiText Arbitrary wiki text
 	 *
-	 * @return String   Fully parsed HTML string
+	 * @return string Fully parsed HTML string
 	 */
 	public function twig_wfWikiText( $wikiText ) {
 		return $this->mContext->getOutput()->parseInline( $wikiText );

@@ -30,9 +30,16 @@
  */
 class MediaWikiTwigLoader implements Twig_LoaderInterface {
 
+	/** @var string */
 	private $mTwigTemplatePath;
+
+	/** @var IContextSource */
 	private $mContext;
 
+	/**
+	 * @param string $twigTemplatePath
+	 * @param IContextSource $context
+	 */
 	public function __construct( $twigTemplatePath, IContextSource $context ) {
 		$this->mTwigTemplatePath = $twigTemplatePath;
 		$this->mContext = $context;
@@ -88,8 +95,8 @@ class MediaWikiTwigLoader implements Twig_LoaderInterface {
 
 	/**
 	 * Will force a refresh after $wgTwigCacheExpiry seconds
-	 * @param string    $name
-	 * @param timestamp $time
+	 * @param string $name
+	 * @param int $time
 	 *
 	 * @return bool
 	 */
