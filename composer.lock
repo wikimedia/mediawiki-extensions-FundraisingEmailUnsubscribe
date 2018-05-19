@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b84f2aa9e45cd667b2c079d1949743a",
+    "content-hash": "7d22dee48060020e36d71e80ae61eee5",
     "packages": [
         {
             "name": "clio/clio",
@@ -487,5 +487,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "platform-overrides": {
+        "php": "5.6.33"
+    }
 }

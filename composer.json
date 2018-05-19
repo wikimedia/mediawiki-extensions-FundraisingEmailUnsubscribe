@@ -18,5 +18,10 @@
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules"
 		]
+	},
+	"config": {
+		"platform": {
+		"php": "5.6.33"
+		}
 	}
 }
