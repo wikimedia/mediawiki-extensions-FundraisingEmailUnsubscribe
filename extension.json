@@ -47,7 +47,7 @@
 	"config": {
 		"FundraisingEmailUnsubscribeSessionKey": "fr-unsub",
 		"FundraisingEmailUnsubscribeCancelUri": "https://www.wikimediafoundation.org/",
-		"FundraisingEmailUnsubscribeHelpEmail": "donations@wikimedia.org",
+		"FundraisingEmailUnsubscribeHelpEmail": "donate@wikimedia.org",
 		"FundraisingEmailUnsubscribeHashSecretKey": "",
 		"FundraisingEmailUnsubscribeSilverpopUsername": null,
 		"FundraisingEmailUnsubscribeSilverpopPassword": null,
