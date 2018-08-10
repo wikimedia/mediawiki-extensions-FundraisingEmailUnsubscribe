@@ -28,10 +28,10 @@
 		"MediaWikiTwig": "includes/MediaWikiTwig.php",
 		"MediaWikiTwigCallbacks": "includes/MediaWikiTwig.php",
 		"XmlTransactionProcessor": "includes/XmlTransactionProcessor.php",
-		"UnsubscribeMethod": "methods/UnsubscribeMethod.php",
+		"SubscriptionMethod": "methods/SubscriptionMethod.php",
 		"FundraiserUnsubscribeThankYou": "methods/FundraiserUnsubscribeThankYou.php",
 		"FundraiserUnsubscribeSilverpop": "methods/FundraiserUnsubscribeSilverpop.php",
-		"IUnsubscribeValidator": "methods/UnsubscribeMethod.php",
+		"ISubscriptionValidator": "methods/ISubscriptionValidator.php",
 		"MediaWikiTwigLoader": "includes/MediaWikiTwigLoader.php"
 	},
 	"ResourceModules": {

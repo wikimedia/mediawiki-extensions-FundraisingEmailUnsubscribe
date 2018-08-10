@@ -20,9 +20,9 @@
  */
 
 /**
- * Interface for unsubscribe class to validate that an inbound request is processable.
+ * Interface for subscription class to validate that an inbound request is processable.
  */
-interface IUnsubscribeValidator {
+interface ISubscriptionValidator {
 	/**
 	 * Get the URI parameter names required to be passed to validateRequest()
 	 * @abstract
@@ -32,7 +32,7 @@ interface IUnsubscribeValidator {
 	public function getRequiredValidationParameters();
 
 	/**
-	 * Validates that an unsubscribe request is valid and able to be processed. Should not perform
+	 * Validates that an (un)subscribe request is valid and able to be processed. Should not perform
 	 * any API calls (esp. ones that could cost money). The parameters required for this call, and
 	 * regex for cleaning should be obtained from getRequiredValidationParameters().
 	 * @abstract
@@ -42,36 +42,4 @@ interface IUnsubscribeValidator {
 	 * @return bool TRUE if the request is valid and may be performed by calling unsubscribe().
 	 */
 	public function validateRequest( array $params );
-}
-
-/**
- *
- */
-abstract class UnsubscribeMethod {
-	protected $mRequiredParameters = array();
-
-	protected function addRequiredParameter( $name, $regex ) {
-		$this->mRequiredParameters[$name] = $regex;
-	}
-
-	/**
-	 * Get the URI parameter names required to be passed to unsubscribe()
-	 *
-	 * @return array Key/value part of URI parameter name => validation regex that shall be used to
-	 * clean the input before passing to this function.
-	 */
-	public function getRequiredParameters() {
-		return $this->mRequiredParameters;
-	}
-
-	/**
-	 * Performs the unsubscribe action.
-	 *
-	 * @param int    $requestID The log ID being used for this transaction
-	 * @param string $process   The name of the currently executing unsubscribe process
-	 * @param array  $params    Key/value map of URI parameter names => cleaned values
-	 *
-	 * @return bool TRUE if the unsubscribe action was successful.
-	 */
-	public abstract function unsubscribe( $requestID, $process, array $params );
 }

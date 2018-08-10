@@ -24,7 +24,7 @@
  * money at the start of new fundraising campaigns :)
  */
 class FundraiserUnsubscribeSilverpop
-	extends UnsubscribeMethod {
+	extends SubscriptionMethod {
 
 	private $remoteActionEnvelope = array( 'Envelope', 'Body' );
 	private $remoteActionMap = array(
@@ -63,7 +63,7 @@ class FundraiserUnsubscribeSilverpop
 		$this->addRequiredParameter( 'email', '/.*@.*/' );
 	}
 
-	public function unsubscribe( $requestID, $process, array $params ) {
+	public function update( $requestID, $process, array $params ) {
 		global $wgFundraisingEmailUnsubscribeSilverpopUsername, $wgFundraisingEmailUnsubscribeSilverpopPassword;
 		global $wgFundraisingEmailUnsubscribeSilverpopTimeout, $wgFundraisingEmailUnsubscribeSilverpopURL;
 

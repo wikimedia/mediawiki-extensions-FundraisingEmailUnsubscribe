@@ -160,9 +160,9 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			if ( class_exists( $className, true ) ) {
 
 				$instance = new $className();
-				if ( !( $instance instanceof UnsubscribeMethod ) ) {
+				if ( !( $instance instanceof SubscriptionMethod ) ) {
 					// Ehh? This class isn't what we want! ABORT ABORT!
-					throw new MWException( "Class '$className' is not a derived class of UnsubscribeMethod." );
+					throw new MWException( "Class '$className' is not a derived class of SubscriptionMethod." );
 				}
 
 				$this->mObjects[] = array(
@@ -178,7 +178,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	/**
 	 * Verifies that all required parameters are present and valid in the URI string. In practice
 	 * this function will call the validateRequest() function of any enabled method in the current
-	 * process that implements IUnsubscribeValidator. This is useful for when a method cannot
+	 * process that implements ISubscriptionValidator. This is useful for when a method cannot
 	 * reasonably provide a validation method, ie: silverpop.
 	 *
 	 * @return bool True if action can proceed.
@@ -189,7 +189,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 			$params = $classObjArray['params'];
 
 			$className = get_class( $classObj );
-			if ( $classObj instanceof IUnsubscribeValidator ) {
+			if ( $classObj instanceof ISubscriptionValidator ) {
 				Logger::log( "Running $className verification" );
 				if ( !$classObj->validateRequest( $params ) ) {
 					$className = get_class( $classObj );
@@ -225,7 +225,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 
 			$className = get_class( $classObj );
 			try {
-				$unsubscribeResult = $classObj->unsubscribe( $this->mID, $this->mProcess, $params );
+				$unsubscribeResult = $classObj->update( $this->mID, $this->mProcess, $params );
 
 				if ( $unsubscribeResult == false ) {
 					$pstr = json_encode( $params );
@@ -280,7 +280,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 
 			// Get what the class expects; and how to validate it
 			$expectedParams = array();
-			if ( $classObj instanceof IUnsubscribeValidator ) {
+			if ( $classObj instanceof ISubscriptionValidator ) {
 				$expectedParams = $classObj->getRequiredValidationParameters();
 			}
 			$expectedParams = array_merge( $classObj->getRequiredParameters(), $expectedParams );

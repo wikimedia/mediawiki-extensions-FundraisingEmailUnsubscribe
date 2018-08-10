@@ -41,7 +41,7 @@ class UnsubscribeThankYouTest extends MediaWikiTestCase {
 
 	public function testSendMessage() {
 		$id = mt_rand();
-		$this->unsubscriber->unsubscribe(
+		$this->unsubscriber->update(
 			$id, 'unsubscribe', array(
 				'email' => 'donor@example.com',
 				'contribution-id' => '123456'

@@ -24,8 +24,8 @@
  * donation.)
  */
 class FundraiserUnsubscribeThankYou
-	extends UnsubscribeMethod
-	implements IUnsubscribeValidator {
+	extends SubscriptionMethod
+	implements ISubscriptionValidator {
 
 	public function __construct() {
 		$this->addRequiredParameter( 'email', '/.*@.*/' );
@@ -62,7 +62,7 @@ class FundraiserUnsubscribeThankYou
 		return true;
 	}
 
-	public function unsubscribe( $requestID, $process, array $params ) {
+	public function update( $requestID, $process, array $params ) {
 		Logger::pushLabel( 'UnsubThankYou' );
 
 		$email = $params['email'];
