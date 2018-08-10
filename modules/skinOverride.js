@@ -3,7 +3,7 @@
 		$( 'div#p-logo a' ).attr( 'href', '#' );
 		 
 		// Cheating a bit, this deserves its own module.
-		$( 'input#unsubscribe' ).on( 'click', function () {
+		$( 'input#unsubscribe, input#continue' ).on( 'click', function () {
 			$( '#execute' ).val( 1 );
 		} );
 	} );

@@ -14,7 +14,9 @@ class UnsubscribeThankYouTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgFundraisingEmailUnsubscribeQueueClass' => '\PHPQueue\Backend\PDO',
 			'wgFundraisingEmailUnsubscribeQueueParameters' => array(
-				'connection_string' => 'sqlite::memory:',
+				'unsubscribe' => array(
+					'connection_string' => 'sqlite::memory:',
+				),
 			),
 			'wgFundraisingEmailUnsubscribeHashSecretKey' => 'Red/Fl4nn3l/#',
 		) );

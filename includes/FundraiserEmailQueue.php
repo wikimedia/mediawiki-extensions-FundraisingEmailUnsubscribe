@@ -6,24 +6,25 @@
  * backend instance as the class being tested
  */
 class FundraiserEmailQueue {
-	static $instance;
+	static $instances = [];
 
 	/**
+	 * @param string $queueName name of the queue to fetch
 	 * @return PHPQueue\Interfaces\FifoQueueStore
 	 */
-	public static function get() {
+	public static function get( $queueName = 'unsubscribe' ) {
 		global $wgFundraisingEmailUnsubscribeQueueClass,
 			   $wgFundraisingEmailUnsubscribeQueueParameters;
 
-		if ( !self::$instance ) {
-			if ( empty( $wgFundraisingEmailUnsubscribeQueueParameters['queue'] ) ) {
-				$wgFundraisingEmailUnsubscribeQueueParameters['queue'] = 'unsubscribe';
+		if ( empty( self::$instances[$queueName] ) ) {
+			if ( empty( $wgFundraisingEmailUnsubscribeQueueParameters[$queueName]['queue'] ) ) {
+				$wgFundraisingEmailUnsubscribeQueueParameters[$queueName]['queue'] = $queueName;
 			}
-			self::$instance = new $wgFundraisingEmailUnsubscribeQueueClass(
-				$wgFundraisingEmailUnsubscribeQueueParameters
+			self::$instances[$queueName] = new $wgFundraisingEmailUnsubscribeQueueClass(
+				$wgFundraisingEmailUnsubscribeQueueParameters[$queueName]
 			);
 		}
 
-		return self::$instance;
+		return self::$instances[$queueName];
 	}
 }

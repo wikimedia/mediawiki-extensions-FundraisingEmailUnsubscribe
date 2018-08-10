@@ -80,6 +80,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	public function getFunctions() {
 		return array(
 			'wfMessage' => new Twig_Function_Method( $this, 'twig_wfMessage' ),
+			'wfText' => new Twig_Function_Method( $this, 'twig_wfText' ),
 			'wfWikiText' => new Twig_Function_Method( $this, 'twig_wfWikiText' ),
 		);
 	}
@@ -94,6 +95,18 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 */
 	public function twig_wfMessage( $message, $params = array() ) {
 		return wfMessage( $message, $params )->parse();
+	}
+
+	/**
+	 * Retrieves non-wiki-parsed MW i18n message
+	 *
+	 * @param string $message Message name
+	 * @param array $params Any parameters for the message; straight array, no K/V
+	 *
+	 * @return string HTML string
+	 */
+	public function twig_wfText( $message, $params = array() ) {
+		return wfMessage( $message, $params )->text();
 	}
 
 	/**

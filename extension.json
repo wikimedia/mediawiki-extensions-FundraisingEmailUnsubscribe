@@ -11,7 +11,8 @@
 	"descriptionmsg": "fundraiserunsubscribe-desc",
 	"type": "specialpage",
 	"SpecialPages": {
-		"FundraiserUnsubscribe": "SpecialFundraiserUnsubscribe"
+		"FundraiserUnsubscribe": "SpecialFundraiserUnsubscribe",
+		"FundraiserSubscribe": "SpecialFundraiserSubscribe"
 	},
 	"MessagesDirs": {
 		"FundraisingEmailUnsubscribe": [
@@ -22,6 +23,7 @@
 		"FundraisingEmailUnsubscribeAlias": "FundraisingEmailUnsubscribe.alias.php"
 	},
 	"AutoloadClasses": {
+		"SpecialFundraiserSubscribe": "SpecialFundraiserSubscribe.php",
 		"SpecialFundraiserUnsubscribe": "SpecialFundraiserUnsubscribe.php",
 		"Logger": "includes/Logger.php",
 		"FundraiserEmailQueue": "includes/FundraiserEmailQueue.php",
@@ -31,6 +33,7 @@
 		"SubscriptionMethod": "methods/SubscriptionMethod.php",
 		"FundraiserUnsubscribeThankYou": "methods/FundraiserUnsubscribeThankYou.php",
 		"FundraiserUnsubscribeSilverpop": "methods/FundraiserUnsubscribeSilverpop.php",
+		"FundraiserSubscribe": "methods/FundraiserSubscribe.php",
 		"ISubscriptionValidator": "methods/ISubscriptionValidator.php",
 		"MediaWikiTwigLoader": "includes/MediaWikiTwigLoader.php"
 	},
@@ -56,7 +59,10 @@
 		"FundraisingEmailUnsubscribeLogFacility": 8,
 		"FundraisingEmailUnsubscribeLogXmlTransactions": false,
 		"FundraisingEmailUnsubscribeQueueClass": "PHPQueue\\Backend\\Predis",
-		"FundraisingEmailUnsubscribeQueueParameters": {},
+		"FundraisingEmailUnsubscribeQueueParameters": {
+			"unsubscribe": {},
+			"opt_in": {}
+		},
 		"FundraisingEmailUnsubscribeProcesses": {
 			"thankyou": [
 				"FundraiserUnsubscribeThankYou"
@@ -64,6 +70,9 @@
 			"silverpop": [
 				"FundraiserUnsubscribeThankYou",
 				"FundraiserUnsubscribeSilverpop"
+			],
+			"optin": [
+				"FundraiserSubscribe"
 			]
 		},
 		"FundraisingEmailUnsubscribeVarMap": {
@@ -86,6 +95,12 @@
 				"recipient-id": "r",
 				"job-id": "j",
 				"list-id": "l"
+			},
+			"optin": {
+				"email": [
+					"FundraiserUnsubscribeThankYou::decodeEmail",
+					"e"
+				]
 			}
 		},
 		"TwigCachePath": "/tmp/twig",

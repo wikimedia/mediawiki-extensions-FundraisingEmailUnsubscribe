@@ -11,4 +11,5 @@ $specialPageAliases = [];
 /** English (English) */
 $specialPageAliases['en'] = [
 	'FundraiserUnsubscribe' => [ 'FundraiserUnsubscribe' ],
+	'FundraiserSubscribe' => [ 'FundraiserSubscribe', 'OptIn' ],
 ];

@@ -65,7 +65,6 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 	public function execute( $sub ) {
 		global $wgFundraisingEmailUnsubscribeProcesses;
 		global $wgFundraisingEmailUnsubscribeCancelUri;
-		global $wgFundraisingEmailUnsubscribeHelpEmail;
 
 		$templateDir = __DIR__ . '/templates';
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
@@ -82,26 +81,20 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		$outContent = '';
 		$this->mProcess = $this->getFilteredValue( static::KEY_PROCESS, static::FILT_PROCESS );
 		$execute = $this->getFilteredValue( static::KEY_EXECUTE, static::FILT_EXECUTE );
+		$errorTemplate = $this->getErrorTemplate();
 
 		if ( array_key_exists( $this->mProcess, $wgFundraisingEmailUnsubscribeProcesses ) ) {
 			// Stage 1: Asking if they really mean to do this. But we do have some setup to do first
 			Logger::log( "Starting process '$this->mProcess' with URI variables: " . json_encode( $_GET + $_POST ) );
+			$template = $this->getQueryTemplate();
 
 			$this->instantiateObjects();
 			if ( $this->stashData() && $this->doVerify() ) {
 				// Output page
-				$outContent = $mwt->render( 'query.html', array(
-						'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-						'uselang' => $this->getLanguage()->getCode(),
-						'email' => $this->mEmail,
-						'token' => $this->mID,
-						'action' => $this->getTitle()->getFullURL(),
-					) );
+				$outContent = $mwt->render( $template, $this->getTemplateParams() );
 			} else {
 				// yay; errors
-				$outContent = $mwt->render( 'error.html', array(
-						'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-					) );
+				$outContent = $mwt->render( $errorTemplate, $this->getTemplateParams() );
 				$this->clearData();
 			}
 
@@ -112,16 +105,13 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 				if ( $this->doUnsubscribe() ) {
 					// Sadness, we lost a donation person
 					Logger::log( 'Unsubscribe action success' );
-					$outContent = $mwt->render( 'unsubscribeSuccess.html', array(
-							'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-						) );
+					$template = $this->getSuccessTemplate();
+					$outContent = $mwt->render( $template, $this->getTemplateParams() );
 					$this->clearData();
 				} else {
 					// Oh noes... errorz
 					Logger::log( 'Unsubscribe action failed' );
-					$outContent = $mwt->render( 'error.html', array(
-							'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-						) );
+					$outContent = $mwt->render( $errorTemplate, $this->getTemplateParams() );
 					$this->clearData();
 				}
 			} else {
@@ -134,9 +124,7 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		} else {
 			// Well, we had an unexpected error. That's nice...
 			Logger::log( "Could not process '$this->mProcess' or execute pre-existing session." );
-			$outContent = $mwt->render( 'error.html', array(
-					'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-				) );
+			$outContent = $mwt->render( $errorTemplate, $this->getTemplateParams() );
 			$this->clearData();
 		}
 
@@ -148,6 +136,36 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		$this->getOutput()->addHTML( $outContent );
 	}
 
+	protected function getTemplateParams() {
+		global $wgFundraisingEmailUnsubscribeHelpEmail;
+		global $wgDonationInterfacePolicyURL;
+
+		$langaugeCode = $this->getLanguage()->getCode();
+
+		// $wgDonationInterfacePolicyURL has $language and $country variables
+		// to replace. We know language but not country.
+
+		$policyUrl = str_replace(
+			'$country',
+			'',
+			$wgDonationInterfacePolicyURL
+		);
+
+		$policyUrl = str_replace(
+			'$language',
+			$langaugeCode,
+			$policyUrl
+		);
+
+		return array(
+			'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
+			'uselang' => $langaugeCode,
+			'email' => $this->mEmail,
+			'token' => $this->mID,
+			'action' => $this->getTitle()->getFullURL(),
+			'policy_url' => $policyUrl,
+		);
+	}
 	/**
 	 * Will attempt to instantiate instances of all classes required by the current process.
 	 *
@@ -580,5 +598,17 @@ class SpecialFundraiserUnsubscribe extends SpecialPage {
 		} else {
 			throw new MWException( "Parameter failed validation raw: ($rawValue), filter: ($filter)" );
 		}
+	}
+
+	protected function getQueryTemplate() {
+		return 'query.html';
+	}
+
+	protected function getSuccessTemplate() {
+		return 'unsubscribeSuccess.html';
+	}
+
+	protected function getErrorTemplate() {
+		return 'error.html';
 	}
 }
