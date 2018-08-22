@@ -1,6 +1,6 @@
 <?php
 
-class SpecialFundraiserSubscribe extends SpecialFundraiserUnsubscribe {
+class SpecialFundraiserSubscribe extends FundraiserSubscriptionPage {
 	public function __construct() {
 		SpecialPage::__construct( 'FundraiserSubscribe' );
 	}

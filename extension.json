@@ -23,6 +23,7 @@
 		"FundraisingEmailUnsubscribeAlias": "FundraisingEmailUnsubscribe.alias.php"
 	},
 	"AutoloadClasses": {
+		"FundraiserSubscriptionPage": "FundraiserSubscriptionPage.php",
 		"SpecialFundraiserSubscribe": "SpecialFundraiserSubscribe.php",
 		"SpecialFundraiserUnsubscribe": "SpecialFundraiserUnsubscribe.php",
 		"Logger": "includes/Logger.php",
