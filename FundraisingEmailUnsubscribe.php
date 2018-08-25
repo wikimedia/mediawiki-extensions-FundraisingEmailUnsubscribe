@@ -1,7 +1,7 @@
 <?php
 /**
- * Extension:FundraisingEmailUnsubscribe. This extension allows a user to unsubscribe from a fundraising
- * mailing list.
+ * Extension:FundraisingEmailUnsubscribe. This extension allows a user to unsubscribe from
+ * (or opt in to) a fundraising mailing list.
  *
  * -- License --
  * This program is free software; you can redistribute it and/or modify

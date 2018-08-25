@@ -523,7 +523,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	}
 
 	/**
-	 * Clears unsubscribe data from the session
+	 * Clears subscription request data from the session
 	 */
 	private function clearData() {
 		global $wgFundraisingEmailUnsubscribeSessionKey;
