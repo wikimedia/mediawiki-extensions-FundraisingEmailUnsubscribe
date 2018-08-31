@@ -4,7 +4,7 @@
 			"Metalhead64"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Ermöglicht es Benutzern, sich aus konfigurierten Mailinglisten zur Spendensammlung auszutragen",
+	"fundraiserunsubscribe-desc": "Ermöglicht es Benutzern, ihre Mitgliedschaft in konfigurierten Mailinglisten zur Spendensammlung zu verwalten.",
 	"fundraiserunsubscribe": "E-Mails zur Wikimedia-Spendensammlung abbestellen",
 	"fundraiserunsubscribe-query": "Möchten Sie '''''$1''''' wirklich abbestellen?",
 	"fundraiserunsubscribe-info": "Diese Aktion meldet Sie vom Empfang von E-Mails der Wikimedia Foundation ab, die Sie als Spender erhalten. Sie könnten weiterhin E-Mails an diese Adresse erhalten, falls diese mit einem unserer Projekte verknüpft ist. Falls Sie Fragen haben, kontaktieren Sie bitte [mailto:$1 $1].",
@@ -12,5 +12,8 @@
 	"fundraiserunsubscribe-cancel": "Abbrechen",
 	"fundraiserunsubscribe-errormsg": "Beim Versuch, Ihre Anfrage zu verarbeiten, ist ein Fehler aufgetreten. Bitte senden Sie eine E-Mail an [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Sie wurden erfolgreich aus unserer Mailingliste entfernt.",
-	"fundraiserunsubscribe-sucesswarning": "Bitte geben Sie uns für die Änderungen vier (4) Tage Zeit. Wir entschuldigen uns für alle E-Mails, die Sie in dieser Zeit erhalten. Falls Sie Fragen haben, kontaktieren Sie bitte [mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "Bitte geben Sie uns für die Änderungen vier (4) Tage Zeit. Wir entschuldigen uns für alle E-Mails, die Sie in dieser Zeit erhalten. Falls Sie Fragen haben, kontaktieren Sie bitte [mailto:$1 $1].",
+	"fundraisersubscribe": "Abonnieren",
+	"fundraisersubscribe-fail": "Beim Versuch, deine Anfrage zu verarbeiten, ist ein Fehler aufgetreten. Bitte kontaktiere [mailto:$1 $1].",
+	"fundraisersubscribe-success": "Danke!"
 }
