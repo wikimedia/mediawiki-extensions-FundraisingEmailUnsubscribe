@@ -11,5 +11,6 @@
 	"fundraiserunsubscribe-cancel": "Ofbriechen",
 	"fundraiserunsubscribe-errormsg": "Beim Versuch Är Ufro ze verschaffen ass ee Feeler geschitt. Kontaktéiert w.e.g. [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Dir gouft vun eiser Mailinglëscht erofgeholl.",
-	"fundraiserunsubscribe-sucesswarning": "Gitt eis véier (4) Deeg, bis d'Ännerunge gemaach sinn. Mir entschëllegen eis, wann Dir bis dohin nach E-maile sollt kréien. Wann Dir eng Fro hutt, kontaktéiert w.e.g. [mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "Gitt eis véier (4) Deeg, bis d'Ännerunge gemaach sinn. Mir entschëllegen eis, wann Dir bis dohin nach E-maile sollt kréien. Wann Dir eng Fro hutt, kontaktéiert w.e.g. [mailto:$1 $1].",
+	"fundraisersubscribe-success": "Merci!"
 }

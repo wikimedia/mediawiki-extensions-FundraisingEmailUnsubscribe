@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Umherirrender"
+			"Umherirrender",
+			"Robby"
 		]
 	},
 	"fundraiserunsubscribe-desc": "{{desc|name=Fundraising Email Unsubscribe|url=https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe}}",
@@ -16,5 +17,5 @@
 	"fundraiserunsubscribe-sucesswarning": "Notification to the user that there might be some manual operations or ongoing things that will take time to clear. Will always be shown with fundraiserunsubscribe-success. $1 is an email address for them to contact if they have further questions.",
 	"fundraisersubscribe": "Title shown on page letting users opt in to emails.",
 	"fundraisersubscribe-fail": "Text to display if the opt-in failed. Link to email address:$1 for more support.\n\nParameters:\n* $1 - email address",
-	"fundraisersubscribe-success": "Message to tell the user the opt-in submission was successful."
+	"fundraisersubscribe-success": "Message to tell the user the opt-in submission was successful.\n{{Identical|Thank you}}"
 }
