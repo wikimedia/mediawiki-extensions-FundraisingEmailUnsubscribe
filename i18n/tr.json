@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dual"
+		]
+	},
+	"fundraisersubscribe": "Katılan",
+	"fundraisersubscribe-fail": "İsteğinizi işlemeye çalışırken bir meydana geldi. Lütfen  [mailto:$1 $1] ile iletişime geçin.",
+	"fundraisersubscribe-success": "Teşekkürler!"
+}
