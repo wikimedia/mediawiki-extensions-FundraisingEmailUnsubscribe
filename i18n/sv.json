@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jopparn"
+			"Jopparn",
+			"WikiPhoenix"
 		]
 	},
 	"fundraiserunsubscribe": "Avsluta prenumeration av Wikimedia Fundraising Email",
@@ -10,5 +11,6 @@
 	"fundraiserunsubscribe-cancel": "Avbryt",
 	"fundraiserunsubscribe-errormsg": "Ett fel uppstod vid försöket att bearbeta din begäran. Vänligen kontakta [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Du har framgångsrikt tagits bort från vår sändlista.",
-	"fundraiserunsubscribe-sucesswarning": "Det kan ta upp till fyra (4) dagar för att ändringarna ska börja gälla. Vi ber om ursäkt för alla e-postmeddelanden som du får under denna tid. Om du har några frågor, vänligen kontakta [mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "Det kan ta upp till fyra (4) dagar för att ändringarna ska börja gälla. Vi ber om ursäkt för alla e-postmeddelanden som du får under denna tid. Om du har några frågor, vänligen kontakta [mailto:$1 $1].",
+	"fundraisersubscribe-success": "Tack!"
 }
