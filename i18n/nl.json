@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"McDutchie",
-			"Siebrand"
+			"Siebrand",
+			"Optilete"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Maakt het mogelijk dat gebruikers zich uitschrijven van ingestelde mailinglijsten voor fondsenwerving",
@@ -13,5 +14,6 @@
 	"fundraiserunsubscribe-cancel": "Annuleren",
 	"fundraiserunsubscribe-errormsg": "Er is een fout opgetreden tijdens het verwerken van uw verzoek. Neem contact op met [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "U bent niet langer ingeschreven op onze mailinglijst.",
-	"fundraiserunsubscribe-sucesswarning": "Het duurt maximaal vier (4) dagen om deze wijzigingen door te voeren. In het geval u in de tussentijd nog e-mailberichten van ons ontvangt, bieden wij daar bij voorbaat onze excuses voor aan. Neem contact op met [mailto:$1 $1] als u nog vragen hebt."
+	"fundraiserunsubscribe-sucesswarning": "Het duurt maximaal vier (4) dagen om deze wijzigingen door te voeren. In het geval u in de tussentijd nog e-mailberichten van ons ontvangt, bieden wij daar bij voorbaat onze excuses voor aan. Neem contact op met [mailto:$1 $1] als u nog vragen hebt.",
+	"fundraisersubscribe-success": "Bedankt!"
 }
