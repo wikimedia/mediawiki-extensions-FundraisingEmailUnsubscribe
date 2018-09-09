@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d22dee48060020e36d71e80ae61eee5",
+    "content-hash": "5bd995dd3bb09b2bf7c8c8e6f579f053",
     "packages": [
         {
             "name": "clio/clio",
