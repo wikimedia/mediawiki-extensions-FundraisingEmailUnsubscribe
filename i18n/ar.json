@@ -13,5 +13,8 @@
 	"fundraiserunsubscribe-cancel": "إلغاء",
 	"fundraiserunsubscribe-errormsg": "حدث خطأ أثناء محاولة معالجة طلبك; يُرجَى الاتصال بـ[mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "لقد تمت إزالتك بنجاح من قائمتنا البريدية.",
-	"fundraiserunsubscribe-sucesswarning": "يُرجَى الانتظار لمدة أربعة (4) أيام حتى تصبح التغييرات سارية المفعول، نعتذر عن أية رسائل بريد إلكتروني تتلقاها خلال هذا الوقت، إذا كانت لديك أية أسئلة، يُرجَى الاتصال بـ[mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "يُرجَى الانتظار لمدة أربعة (4) أيام حتى تصبح التغييرات سارية المفعول، نعتذر عن أية رسائل بريد إلكتروني تتلقاها خلال هذا الوقت، إذا كانت لديك أية أسئلة، يُرجَى الاتصال بـ[mailto:$1 $1].",
+	"fundraisersubscribe": "اشتراك",
+	"fundraisersubscribe-fail": "حدث خطأ أثناء محاولة معالجة طلبك; يُرجَى الاتصال بـ[mailto:$1 $1].",
+	"fundraisersubscribe-success": "شكرا لك!"
 }
