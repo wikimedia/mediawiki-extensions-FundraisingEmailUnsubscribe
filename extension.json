@@ -62,7 +62,7 @@
 		"FundraisingEmailUnsubscribeQueueClass": "PHPQueue\\Backend\\Predis",
 		"FundraisingEmailUnsubscribeQueueParameters": {
 			"unsubscribe": {},
-			"opt_in": {}
+			"opt-in": {}
 		},
 		"FundraisingEmailUnsubscribeProcesses": {
 			"thankyou": [

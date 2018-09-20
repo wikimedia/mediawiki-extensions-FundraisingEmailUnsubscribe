@@ -14,8 +14,9 @@ class SubscribeTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgFundraisingEmailUnsubscribeQueueClass' => '\PHPQueue\Backend\PDO',
 			'wgFundraisingEmailUnsubscribeQueueParameters' => array(
-				'opt_in' => array(
+				'opt-in' => array(
 					'connection_string' => 'sqlite::memory:',
+					'queue' => 'opt_in', // this backend needs a valid table name
 				),
 			),
 		) );
@@ -29,7 +30,7 @@ class SubscribeTest extends MediaWikiTestCase {
 				'email' => 'donor@example.com',
 			)
 		);
-		$queue = FundraiserEmailQueue::get( 'opt_in' );
+		$queue = FundraiserEmailQueue::get( 'opt-in' );
 		$message = $queue->pop();
 		$this->assertNotNull( $message );
 		$this->assertEquals( array(

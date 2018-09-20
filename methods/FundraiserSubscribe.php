@@ -57,7 +57,7 @@ class FundraiserSubscribe
 
 		// Send to the queue
 		Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );
-		FundraiserEmailQueue::get( 'opt_in' )->push( $message );
+		FundraiserEmailQueue::get( 'opt-in' )->push( $message );
 
 		// Clean up and return
 		Logger::popLabel();
