@@ -27,6 +27,11 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
 	// Load the interface messages that are shared across multiple gateways
 	$wgMessagesDirs['FundraisingEmailUnsubscribe'][] = __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for FundraisingEmailUnsubscribe extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
 	return;
 } else {
 	die( 'This version of the FundraisingEmailUnsubscribe extension requires MediaWiki 1.27+' );
