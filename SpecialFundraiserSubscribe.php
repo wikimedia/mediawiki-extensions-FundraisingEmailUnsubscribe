@@ -2,7 +2,7 @@
 
 class SpecialFundraiserSubscribe extends FundraiserSubscriptionPage {
 	public function __construct() {
-		SpecialPage::__construct( 'FundraiserSubscribe' );
+		parent::__construct( 'FundraiserSubscribe' );
 	}
 
 	protected function getQueryTemplate() {

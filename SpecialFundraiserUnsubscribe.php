@@ -24,7 +24,7 @@
 class SpecialFundraiserUnsubscribe extends FundraiserSubscriptionPage {
 
 	public function __construct() {
-		SpecialPage::__construct( 'FundraiserUnsubscribe' );
+		parent::__construct( 'FundraiserUnsubscribe' );
 	}
 
 	protected function getQueryTemplate() {
