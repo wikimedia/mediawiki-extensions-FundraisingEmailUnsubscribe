@@ -30,7 +30,9 @@
  * NOTE: Twig autoescaping is DISABLED! It plays havock with MW template autoexpansion.
  */
 class MediaWikiTwig {
+	/** @var Twig_Environment */
 	protected $mTwig;
+	/** @var array */
 	protected $mCallbacks;
 
 	/**

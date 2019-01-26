@@ -26,7 +26,9 @@
 class FundraiserUnsubscribeSilverpop
 	extends SubscriptionMethod {
 
+	/** @var string[] */
 	private $remoteActionEnvelope = array( 'Envelope', 'Body' );
+	/** @var array[] */
 	private $remoteActionMap = array(
 		'Login' => array(
 			'out' => array(
@@ -52,6 +54,7 @@ class FundraiserUnsubscribeSilverpop
 		),
 	);
 
+	/** @var string[] */
 	private $currentParams = array();
 
 	public function __construct() {

@@ -49,10 +49,16 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	const KEY_EXECUTE = 'execute';
 	const FILT_EXECUTE = '/[a-zA-Z0-9]*/';
 
+	/** @var array[] */
 	private $mObjects = array();
 
+	/** @var string */
 	private $mProcess = '';
+
+	/** @var string */
 	private $mEmail = '';
+
+	/** @var int */
 	private $mID = 0;
 
 	abstract protected function getQueryTemplate();

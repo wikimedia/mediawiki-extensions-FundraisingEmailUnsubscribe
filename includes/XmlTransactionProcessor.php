@@ -25,9 +25,13 @@
  */
 class XmlTransactionProcessor {
 
+	/** @var array[] */
 	private $mTransactionMap = array();
+	/** @var array */
 	private $mEnvelope = array();
+	/** @var string|int */
 	private $mTimeout = 'default';
+	/** @var string */
 	private $mURL = '';
 
 	/**
@@ -58,7 +62,7 @@ class XmlTransactionProcessor {
 	 *  - DOMDocument   : The returned XML object
 	 *  - this          : In case the function needs to modify this processor object
 	 *
-	 * @param array $map
+	 * @param array[] $map
 	 */
 	public function setTransactionMap( array $map ) {
 		$this->mTransactionMap = $map;

@@ -38,7 +38,7 @@ class Logger {
 	private static $bucket = '';
 	/** @var string A persistent string prepended to all messages */
 	private static $context = '';
-	/** @var array A stack of strings, whatever is on the top of the stack will get prepended to the message */
+	/** @var string[] A stack of strings, whatever is on the top of the stack will get prepended to the message */
 	private static $label = array( '' );
 
 	private function __construct() {

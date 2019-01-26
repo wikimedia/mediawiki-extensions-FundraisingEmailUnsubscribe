@@ -6,6 +6,7 @@
  * backend instance as the class being tested
  */
 class FundraiserEmailQueue {
+	/** @var PHPQueue\Interfaces\FifoQueueStore[] */
 	static $instances = [];
 
 	/**
