@@ -2,9 +2,5 @@
 *.kate-swp
 .*.swp
 node_modules/**
-
-# dev dependencies
-vendor/jakub-onderka/php-console-color/
-vendor/jakub-onderka/php-console-highlighter/
-vendor/jakub-onderka/php-parallel-lint/
-vendor/bin/parallel-lint
+vendor
+composer.lock
