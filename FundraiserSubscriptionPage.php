@@ -466,7 +466,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 
 			// Evaluate it if possible
 			if ( $evaluate ) {
-				if ( is_a( $function, 'Closure' ) ) {
+				if ( is_a( $function, Closure::class ) ) {
 					$raw = $function( $reqParamValues );
 				} else {
 					list( $class, $funcName ) = explode( '::', $function );

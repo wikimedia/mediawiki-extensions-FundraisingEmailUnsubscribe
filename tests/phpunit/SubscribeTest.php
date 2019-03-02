@@ -12,7 +12,7 @@ class SubscribeTest extends MediaWikiTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->setMwGlobals( array(
-			'wgFundraisingEmailUnsubscribeQueueClass' => '\PHPQueue\Backend\PDO',
+			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
 			'wgFundraisingEmailUnsubscribeQueueParameters' => array(
 				'opt-in' => array(
 					'connection_string' => 'sqlite::memory:',
