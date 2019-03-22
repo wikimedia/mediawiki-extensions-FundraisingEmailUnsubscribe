@@ -52,7 +52,8 @@ class FundraiserSubscribe
 
 		$message = array(
 			'process' => $process,
-			'email' => $email
+			'email' => $email,
+			'variant' => $params['variant']
 		);
 
 		// Send to the queue

@@ -13,7 +13,9 @@ module.exports = function ( grunt ) {
 			all: [
 				'**/*.js',
 				'!node_modules/**',
-				'!vendor/**'
+				'!vendor/**',
+				'!modules/lightgallery.js',
+				'!modules/lg-hash.js'
 			]
 		},
 		jsonlint: {

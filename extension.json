@@ -42,6 +42,12 @@
 		"fundraiserUnsubscribe.skinOverride": {
 			"styles": "skinOverride.css",
 			"scripts": "skinOverride.js"
+		},
+		"fundraiserUnsubscribe.lightGallery": {
+			"scripts": [
+				"lightgallery.js",
+				"lg-hash.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

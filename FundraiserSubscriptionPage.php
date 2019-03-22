@@ -52,11 +52,17 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	const KEY_EXECUTE = 'execute';
 	const FILT_EXECUTE = '/[a-zA-Z0-9]*/';
 
+	const KEY_VARIANT = 'v';
+	const FILT_VARIANT = '/[a-zA-Z0-9_-]*/';
+
 	/** @var array[] */
 	private $mObjects = array();
 
 	/** @var string */
 	private $mProcess = '';
+
+	/** @var string */
+	protected $mVariant = '';
 
 	/** @var string */
 	private $mEmail = '';
@@ -70,6 +76,10 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 
 	abstract protected function getErrorTemplate();
 
+	protected function getTemplateDir() {
+		return __DIR__ . '/templates';
+	}
+
 	/**
 	 * Execute either the verification of a subscription request, or a subscription action.
 	 *
@@ -79,7 +89,6 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		global $wgFundraisingEmailUnsubscribeProcesses;
 		global $wgFundraisingEmailUnsubscribeCancelUri;
 
-		$templateDir = __DIR__ . '/templates';
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
 		// in loadSessionData() if it exists.
 		Logger::setBucket( 'FundraisingEmailUnsubscribe' );
@@ -87,12 +96,13 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		Logger::setContext( $this->mID );
 
 		// Prepare template environment
-		$mwt = new MediaWikiTwig( $templateDir, $this->getContext() );
+		$mwt = new MediaWikiTwig( $this->getTemplateDir(), $this->getContext() );
 
 		// Walk through the steps of the process. If we have a 'p' parameter we're just starting,
 		// If we have data in the session, and the 'execute' parameter, we're finishing
 		$outContent = '';
 		$this->mProcess = $this->getFilteredValue( static::KEY_PROCESS, static::FILT_PROCESS );
+		$this->mVariant = $this->getFilteredValue( static::KEY_VARIANT, static::FILT_VARIANT );
 		$execute = $this->getFilteredValue( static::KEY_EXECUTE, static::FILT_EXECUTE );
 		$errorTemplate = $this->getErrorTemplate();
 
@@ -169,7 +179,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$langaugeCode,
 			$policyUrl
 		);
-
+		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
 		return array(
 			'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 			'uselang' => $langaugeCode,
@@ -177,6 +187,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			'token' => $this->mID,
 			'action' => $this->getPageTitle()->getFullURL(),
 			'policy_url' => $policyUrl,
+			'template_path' => "$scriptPath/extensions/FundraisingEmailUnsubscribe/templates",
 		);
 	}
 
@@ -254,6 +265,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		foreach ( $this->mObjects as $classObjArray ) {
 			$classObj = $classObjArray['instance'];
 			$params = $classObjArray['params'];
+			$params += ['variant' => $this->mVariant];
 
 			$className = get_class( $classObj );
 			try {
@@ -399,6 +411,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		}
 
 		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['process'] = $this->mProcess;
+		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['variant'] = $this->mVariant;
 		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['email'] = $this->mEmail;
 		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['id'] = $this->mID;
 
@@ -515,6 +528,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		if ( ( session_id() != null ) && array_key_exists( $skey, $_SESSION ) ) {
 			$this->mProcess = $_SESSION[$skey]['process'];
 			$this->mEmail = $_SESSION[$skey]['email'];
+			$this->mVariant = $_SESSION[$skey]['variant'];
 			$this->mID = $_SESSION[$skey]['id'];
 
 			Logger::setContext( $this->mID );

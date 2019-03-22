@@ -28,6 +28,7 @@ class SubscribeTest extends MediaWikiTestCase {
 		$this->processor->update(
 			$id, 'optin', array(
 				'email' => 'donor@example.com',
+				'variant' => '',
 			)
 		);
 		$queue = FundraiserEmailQueue::get( 'opt-in' );
@@ -35,7 +36,26 @@ class SubscribeTest extends MediaWikiTestCase {
 		$this->assertNotNull( $message );
 		$this->assertEquals( array(
 			'email' => 'donor@example.com',
-			'process' => 'optin'
+			'process' => 'optin',
+			'variant' => ''
+		), $message );
+	}
+
+	public function testSendMessageVariant() {
+		$id = mt_rand();
+		$this->processor->update(
+			$id, 'optin', array(
+				'email' => 'donor@example.com',
+				'variant' => 'bloop_de_woop',
+			)
+		);
+		$queue = FundraiserEmailQueue::get( 'opt-in' );
+		$message = $queue->pop();
+		$this->assertNotNull( $message );
+		$this->assertEquals( array(
+			'email' => 'donor@example.com',
+			'process' => 'optin',
+			'variant' => 'bloop_de_woop'
 		), $message );
 	}
 }
