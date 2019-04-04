@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Session\SessionManager;
+
 /**
  * Base class for special pages that process email opt-in and unsubscribe requests.
  *
@@ -172,7 +175,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			'uselang' => $langaugeCode,
 			'email' => $this->mEmail,
 			'token' => $this->mID,
-			'action' => $this->getTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getFullURL(),
 			'policy_url' => $policyUrl,
 		);
 	}
@@ -385,7 +388,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		}
 
 		// Apparently we made it through alive :) Save to session and report all is good!
-		wfSetupSession();
+		SessionManager::getGlobalSession()->persist();
 
 		if ( array_key_exists( 'email', $solvedParams ) ) {
 			$this->mEmail = $solvedParams['email'];
