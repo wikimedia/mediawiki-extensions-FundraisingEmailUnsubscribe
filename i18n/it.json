@@ -14,5 +14,6 @@
 	"fundraiserunsubscribe-errormsg": "Si è verificato un errore durante la lavorazione della tua richiesta. Ti preghiamo di contattarci via email [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Sei stato rimosso dalla nostra mailing list.",
 	"fundraiserunsubscribe-sucesswarning": "Potresti dover attendere al massimo quattro (4) giorni perché le modifiche abbiano effetto. Ci scusiamo se durante questo periodo dovessi ugualmente ricevere delle email. Per qualsiasi migliore informazione, contattaci a [mailto:$1 $1].",
-	"fundraisersubscribe-success": "Grazie!"
+	"fundraisersubscribe-success": "Grazie!",
+	"fundraisersubscribe-photo-credit": "da $1"
 }

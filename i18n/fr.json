@@ -18,5 +18,7 @@
 	"fundraiserunsubscribe-sucesswarning": "Veuillez nous accorder quatre (4) jours pour que les modifications deviennent effectives. Nous nous excusons pour tous les courriels que vous pourriez encore recevoir durant ce temps. Si vous avez des questions, veuillez contacter [mailto:$1 $1].",
 	"fundraisersubscribe": "S'inscrire",
 	"fundraisersubscribe-fail": "Une erreur est survenue pendant le traitement de votre requête. Veuillez contacter [mailto:$1 $1].",
-	"fundraisersubscribe-success": "Merci !"
+	"fundraisersubscribe-success": "Merci !",
+	"fundraisersubscribe-appeal-headline-001": "Vous aimez ce que vous voyez ?",
+	"fundraisersubscribe-photo-credit": "par $1"
 }
