@@ -3,7 +3,8 @@
 		"authors": [
 			"Okras",
 			"Vlad5250",
-			"Movses"
+			"Movses",
+			"Kareyac"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Позволяет пользователям управлять членством в рассылках, связанных со сбором средств.",
@@ -15,5 +16,6 @@
 	"fundraiserunsubscribe-errormsg": "Произошла ошибка при попытке обработать ваш запрос. Пожалуйста, свяжитесь с [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Вы были успешно исключены из нашего списка рассылки.",
 	"fundraiserunsubscribe-sucesswarning": "Пожалуйста, учтите, что  изменения вступят в силу в течение четырёх (4) дней. Приносим свои извинения за письма, которые вы получите за это время. Если у вас возникли вопросы, обращайтесь по адресу [mailto:$1 $1].",
-	"fundraisersubscribe-success": "Спасибо!"
+	"fundraisersubscribe-success": "Спасибо!",
+	"fundraisersubscribe-photo-caption-M69594652": "Национальный парк «Сатчари»"
 }
