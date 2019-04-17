@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Fúlvio"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Permite que os utilizadores giram a sua subscrição das listas de divulgação configuradas para angariação de fundos",
@@ -16,5 +17,6 @@
 	"fundraiserunsubscribe-sucesswarning": "Aguarde até quatro (4) dias para que as alterações entrem em vigor. Pedimos desculpa por qualquer correio eletrónico que receba durante este período. Se tiver alguma dúvida, contacte-nos no endereço [mailto:$1 $1].",
 	"fundraisersubscribe": "Opção de inclusão",
 	"fundraisersubscribe-fail": "Ocorreu um erro ao tentar processar o seu pedido. Contacte [mailto:$1 $1], por favor.",
-	"fundraisersubscribe-success": "Obrigado!"
+	"fundraisersubscribe-success": "Obrigado!",
+	"fundraisersubscribe-photo-credit": "por $1"
 }
