@@ -124,7 +124,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		} elseif ( $this->loadSessionData() ) {
 			Logger::log( 'Resuming session' );
 
-			if ( $execute == True ) {
+			if ( $execute == true ) {
 				if ( $this->executeSubscriptionRequest() ) {
 					// Sadness, we lost a donation person
 					Logger::log( 'Subscription action success' );
@@ -265,7 +265,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		foreach ( $this->mObjects as $classObjArray ) {
 			$classObj = $classObjArray['instance'];
 			$params = $classObjArray['params'];
-			$params += ['variant' => $this->mVariant];
+			$params += [ 'variant' => $this->mVariant ];
 
 			$className = get_class( $classObj );
 			try {
@@ -310,10 +310,10 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		// This variable stores all the parameters that cannot be processed in the main loop. IE:
 		// they rely on other parameters to be decoded first. It has a form of:
 		// [
-		//    varmapped name,
-		//    original varmap entry,
-		//    filter string,
-		//    reference to 'params' array
+		// varmapped name,
+		// original varmap entry,
+		// filter string,
+		// reference to 'params' array
 		// ]
 		$standasideParams = array();
 
@@ -447,7 +447,6 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		$filtString   = $standasideParam['filtString'];     // How we have to filter it
 		$arrayRef     = &$standasideParam['arrayRef'];      // Reference to where do we store it
 
-
 		// Now do actual work; we have two options; a lambda expression or a remap
 		if ( is_array( $keyMapObject ) ) {
 			// Lambda expression
@@ -567,41 +566,41 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 */
 	private function getFilteredValue( $key, $filter, $expected = '' ) {
 		return $this->filterValue(
-			//$this->getRequest()->getVal( $key, $expected ), <--switch these back out when the mangled links stop
-			$this->getRequestVal_CleanKeys($key, $expected),
+			// $this->getRequest()->getVal( $key, $expected ), <--switch these back out when the mangled links stop
+			$this->getRequestVal_CleanKeys( $key, $expected ),
 			$filter,
 			$expected
 		);
 	}
-	
+
 	/**
 	 * Containment for a temporary fix, for the long tail on mangled unsub links
-	 * in emails that went out between 11/2 and 11/3, 2012. 
-	 * Once we stop seeing 'amp;' in the logs, we can whack this and go back to 
+	 * in emails that went out between 11/2 and 11/3, 2012.
+	 * Once we stop seeing 'amp;' in the logs, we can whack this and go back to
 	 * just using getVal in getFilteredValue().
 	 */
-	private function getRequestVal_CleanKeys( $key, $expected ){
-		static $vals = NULL;
-		if ( is_null($vals) ){
+	private function getRequestVal_CleanKeys( $key, $expected ) {
+		static $vals = null;
+		if ( is_null( $vals ) ) {
 			$vals = $this->getRequest()->getValues();
 			$mangled = false;
-			foreach ( $vals as $vk => $vv ){
-				if ( strpos( $vk, 'amp;' ) !== false ){
+			foreach ( $vals as $vk => $vv ) {
+				if ( strpos( $vk, 'amp;' ) !== false ) {
 					$mangled = true;
-					$rekey = str_replace( 'amp;', '', $vk ); //some have multiples.
+					$rekey = str_replace( 'amp;', '', $vk ); // some have multiples.
 					$vals[$rekey] = $vv;
 					unset( $vals[$vk] );
 				}
 			}
-			if ($mangled) {
+			if ( $mangled ) {
 				Logger::log( "Found another mangled URL.", LOG_INFO );
 			}
 		}
-		
-		if ( !array_key_exists( $key, $vals ) || is_null( $vals[$key] ) ){
+
+		if ( !array_key_exists( $key, $vals ) || is_null( $vals[$key] ) ) {
 			return $expected;
 		}
-		
+
 		return $vals[$key];
 	}
 

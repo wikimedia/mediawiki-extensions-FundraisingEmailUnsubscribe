@@ -24,7 +24,8 @@
  */
 class FundraiserSubscribe
 	extends SubscriptionMethod
-	implements ISubscriptionValidator {
+	implements ISubscriptionValidator
+{
 
 	public function __construct() {
 		$this->addRequiredParameter( 'email', '/.*@.*/' );

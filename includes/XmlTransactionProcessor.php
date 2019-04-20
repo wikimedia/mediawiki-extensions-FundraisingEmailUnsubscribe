@@ -145,7 +145,7 @@ class XmlTransactionProcessor {
 	 *
 	 * @param array $domArray The starting DOM array -- which is not a DOM object
 	 * @param array $data The source parameter data
-	 * @param DOMElement|DOMNode $dom The resulting DOM object
+	 * @param DOMElement|DOMNode &$dom The resulting DOM object
 	 *
 	 * @throws MWException
 	 */

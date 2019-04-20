@@ -42,16 +42,15 @@ class Logger {
 	private static $label = array( '' );
 
 	private function __construct() {
-
 	}
 
 	/**
 	 * Log a message string to Syslog
 	 * @static
 	 *
-	 * @param string $message   The string to log
-	 * @param int    $priority  The syslog priority to log this message at
-	 * @param string $label     When pushing/popping a label would be too much work
+	 * @param string $message The string to log
+	 * @param int $priority The syslog priority to log this message at
+	 * @param string|null $label When pushing/popping a label would be too much work
 	 */
 	public static function log( $message, $priority = LOG_INFO, $label = null ) {
 		if ( static::$inst == null ) {
@@ -65,10 +64,10 @@ class Logger {
 	 * Log an exception to Syslog. The stack trace will be included as a JSON string.
 	 * @static
 	 *
-	 * @param Exception $ex             The exception
-	 * @param string    $additionalText Any string to also log as context, default is empty
-	 * @param int       $priority       The syslog priority to log this message at, default ERR
-	 * @param string    $label          When pushing/popping a label would be too much work
+	 * @param Exception $ex The exception
+	 * @param string $additionalText Any string to also log as context, default is empty
+	 * @param int $priority The syslog priority to log this message at, default ERR
+	 * @param string|null $label When pushing/popping a label would be too much work
 	 */
 	public static function logEx( Exception $ex, $additionalText = '', $priority = LOG_ERR, $label = null ) {
 		if ( static::$inst == null ) {
@@ -97,7 +96,7 @@ class Logger {
 	 * message by the Syslog utility. Can be used for very cheap bucketing of logs.
 	 * @static
 	 *
-	 * @param $bucket
+	 * @param string $bucket
 	 */
 	public static function setBucket( $bucket ) {
 		static::$bucket = $bucket;
@@ -108,7 +107,7 @@ class Logger {
 	 * label. Use it for things like request IDs.
 	 * @static
 	 *
-	 * @param $context
+	 * @param string $context
 	 */
 	public static function setContext( $context ) {
 		static::$context = $context;
@@ -119,7 +118,7 @@ class Logger {
 	 * string was pushed.
 	 * @static
 	 *
-	 * @param $label
+	 * @param string $label
 	 */
 	public static function pushLabel( $label ) {
 		static::$label[] = $label;
