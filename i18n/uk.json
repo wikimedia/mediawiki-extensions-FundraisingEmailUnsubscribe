@@ -17,5 +17,6 @@
 	"fundraiserunsubscribe-sucesswarning": "Будь ласка, врахуйте, що зміни наберуть силу протягом чотирьох (4) днів. Ми приносимо вибачення за будь-які листи, які Ви отримаєте за цей час. Якщо у Вас виникли питання, будь ласка, звертайтеся за адресою [mailto:$1 $1].",
 	"fundraisersubscribe": "Підписатись",
 	"fundraisersubscribe-fail": "Сталася помилка при спробі опрацювати Ваш запит. Будь ласка, зв'яжіться з [mailto:$1 $1].",
-	"fundraisersubscribe-success": "Дякуємо!"
+	"fundraisersubscribe-success": "Дякуємо!",
+	"fundraisersubscribe-photo-credit": "від $1"
 }
