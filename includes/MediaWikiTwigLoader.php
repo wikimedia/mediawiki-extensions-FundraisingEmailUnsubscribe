@@ -102,6 +102,6 @@ class MediaWikiTwigLoader implements Twig_LoaderInterface {
 	 */
 	public function isFresh( $name, $time ) {
 		global $wgTwigCacheExpiry;
-		return  ( time() < ( $time + $wgTwigCacheExpiry ) );
+		return ( time() < ( $time + $wgTwigCacheExpiry ) );
 	}
 }

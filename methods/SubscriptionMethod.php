@@ -45,11 +45,11 @@ abstract class SubscriptionMethod {
 	/**
 	 * Performs the subscription action.
 	 *
-	 * @param int    $requestID The log ID being used for this transaction
-	 * @param string $process   The name of the currently executing subscription process
-	 * @param array  $params    Key/value map of URI parameter names => cleaned values
+	 * @param int $requestID The log ID being used for this transaction
+	 * @param string $process The name of the currently executing subscription process
+	 * @param array $params Key/value map of URI parameter names => cleaned values
 	 *
 	 * @return bool TRUE if the subscription action was successful.
 	 */
-	public abstract function update( $requestID, $process, array $params );
+	abstract public function update( $requestID, $process, array $params );
 }
