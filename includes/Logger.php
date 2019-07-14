@@ -39,7 +39,7 @@ class Logger {
 	/** @var string A persistent string prepended to all messages */
 	private static $context = '';
 	/** @var string[] A stack of strings, whatever is on the top of the stack will get prepended to the message */
-	private static $label = array( '' );
+	private static $label = [ '' ];
 
 	private function __construct() {
 	}
@@ -74,7 +74,7 @@ class Logger {
 			static::$inst = new Logger();
 		}
 
-		$msg = array();
+		$msg = [];
 		$msg[] = get_class( $ex );
 
 		if ( $additionalText != '' ) {

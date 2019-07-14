@@ -51,11 +51,11 @@ class FundraiserSubscribe
 
 		$email = $params['email'];
 
-		$message = array(
+		$message = [
 			'process' => $process,
 			'email' => $email,
 			'variant' => $params['variant']
-		);
+		];
 
 		// Send to the queue
 		Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );

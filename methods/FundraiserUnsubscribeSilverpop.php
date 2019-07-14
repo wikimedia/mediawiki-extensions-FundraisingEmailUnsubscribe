@@ -27,35 +27,35 @@ class FundraiserUnsubscribeSilverpop
 	extends SubscriptionMethod {
 
 	/** @var string[] */
-	private $remoteActionEnvelope = array( 'Envelope', 'Body' );
+	private $remoteActionEnvelope = [ 'Envelope', 'Body' ];
 	/** @var array[] */
-	private $remoteActionMap = array(
-		'Login' => array(
-			'out' => array(
+	private $remoteActionMap = [
+		'Login' => [
+			'out' => [
 				'USERNAME' => 'username',
 				'PASSWORD' => 'password',
-			),
+			],
 			'in' => 'processRemoteAction',
-		),
+		],
 
-		'Logout' => array(
-			'out' => array(),
+		'Logout' => [
+			'out' => [],
 			'in' => 'processRemoteAction',
-		),
+		],
 
-		'OptOutRecipient' => array(
-			'out' => array(
+		'OptOutRecipient' => [
+			'out' => [
 				'LIST_ID' => 'list-id',
 				'MAILING_ID' => 'mailing-id',
 				'RECIPIENT_ID' => 'recipient-id',
 				'JOB_ID' => 'job-id',
-			),
+			],
 			'in' => 'processRemoteAction',
-		),
-	);
+		],
+	];
 
 	/** @var string[] */
-	private $currentParams = array();
+	private $currentParams = [];
 
 	public function __construct() {
 		$this->addRequiredParameter( 'mailing-id', '/[0-9]*/' );
@@ -81,10 +81,10 @@ class FundraiserUnsubscribeSilverpop
 		$txnObj->setTransactionMap( $this->remoteActionMap );
 
 		// Do the transaction chain
-		$outParamsLogin = array(
+		$outParamsLogin = [
 			'username' => $wgFundraisingEmailUnsubscribeSilverpopUsername,
 			'password' => $wgFundraisingEmailUnsubscribeSilverpopPassword,
-		);
+		];
 
 		if ( $txnObj->doTransaction( 'Login', $this, $outParamsLogin ) &&
 			 $txnObj->doTransaction( 'OptOutRecipient', $this, $params ) &&
@@ -142,7 +142,7 @@ class FundraiserUnsubscribeSilverpop
 				}
 
 				// Get the jsessionid and validate it
-				$matches = array();
+				$matches = [];
 				$sessionId = $nodes->item( 0 )->nodeValue;
 				if ( preg_match( '/^[0-9a-zA-Z]+$/', $sessionId, $matches ) ) {
 					$sessionId = $matches[0];

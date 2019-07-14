@@ -26,7 +26,7 @@
  */
 abstract class SubscriptionMethod {
 	/** @var string[] */
-	protected $mRequiredParameters = array();
+	protected $mRequiredParameters = [];
 
 	protected function addRequiredParameter( $name, $regex ) {
 		$this->mRequiredParameters[$name] = $regex;

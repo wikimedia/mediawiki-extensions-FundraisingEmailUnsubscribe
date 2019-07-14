@@ -56,7 +56,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	const FILT_VARIANT = '/[a-zA-Z0-9_-]*/';
 
 	/** @var array[] */
-	private $mObjects = array();
+	private $mObjects = [];
 
 	/** @var string */
 	private $mProcess = '';
@@ -180,7 +180,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$policyUrl
 		);
 		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
-		return array(
+		return [
 			'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
 			'uselang' => $langaugeCode,
 			'email' => $this->mEmail,
@@ -188,7 +188,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			'action' => $this->getPageTitle()->getFullURL(),
 			'policy_url' => $policyUrl,
 			'template_path' => "$scriptPath/extensions/FundraisingEmailUnsubscribe/templates",
-		);
+		];
 	}
 
 	/**
@@ -208,9 +208,9 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 					throw new MWException( "Class '$className' is not a derived class of SubscriptionMethod." );
 				}
 
-				$this->mObjects[] = array(
+				$this->mObjects[] = [
 					'instance' => $instance,
-				);
+				];
 			} else {
 				// We seem to be missing a class. Log it and exit.
 				throw new MWException( "Class '$className' does not exist." );
@@ -305,7 +305,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 
 		// This variable will store, at the end, all the parameters that passed through the
 		// variable map. This helps us process annoyingly derived parameters.
-		$solvedParams = array();
+		$solvedParams = [];
 
 		// This variable stores all the parameters that cannot be processed in the main loop. IE:
 		// they rely on other parameters to be decoded first. It has a form of:
@@ -315,15 +315,15 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		// filter string,
 		// reference to 'params' array
 		// ]
-		$standasideParams = array();
+		$standasideParams = [];
 
 		// Do all the simple variable extraction
 		foreach ( $this->mObjects as &$classObjArray ) {
 			$classObj = $classObjArray['instance'];
-			$classObjArray['params'] = array();
+			$classObjArray['params'] = [];
 
 			// Get what the class expects; and how to validate it
-			$expectedParams = array();
+			$expectedParams = [];
 			if ( $classObj instanceof ISubscriptionValidator ) {
 				$expectedParams = $classObj->getRequiredValidationParameters();
 			}
@@ -339,12 +339,12 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 					if ( is_array( $keyMapObject ) || ( strpos( $keyMapObject, '!' ) !== false ) ) {
 						// Complex processing required, yay lambda expressions! (or external
 						// references). Let's just store this for now and come back to it later.
-						$standasideParams[] = array(
+						$standasideParams[] = [
 							'paramName' => $paramName,
 							'keyMapObject' => $keyMapObject,
 							'filtString' => $filtString,
 							'arrayRef' => &$classObjArray['params'],
-						);
+						];
 
 					} else {
 						// Take the value normally; it's just mapped differently
@@ -452,7 +452,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			// Lambda expression
 			$function = $keyMapObject[0];
 			$reqParam = array_slice( $keyMapObject, 1 );
-			$reqParamValues = array();
+			$reqParamValues = [];
 			$evaluate = true;
 
 			// Can we evaluate the expression at this time?
@@ -485,7 +485,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 					$raw = $function( $reqParamValues );
 				} else {
 					list( $class, $funcName ) = explode( '::', $function );
-					$raw = call_user_func( array( $class, $funcName ), $reqParamValues );
+					$raw = call_user_func( [ $class, $funcName ], $reqParamValues );
 				}
 
 				$value = $this->filterValue( $raw, $filtString );
@@ -616,7 +616,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * @throws MWException If $expected was null and the validation failed.
 	 */
 	private function filterValue( $rawValue, $filter, $expected = null ) {
-		$matches = array();
+		$matches = [];
 		preg_match( $filter, $rawValue, $matches );
 		if ( ( count( $matches ) > 0 ) && ( $matches[0] !== '' ) ) {
 			return $matches[0];

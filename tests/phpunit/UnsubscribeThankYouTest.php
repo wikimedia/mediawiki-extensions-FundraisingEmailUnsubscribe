@@ -11,51 +11,51 @@ class UnsubscribeThankYouTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
-			'wgFundraisingEmailUnsubscribeQueueParameters' => array(
-				'unsubscribe' => array(
+			'wgFundraisingEmailUnsubscribeQueueParameters' => [
+				'unsubscribe' => [
 					'connection_string' => 'sqlite::memory:',
-				),
-			),
+				],
+			],
 			'wgFundraisingEmailUnsubscribeHashSecretKey' => 'Red/Fl4nn3l/#',
-		) );
+		] );
 		$this->unsubscriber = new FundraiserUnsubscribeThankYou();
 	}
 
 	public function testValidateBadHash() {
-		$result = $this->unsubscriber->validateRequest( array(
+		$result = $this->unsubscriber->validateRequest( [
 			'email' => 'pestered@example.com',
 			'contribution-id' => '98765432',
 			'hash' => 'a76f8eg86b87eg109c0d983d6a0e9a6d827e79c7',
-		) );
+		] );
 		$this->assertFalse( $result, 'Bogus hash considered valid' );
 	}
 
 	public function testValidateGoodHash() {
-		$result = $this->unsubscriber->validateRequest( array(
+		$result = $this->unsubscriber->validateRequest( [
 			'email' => 'pestered@example.com',
 			'contribution-id' => '98765432',
 			'hash' => '87b7b93fffbe72b61261e59941e3b6628b0e5689',
-		) );
+		] );
 		$this->assertTrue( $result, 'Good hash considered invalid' );
 	}
 
 	public function testSendMessage() {
 		$id = mt_rand();
 		$this->unsubscriber->update(
-			$id, 'unsubscribe', array(
+			$id, 'unsubscribe', [
 				'email' => 'donor@example.com',
 				'contribution-id' => '123456'
-			)
+			]
 		);
 		$queue = FundraiserEmailQueue::get();
 		$message = $queue->pop();
 		$this->assertNotNull( $message );
-		$this->assertEquals( array(
+		$this->assertEquals( [
 			'email' => 'donor@example.com',
 			'contribution-id' => '123456',
 			'process' => 'unsubscribe',
-		), $message );
+		], $message );
 	}
 }

@@ -73,11 +73,11 @@ class FundraiserUnsubscribeThankYou
 			// Link is from test letter, don't actually send the queue message
 			Logger::log( 'Test link, will not queue message' );
 		} else {
-			$message = array(
+			$message = [
 				'process' => $process,
 				'email' => $email,
 				'contribution-id' => $contribId
-			);
+			];
 
 			// Send to the queue
 			Logger::log( 'Placing message in queue for email ' . json_encode( $email ) );

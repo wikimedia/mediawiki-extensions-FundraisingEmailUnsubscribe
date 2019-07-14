@@ -11,51 +11,51 @@ class SubscribeTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
-			'wgFundraisingEmailUnsubscribeQueueParameters' => array(
-				'opt-in' => array(
+			'wgFundraisingEmailUnsubscribeQueueParameters' => [
+				'opt-in' => [
 					'connection_string' => 'sqlite::memory:',
 					'queue' => 'opt_in', // this backend needs a valid table name
-				),
-			),
-		) );
+				],
+			],
+		] );
 		$this->processor = new FundraiserSubscribe();
 	}
 
 	public function testSendMessage() {
 		$id = mt_rand();
 		$this->processor->update(
-			$id, 'optin', array(
+			$id, 'optin', [
 				'email' => 'donor@example.com',
 				'variant' => '',
-			)
+			]
 		);
 		$queue = FundraiserEmailQueue::get( 'opt-in' );
 		$message = $queue->pop();
 		$this->assertNotNull( $message );
-		$this->assertEquals( array(
+		$this->assertEquals( [
 			'email' => 'donor@example.com',
 			'process' => 'optin',
 			'variant' => ''
-		), $message );
+		], $message );
 	}
 
 	public function testSendMessageVariant() {
 		$id = mt_rand();
 		$this->processor->update(
-			$id, 'optin', array(
+			$id, 'optin', [
 				'email' => 'donor@example.com',
 				'variant' => 'bloop_de_woop',
-			)
+			]
 		);
 		$queue = FundraiserEmailQueue::get( 'opt-in' );
 		$message = $queue->pop();
 		$this->assertNotNull( $message );
-		$this->assertEquals( array(
+		$this->assertEquals( [
 			'email' => 'donor@example.com',
 			'process' => 'optin',
 			'variant' => 'bloop_de_woop'
-		), $message );
+		], $message );
 	}
 }

@@ -44,11 +44,11 @@ class MediaWikiTwig {
 		global $wgTwigCachePath;
 
 		$loader = new MediaWikiTwigLoader( $templatePath, $context );
-		$this->mTwig = new Twig_Environment( $loader, array(
+		$this->mTwig = new Twig_Environment( $loader, [
 			'cache' => $wgTwigCachePath . '/' . md5( $templatePath ),
 			'auto_reload' => true,
 			'autoescape' => false,
-		) );
+		] );
 		$this->mTwig->addExtension( new MediaWikiTwigCallbacks( $context ) );
 	}
 
@@ -60,7 +60,7 @@ class MediaWikiTwig {
 	 *
 	 * @return string Rendered HTML data
 	 */
-	public function render( $template, $params = array() ) {
+	public function render( $template, $params = [] ) {
 		return $this->mTwig->render( $template, $params );
 	}
 }
@@ -80,11 +80,11 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	}
 
 	public function getFunctions() {
-		return array(
+		return [
 			'wfMessage' => new Twig_Function_Method( $this, 'twig_wfMessage' ),
 			'wfText' => new Twig_Function_Method( $this, 'twig_wfText' ),
 			'wfWikiText' => new Twig_Function_Method( $this, 'twig_wfWikiText' ),
-		);
+		];
 	}
 
 	/**
@@ -95,7 +95,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string Parsed HTML string
 	 */
-	public function twig_wfMessage( $message, $params = array() ) {
+	public function twig_wfMessage( $message, $params = [] ) {
 		return wfMessage( $message, $params )->parse();
 	}
 
@@ -107,7 +107,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string HTML string
 	 */
-	public function twig_wfText( $message, $params = array() ) {
+	public function twig_wfText( $message, $params = [] ) {
 		return wfMessage( $message, $params )->text();
 	}
 

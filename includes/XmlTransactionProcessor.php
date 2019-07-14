@@ -26,9 +26,9 @@
 class XmlTransactionProcessor {
 
 	/** @var array[] */
-	private $mTransactionMap = array();
+	private $mTransactionMap = [];
 	/** @var array */
-	private $mEnvelope = array();
+	private $mEnvelope = [];
 	/** @var string|int */
 	private $mTimeout = 'default';
 	/** @var string */
@@ -85,7 +85,7 @@ class XmlTransactionProcessor {
 	 *
 	 * @return bool If true, the transaction was completely successful.
 	 */
-	public function doTransaction( $txnName, $callbackObj, $outParams = array() ) {
+	public function doTransaction( $txnName, $callbackObj, $outParams = [] ) {
 		global $wgFundraisingEmailUnsubscribeLogXmlTransactions;
 
 		Logger::pushLabel( 'XMLTransaction' );
@@ -189,7 +189,7 @@ class XmlTransactionProcessor {
 		if ( $status->isOK() ) {
 			return $req->getContent();
 		} else {
-			$errors = json_encode( array( 'curl' => $status->errors, 'request' => $req->status->getErrorsArray() ) );
+			$errors = json_encode( [ 'curl' => $status->errors, 'request' => $req->status->getErrorsArray() ] );
 			Logger::log( "Communications failed with : $errors", LOG_ERR, 'XMLTransaction' );
 			return false;
 		}

@@ -61,7 +61,7 @@ class MediaWikiTwigLoader implements Twig_LoaderInterface {
 		// variant first, followed by all the fallbacks, only then falling back to the original
 		// title.
 		$parts = explode( '.', $name );
-		$langVariants = array( $lang->getCode() );
+		$langVariants = [ $lang->getCode() ];
 		$langVariants = array_merge( $langVariants, $lang->getFallbackLanguages() );
 
 		foreach ( $langVariants as $langCode ) {
