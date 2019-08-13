@@ -163,7 +163,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		global $wgFundraisingEmailUnsubscribeHelpEmail;
 		global $wgDonationInterfacePolicyURL;
 
-		$langaugeCode = $this->getLanguage()->getCode();
+		$languageCode = $this->getLanguage()->getCode();
 
 		// $wgDonationInterfacePolicyURL has $language and $country variables
 		// to replace. We know language but not country.
@@ -176,13 +176,13 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 
 		$policyUrl = str_replace(
 			'$language',
-			$langaugeCode,
+			$languageCode,
 			$policyUrl
 		);
 		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
 		return [
 			'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
-			'uselang' => $langaugeCode,
+			'uselang' => $languageCode,
 			'email' => $this->mEmail,
 			'token' => $this->mID,
 			'action' => $this->getPageTitle()->getFullURL(),
