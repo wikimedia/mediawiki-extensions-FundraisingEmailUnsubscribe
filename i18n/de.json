@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Kghbln"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Ermöglicht es Benutzern, ihre Mitgliedschaft in konfigurierten Mailinglisten zur Spendensammlung zu verwalten.",
@@ -38,5 +39,5 @@
 	"fundraisersubscribe-photo-caption-M70155469": "Sonnenuntergang in Baixa Grande, eine Oase in der Mitte des Nationalparks Lençóis Maranhenses",
 	"fundraisersubscribe-photo-caption-M69609122": "Phoenicopterus roseus am See von Tunis",
 	"fundraisersubscribe-photo-caption-M69961161": "Bell Island von Franz-Josef-Land und Eira Lodge der Benjamin-Leigh-Smith-Expedition, Russischer Arktis-Nationalpark. Das Bild wurde als Teil der Expedition „In the footsteps of two captains“ von Maritime Heritage Associations aufgenommen.",
-	"fundraisersubscribe-photo-license": "Alle Bilder sind lizenziert unter der Lizenz [$1 „Creative Commons Attribution-Share Alike 4.0 International“]."
+	"fundraisersubscribe-photo-license": "Alle Bilder sind lizenziert unter der Creative-Commons-Lizenz [$1 „Namensnennung – Weitergabe unter gleichen Bedingungen“]."
 }
