@@ -13,5 +13,6 @@
 	"fundraiserunsubscribe-cancel": "Cancelar",
 	"fundraiserunsubscribe-errormsg": "Se ha producido un error al intentar procesar tu solicitud. Por favor, contacta con [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Te has dado de baja de la lista de correo correctamente.",
+	"fundraisersubscribe-success": "Gracias.",
 	"fundraisersubscribe-appeal-headline-001": "¿Te agrada lo que ves?"
 }
