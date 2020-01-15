@@ -120,6 +120,6 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 * @return string Fully parsed HTML string
 	 */
 	public function twig_wfWikiText( $wikiText ) {
-		return $this->mContext->getOutput()->parseInline( $wikiText );
+		return $this->mContext->getOutput()->parseInlineAsInterface( $wikiText );
 	}
 }
