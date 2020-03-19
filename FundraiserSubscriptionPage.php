@@ -434,8 +434,8 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * Closure) or class static functions. Either way they must accept only a single argument which
 	 * is an array of key->value pairs as dictated by the variable map.
 	 *
-	 * @param $standasideParam  Information on the parameter we're solving for.
-	 * @param $solvedParams     Key->Value of all parameters already solved for.
+	 * @param array $standasideParam Information on the parameter we're solving for.
+	 * @param array &$solvedParams Key->Value of all parameters already solved for.
 	 *
 	 * @return bool If the parameter was successfully solved.
 	 */
@@ -578,10 +578,15 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * in emails that went out between 11/2 and 11/3, 2012.
 	 * Once we stop seeing 'amp;' in the logs, we can whack this and go back to
 	 * just using getVal in getFilteredValue().
+	 *
+	 * @param string $key
+	 * @param string $expected
+	 *
+	 * @return string
 	 */
 	private function getRequestVal_CleanKeys( $key, $expected ) {
 		static $vals = null;
-		if ( is_null( $vals ) ) {
+		if ( $vals === null ) {
 			$vals = $this->getRequest()->getValues();
 			$mangled = false;
 			foreach ( $vals as $vk => $vv ) {
@@ -597,7 +602,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			}
 		}
 
-		if ( !array_key_exists( $key, $vals ) || is_null( $vals[$key] ) ) {
+		if ( !array_key_exists( $key, $vals ) || $vals[$key] === null ) {
 			return $expected;
 		}
 
@@ -607,9 +612,9 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	/**
 	 * When all you have is a raw value; how does one sanitize it!? Answer, this function!
 	 *
-	 * @param string $rawValue  The raw value to poke and prod at
-	 * @param string $filter    The regex to use to validate the $rawValue
-	 * @param null   $expected  What to return if the validation fails. Default is null which will
+	 * @param string $rawValue The raw value to poke and prod at
+	 * @param string $filter The regex to use to validate the $rawValue
+	 * @param null $expected What to return if the validation fails. Default is null which will
 	 *                          throw an exception on unhappyness.
 	 *
 	 * @return null The sanitized value :)

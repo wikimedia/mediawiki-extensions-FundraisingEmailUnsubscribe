@@ -10,6 +10,9 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe",
 	"descriptionmsg": "fundraiserunsubscribe-desc",
 	"type": "specialpage",
+	"require": {
+		"MediaWiki": ">= 1.35.0"
+	},
 	"SpecialPages": {
 		"FundraiserUnsubscribe": "SpecialFundraiserUnsubscribe",
 		"FundraiserSubscribe": "SpecialFundraiserSubscribe"
