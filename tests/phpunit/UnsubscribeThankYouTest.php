@@ -9,7 +9,7 @@ class UnsubscribeThankYouTest extends MediaWikiTestCase {
 	 */
 	protected $unsubscriber;
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,

@@ -3,8 +3,6 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.LineLength.TooLong" />
 		<exclude name="Generic.Files.OneObjectStructurePerFile.MultipleFound" />
-		<exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing" />
-		<exclude name="Squiz.Scope.MemberVarScope.Missing" />
 		<exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
@@ -12,6 +10,9 @@
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
 		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
+		<exclude name="PSR12.Properties.ConstantVisibility.NotFound" />
+		<exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing" />
+		<exclude name="Squiz.Scope.MemberVarScope.Missing" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
