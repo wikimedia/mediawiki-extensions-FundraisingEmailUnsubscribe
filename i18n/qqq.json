@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Robby",
 			"Shirayuki",
-			"Umherirrender",
-			"Robby"
+			"Umherirrender"
 		]
 	},
 	"fundraiserunsubscribe-desc": "{{desc|name=Fundraising Email Unsubscribe|url=https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe}}",

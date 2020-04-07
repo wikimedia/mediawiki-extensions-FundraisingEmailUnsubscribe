@@ -2,11 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Cquoi",
-			"Metroitendo",
-			"Valystant",
-			"Wladek92",
 			"Gomoko",
-			"Urhixidur"
+			"Metroitendo",
+			"Urhixidur",
+			"Valystant",
+			"Wladek92"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Autorise les utilisateurs à gérer leur abonnement dans les listes de diffusion configurées pour les collectes de fonds.",

@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mainframe98",
 			"McDutchie",
-			"Siebrand",
 			"Optilete",
-			"Mainframe98"
+			"Siebrand"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Maakt het mogelijk dat gebruikers zich uitschrijven van ingestelde mailinglijsten voor fondsenwerving",

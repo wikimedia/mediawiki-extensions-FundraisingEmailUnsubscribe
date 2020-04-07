@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Simon Shek",
 			"Cwlin0416",
-			"Kly"
+			"Kly",
+			"Simon Shek"
 		]
 	},
 	"fundraiserunsubscribe-desc": "允許使用者在籌款郵寄名單裡管理他們的成員。",

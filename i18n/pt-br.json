@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luckas",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Luckas"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Permite que os usuários gerenciem sua associação em listas de discussão de captação de recursos configuradas",

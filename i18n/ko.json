@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jango",
 			"Revi",
-			"Ykhwong",
-			"Jango"
+			"Ykhwong"
 		]
 	},
 	"fundraiserunsubscribe-desc": "구성된 모금 메일링 리스트의 회원을 사용자가 관리할 수 있게 합니다",
