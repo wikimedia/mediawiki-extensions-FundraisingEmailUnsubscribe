@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"Dual"
+			"Dual",
+			"MuratTheTurkish"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Kullanıcıların yapılandırılmış para toplama posta listelerindeki üyeliklerini yönetmelerine olanak tanır",
-	"fundraiserunsubscribe": "Wikimedia Bağış Toplama E-posta listesinden çık",
-	"fundraiserunsubscribe-query": "'''''$1''''' aboneliğini iptal etmek istediğinizden emin misiniz?",
+	"fundraiserunsubscribe-desc": "Kullanıcıların yapılandırılmış bağış toplama posta listelerinde üyeliklerini yönetmelerine olanak tanır",
+	"fundraiserunsubscribe": "Wikimedia Bağış Toplama E-posta abonelikten çık",
+	"fundraiserunsubscribe-query": "'''''$1''''' aboneliğini çıkmak istediğinizden emin misiniz?",
 	"fundraiserunsubscribe-info": "Bu, size bağışçı olarak gönderilen Wikimedia Vakfı'dan gelen e-postaları devre dışı bırakacaktır. Projelerimizden birinde bir hesapla ilişkilendirilmişse bu e-posta adresine e-postalar almaya devam edebilirsiniz. Herhangi bir sorunuz varsa, lütfen [mailto:$1 $1] ile iletişime geçin.",
 	"fundraiserunsubscribe-submit": "Abonelikten çık",
 	"fundraiserunsubscribe-cancel": "İptal",
@@ -15,7 +16,7 @@
 	"fundraiserunsubscribe-success": "Posta listemizden başarıyla kaldırıldınız.",
 	"fundraiserunsubscribe-sucesswarning": "Değişikliklerin geçerli olması için lütfen dört (4) güne kadar bekleyin. Bu süre içinde aldığınız tüm e-postalar için özür dileriz. Herhangi bir sorunuz varsa, lütfen [mailto:$1 $1] ile iletişime geçin.",
 	"fundraisersubscribe": "Katılan",
-	"fundraisersubscribe-fail": "İsteğinizi işlemeye çalışırken bir meydana geldi. Lütfen  [mailto:$1 $1] ile iletişime geçin.",
+	"fundraisersubscribe-fail": "İsteğinizi işlemeye çalışırken bir meydana geldi. Lütfen [mailto:$1 $1] ile iletişime geçin.",
 	"fundraisersubscribe-success": "Teşekkürler!",
 	"fundraisersubscribe-opt-in-continue-001": "Evet, katılmayı seçeceğim",
 	"fundraisersubscribe-page-title-001": "Viki Dünyayı Seviyor",
@@ -24,7 +25,7 @@
 	"fundraisersubscribe-appeal-text-001": "Size bu tür fotoğraflarla, gelecekte destek veya tavsiye vermenin yolları ve Vikipedi'den sevdiğiniz şeylerle ilgili daha fazla güncelleme göndermek istiyoruz.",
 	"fundraisersubscribe-privacy-text-001": "Aldığınız her e-posta, abonelikten çıkma için kolay bir seçenek içerir. Bilgileriniz [$1 bağışçı gizlilik politikamıza] göre işlenir.",
 	"fundraisersubscribe-photo-credit": "$1",
-	"fundraisersubscribe-photo-caption-M69961168": "Mors Northbrook Adası'nda yalan. Rus Arktik Ulusal Parkı. Fotoğraf, Deniz Mirası Dernekleri tarafından iki kaptanın izinden yapılan keşif kapsamında çekildi",
+	"fundraisersubscribe-photo-caption-M69961168": "Mors Northbrook Adası'nda yatıyor. Rus Arktik Ulusal Parkı. Fotoğraf, Deniz Mirası Dernekleri tarafından iki kaptanın izinden yapılan keşif kapsamında çekildi",
 	"fundraisersubscribe-photo-caption-M69960916": "Sütunlu bazalt Cape Stolbchaty, Kunashir Adası, Kurils tabiatı, Rusya güneş battıktan sonra",
 	"fundraisersubscribe-photo-caption-M68724727": "Üstünde manastır bulunan Meteora kaya oluşumu",
 	"fundraisersubscribe-photo-caption-M68822431": "Tassili n'Ajjer Ulusal Parkı, Cezayir",
@@ -39,5 +40,5 @@
 	"fundraisersubscribe-photo-caption-M70155469": "Baixa Grande, Ulusal Park Lençóis Maranhenses ortasında bir vaha günbatımı",
 	"fundraisersubscribe-photo-caption-M69609122": "Tunus Gölü Phoenicopterus çevresi",
 	"fundraisersubscribe-photo-caption-M69961161": "Franz Josef Land Bell Adası ve Benjamin Leigh Smith seferi, Rus Arktik Ulusal Parkı Eira Lodge. Fotoğraf, Deniz Mirası Dernekleri tarafından iki kaptanın izinden yapılan keşif kapsamında çekildi",
-	"fundraisersubscribe-photo-license": "Tüm görüntüler [$1 Creative Commons Atıf-Benzer Paylaşım 4.0 Uluslararası] lisansı ile lisanslanmıştır."
+	"fundraisersubscribe-photo-license": "Tüm resimler [$1 Creative Commons Atıf-Benzer Paylaşım 4.0 Uluslararası] lisansı ile lisanslanmıştır."
 }
