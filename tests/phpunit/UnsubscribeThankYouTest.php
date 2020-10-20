@@ -1,5 +1,9 @@
 <?php
 
+if ( file_exists( __DIR__ . '/../../vendor/autoload.php' ) ) {
+	include_once __DIR__ . '/../../vendor/autoload.php';
+}
+
 /**
  * @group FundraisingEmailUnsubscribe
  */
@@ -9,7 +13,7 @@ class UnsubscribeThankYouTest extends MediaWikiTestCase {
 	 */
 	protected $unsubscriber;
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->setMwGlobals( [
 			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,

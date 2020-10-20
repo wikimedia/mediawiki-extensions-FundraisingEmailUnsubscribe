@@ -134,8 +134,9 @@ class Logger {
 
 	/**
 	 * Perform the actual log operation.
-	 * @param $msgText
-	 * @param $pri
+	 * @param string $msgText
+	 * @param int $pri
+	 * @param string|null $label
 	 */
 	private function logString( $msgText, $pri, $label = null ) {
 		global $wgFundraisingEmailUnsubscribeLogFacility;
