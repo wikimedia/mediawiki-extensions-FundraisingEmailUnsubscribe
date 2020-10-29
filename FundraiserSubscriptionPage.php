@@ -83,7 +83,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	/**
 	 * Execute either the verification of a subscription request, or a subscription action.
 	 *
-	 * @param String $sub
+	 * @param string $sub
 	 */
 	public function execute( $sub ) {
 		global $wgFundraisingEmailUnsubscribeProcesses;

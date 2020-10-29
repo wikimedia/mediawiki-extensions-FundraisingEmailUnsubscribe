@@ -172,7 +172,7 @@ class XmlTransactionProcessor {
 	 * @param string|array $data
 	 * @param string $timeout
 	 *
-	 * @return bool|String
+	 * @return bool|string
 	 */
 	protected function doHttpTransaction( $data, $timeout = 'default' ) {
 		$options['method'] = 'POST';
