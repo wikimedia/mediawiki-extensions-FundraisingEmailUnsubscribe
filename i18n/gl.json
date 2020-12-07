@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Toliño"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Permite aos usuarios cancelar a subscrición ás listas de correo da recadación de fondos.",
+	"fundraiserunsubscribe-desc": "Permite aos usuarios modificar a súa subscrición ás listas de correo da recadación de fondos.",
 	"fundraiserunsubscribe": "Cancelar a subscrición aos correos electrónicos da recadación de fondos da Wikimedia",
 	"fundraiserunsubscribe-query": "Estás seguro de querer cancelar a subscrición de '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Isto cancelará os correos electrónicos que a Fundación Wikimedia che envía como doante. Poida que sigas recibindo correos se este enderezo está asociado a unha conta nun dos nosos proxectos. Se tes dúbidas ou preguntas, ponte en contacto con nós no enderezo [mailto:$1 $1].",
