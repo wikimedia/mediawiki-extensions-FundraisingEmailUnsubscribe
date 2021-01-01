@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "825f0eb02c06d45d75919cf148da2ee6",
+    "content-hash": "f5dd3310a1894e5f64ce526cbf018f4e",
     "packages": [
         {
             "name": "clio/clio",
@@ -199,12 +199,12 @@
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
+                "url": "https://github.com/predis/predis.git",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "url": "https://api.github.com/repos/predis/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
@@ -241,6 +241,16 @@
                 "nosql",
                 "predis",
                 "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/tillkruss",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tillkruss",
+                    "type": "github"
+                }
             ],
             "time": "2016-06-16T16:22:20+00:00"
         },
@@ -386,19 +396,20 @@
                     "homepage": "http://www.acci.cz"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2014-04-08T15:00:19+00:00"
         },
         {
-            "name": "jakub-onderka/php-console-highlighter",
+            "name": "php-parallel-lint/php-console-highlighter",
             "version": "v0.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/JakubOnderka/PHP-Console-Highlighter.git",
+                "url": "https://github.com/php-parallel-lint/PHP-Console-Highlighter.git",
                 "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JakubOnderka/PHP-Console-Highlighter/zipball/7daa75df45242c8d5b75a22c00a201e7954e4fb5",
+                "url": "https://api.github.com/repos/php-parallel-lint/PHP-Console-Highlighter/zipball/7daa75df45242c8d5b75a22c00a201e7954e4fb5",
                 "reference": "7daa75df45242c8d5b75a22c00a201e7954e4fb5",
                 "shasum": ""
             },
@@ -430,19 +441,22 @@
                     "homepage": "http://www.acci.cz/"
                 }
             ],
+            "support": {
+                "source": "https://github.com/php-parallel-lint/PHP-Console-Highlighter/tree/v0.3.2"
+            },
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "jakub-onderka/php-parallel-lint",
+            "name": "php-parallel-lint/php-parallel-lint",
             "version": "v0.9.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/JakubOnderka/PHP-Parallel-Lint.git",
+                "url": "https://github.com/php-parallel-lint/PHP-Parallel-Lint.git",
                 "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JakubOnderka/PHP-Parallel-Lint/zipball/2ead2e4043ab125bee9554f356e0a86742c2d4fa",
+                "url": "https://api.github.com/repos/php-parallel-lint/PHP-Parallel-Lint/zipball/2ead2e4043ab125bee9554f356e0a86742c2d4fa",
                 "reference": "2ead2e4043ab125bee9554f356e0a86742c2d4fa",
                 "shasum": ""
             },
@@ -477,6 +491,9 @@
             ],
             "description": "This tool check syntax of PHP files about 20x faster than serial check.",
             "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
+            "support": {
+                "source": "https://github.com/php-parallel-lint/PHP-Parallel-Lint/tree/v0.9.2"
+            },
             "time": "2015-12-15T10:42:16+00:00"
         }
     ],
@@ -486,5 +503,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
