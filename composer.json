@@ -9,7 +9,7 @@
 		"php": ">= 7.2.9",
 		"coderkungfu/php-queue": "^1.0",
 		"predis/predis": "^1.1",
-		"twig/twig": "^1.38"
+		"twig/twig": "1.24.2"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
