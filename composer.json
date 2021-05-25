@@ -3,7 +3,7 @@
 	"description": "Wikimedia Foundation mailing list update frontend",
 	"license": "GPL-2.0-only",
 	"support": {
-		"irc": "irc://irc.freenode.net/wikimedia-fundraising"
+		"irc": "irc://irc.libera.chat/wikimedia-fundraising"
 	},
 	"require": {
 		"php": ">= 7.2.9",
