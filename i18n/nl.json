@@ -7,7 +7,7 @@
 			"Siebrand"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Maakt het mogelijk dat gebruikers zich uitschrijven van ingestelde mailinglijsten voor fondsenwerving",
+	"fundraiserunsubscribe-desc": "Hiermee kunnen gebruikers hun lidmaatschap beheren van de ingestelde mailinglijsten voor fondsenwerving",
 	"fundraiserunsubscribe": "Uitschrijven van e-mails van Wikimedia over fondsenwerving",
 	"fundraiserunsubscribe-query": "Weet u zeker dat u het e-mailadres '''$1''' wilt uitschrijven?",
 	"fundraiserunsubscribe-info": "Hierdoor ontvangt u niet langer e-mails die Wikimedia aan u als donateur verzendt. Mogelijk ontvangt u nog steeds e-mails op dit e-mailadres als u een gebruiker op een van onze projecten hebt. Als u vragen hebt, neem dan contact op met [mailto:$1 $1].",
