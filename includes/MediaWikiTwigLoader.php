@@ -21,6 +21,8 @@
  * @file
  */
 
+use Twig\Loader\LoaderInterface;
+
 /**
  * Provides methods for Twig templates to integrate with Mediawiki.
  *
@@ -28,7 +30,7 @@
  * look for files named a.lang.b where lang is every language code in the current languages fallback
  * list. It will also of course use the original a.b file if no localized file exists.
  */
-class MediaWikiTwigLoader implements Twig_LoaderInterface {
+class MediaWikiTwigLoader implements LoaderInterface {
 
 	/** @var string */
 	private $mTwigTemplatePath;

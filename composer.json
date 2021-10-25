@@ -9,7 +9,7 @@
 		"php": ">= 7.2.9",
 		"coderkungfu/php-queue": "^1.0",
 		"predis/predis": "^1.1",
-		"twig/twig": "1.24.2"
+		"twig/twig": "1.44.5"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "38.0.0",
