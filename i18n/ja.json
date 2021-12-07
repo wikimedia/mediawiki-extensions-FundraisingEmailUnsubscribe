@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Omotecho",
-			"Shirayuki"
+			"Shirayuki",
+			"Pcoombe"
 		]
 	},
 	"fundraiserunsubscribe-desc": "利用者が資金調達メーリングリストの購読を管理できるようにする",
-	"fundraiserunsubscribe": "ウィキメディア資金調達メールの購読解除",
+	"fundraiserunsubscribe": "ウィキメディア財団の募金活動のメール配信を停止する",
 	"fundraiserunsubscribe-query": "'''''$1''''' を本当に購読解除しますか?",
 	"fundraiserunsubscribe-info": "ここでは、寄付者のあなたにウィキメディア財団がお送りするメールを購読解除できます。このメールアドレスが、私たちのプロジェクト群のいずれかのアカウントに関連付けられている場合は、引き続きメールが届くかもしれません。何かご質問がある場合は、[mailto:$1 $1] にお問い合わせください。",
 	"fundraiserunsubscribe-submit": "購読解除",
