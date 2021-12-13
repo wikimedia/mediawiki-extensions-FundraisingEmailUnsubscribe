@@ -3,10 +3,11 @@
 		"authors": [
 			"Fitoschido",
 			"Macofe",
-			"Ryo567"
+			"Ryo567",
+			"ArenaL5"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Permite a los usuarios darse de baja de las listas de correo de recaudación de fondos.",
+	"fundraiserunsubscribe-desc": "Permite a los usuarios modificar su suscripción a las listas de correo de recaudación de fondos.",
 	"fundraiserunsubscribe": "Darse de baja de la lista de correos de recaudación de fondos de Wikipedia.",
 	"fundraiserunsubscribe-query": "¿Seguro que quieres desuscribir a '''''$1'''''?",
 	"fundraiserunsubscribe-submit": "Cancelar la suscripción",
