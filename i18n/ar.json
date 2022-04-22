@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"FiberAhmed",
 			"Meno25",
 			"ديفيد"
 		]
@@ -16,7 +17,7 @@
 	"fundraiserunsubscribe-sucesswarning": "يُرجَى الانتظار لمدة أربعة (4) أيام حتى تصبح التغييرات سارية المفعول، نعتذر عن أية رسائل بريد إلكتروني تتلقاها خلال هذا الوقت، إذا كانت لديك أية أسئلة، يُرجَى الاتصال بـ[mailto:$1 $1].",
 	"fundraisersubscribe": "اشتراك",
 	"fundraisersubscribe-fail": "حدث خطأ أثناء محاولة معالجة طلبك; يُرجَى الاتصال بـ[mailto:$1 $1].",
-	"fundraisersubscribe-success": "شكرا لك!",
+	"fundraisersubscribe-success": "شكرًا لك!",
 	"fundraisersubscribe-opt-in-continue-001": "نعم، سأشترك",
 	"fundraisersubscribe-page-title-001": "ويكي يهوى الأرض",
 	"fundraisersubscribe-page-subtitle-001": "اكتشف أسرار عالمنا الطبيعي الموجودة على ويكيميديا ​​كومنز، استكشف أفضل 15 صورة لعام 2018، تم التقاطها ومشاركتها واختيارها من قبل متطوعي ويكيميديا.",
