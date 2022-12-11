@@ -19,6 +19,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class that prepares an XML transaction and executes it. Right now it's probably way specific
  * to the SilverPop method. Hopefully easy to extend if required?
@@ -178,7 +180,8 @@ class XmlTransactionProcessor {
 		$options['method'] = 'POST';
 		$options['timeout'] = $this->mTimeout;
 
-		$req = MWHttpRequest::factory( $this->mURL, $options );
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $this->mURL, $options );
 		if ( !is_array( $data ) ) {
 			$req->setHeader( 'Content-Type', 'text/xml; charset=utf8' );
 			$req->setHeader( 'Content-Length', strlen( $data ) );
