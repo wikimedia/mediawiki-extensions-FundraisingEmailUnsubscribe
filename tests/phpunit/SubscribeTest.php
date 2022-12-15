@@ -6,6 +6,7 @@ if ( file_exists( __DIR__ . '/../../vendor/autoload.php' ) ) {
 
 /**
  * @group FundraisingEmailUnsubscribe
+ * @covers FundraiserSubscribe
  */
 class SubscribeTest extends MediaWikiIntegrationTestCase {
 	/**
