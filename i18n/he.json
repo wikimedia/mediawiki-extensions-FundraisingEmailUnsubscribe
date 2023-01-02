@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"YaronSh"
 		]
 	},
-	"fundraiserunsubscribe-cancel": "ביטול"
+	"fundraiserunsubscribe-cancel": "ביטול",
+	"fundraisersubscribe-opt-in-continue-001": "כן, אני אצטרף"
 }
