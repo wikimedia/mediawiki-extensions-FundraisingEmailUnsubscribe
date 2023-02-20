@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"EHughes",
+			"Matěj Suchánek",
 			"Mormegil"
 		]
 	},
@@ -13,5 +14,5 @@
 	"fundraiserunsubscribe-cancel": "Storno",
 	"fundraiserunsubscribe-errormsg": "Při zpracování vašeho požadavku došlo k chybě. Napište prosím na [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Byli jste úspěšně odebráni z naší e-mailové konference.",
-	"fundraiserunsubscribe-sucesswarning": "Počkejte prosím až (4) dny, než změny vstoupí v platnost. Omlouváme se za veškeré e-maily, které v té době obdržíte. Jestliže máte nějaké dotazy, kontaktujte nás posím na adrese  [mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "Počkejte prosím až čtyři (4) dny, než změny vstoupí v platnost. Omlouváme se za veškeré e-maily, které v té době obdržíte. Jestliže máte nějaké dotazy, kontaktujte nás prosím na adrese [mailto:$1 $1]."
 }
