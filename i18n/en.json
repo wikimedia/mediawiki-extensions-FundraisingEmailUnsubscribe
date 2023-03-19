@@ -12,7 +12,7 @@
 	"fundraiserunsubscribe-success": "You have successfully been removed from our mailing list.",
 	"fundraiserunsubscribe-sucesswarning": "Please allow up to four (4) days for the changes to take effect. We apologize for any emails you receive during this time. If you have any questions, please contact [mailto:$1 $1].",
 	"fundraisersubscribe": "Opt in",
-	"fundraisersubscribe-fail":  "An error occurred while attempting to process your request. Please contact [mailto:$1 $1].",
+	"fundraisersubscribe-fail": "An error occurred while attempting to process your request. Please contact [mailto:$1 $1].",
 	"fundraisersubscribe-success": "Thank you!",
 	"fundraisersubscribe-opt-in-continue-001": "Yes, I'll opt in",
 	"fundraisersubscribe-page-title-001": "Wiki Loves Earth",
