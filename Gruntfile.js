@@ -1,13 +1,13 @@
-/*jshint node:true */
+/* eslint-env node */
 module.exports = function ( grunt ) {
 	var conf = grunt.file.readJSON( 'extension.json' );
 
-	grunt.loadNpmTasks( 'grunt-jsonlint' );
-	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
+	grunt.loadNpmTasks( 'grunt-eslint' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
 
 	grunt.initConfig( {
+		// eslint-disable-next-line es-x/no-object-assign, compat/compat
 		banana: Object.assign(
 			conf.MessagesDirs,
 			{
@@ -16,31 +16,27 @@ module.exports = function ( grunt ) {
 				}
 			}
 		),
-		jshint: {
+		eslint: {
+			options: {
+				cache: true
+			},
 			all: [
-				'**/*.js',
+				'**/*.js{,on}',
 				'!node_modules/**',
 				'!vendor/**',
 				'!modules/lightgallery.js',
 				'!modules/lg-hash.js'
 			]
 		},
-		jsonlint: {
-			all: [
-				'**/*.json',
-				'!node_modules/**',
-				'!vendor/**'
-			]
-		},
 		stylelint: {
 			all: [
-				'**/*.css',
+				'**/*.{css,less}',
 				'!node_modules/**',
 				'!vendor/**'
 			]
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jsonlint', 'stylelint', 'banana', 'jshint' ] );
+	grunt.registerTask( 'test', [ 'eslint', 'banana', 'stylelint' ] );
 	grunt.registerTask( 'default', 'test' );
 };
