@@ -5,6 +5,12 @@
 			"YaronSh"
 		]
 	},
+	"fundraiserunsubscribe-submit": "ביטול מינוי",
 	"fundraiserunsubscribe-cancel": "ביטול",
-	"fundraisersubscribe-opt-in-continue-001": "כן, אני אצטרף"
+	"fundraisersubscribe": "להצטרף",
+	"fundraisersubscribe-success": "תודה!",
+	"fundraisersubscribe-opt-in-continue-001": "כן, אני אצטרף",
+	"fundraisersubscribe-appeal-headline-001": "אהבת את מה שראית?",
+	"fundraisersubscribe-photo-credit": "מאת $1",
+	"fundraisersubscribe-photo-license": "כל התמונות מתפרסמות לפי תנאי רישיון [$1 קריאייטיב קומונז ייחוס–שיתוף זהה 4.0 בין־לאומי]."
 }
