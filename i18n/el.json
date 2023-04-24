@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"EHughes",
+			"NikosLikomitros"
 		]
 	},
+	"fundraiserunsubscribe": "Κατάργηση της εγγραφή σας από το Email Συγκέντρωσης Χρημάτων του Wikimedia",
+	"fundraiserunsubscribe-query": "Είστε σίγουροι πως θέλετε να ακυρώσετε τη εγγραφή σας για τη διεύθυνση '''''$1''''';",
 	"fundraiserunsubscribe-submit": "Κατάργηση εγγραφής",
 	"fundraiserunsubscribe-cancel": "Ακύρωση",
+	"fundraiserunsubscribe-sucesswarning": "Παρακαλούμε, επιτρέψτε έως και τέσσερις (4) ημέρες έως ότου πραγματοποιηθούν οι αλλαγές. Ζητούμε προκαταβολικά συγγνώμη για οποιαδήποτε επικοινωνία email λάβετε από εμάς κατά αυτό το διάστημα. Εάν έχετε οποιαδήποτε απορία, παρακαλούμε επικοινωνήστε μαζί μας στο [mailto:$1 $1]",
 	"fundraisersubscribe-success": "Σας ευχαριστούμε!"
 }
