@@ -5,18 +5,19 @@
 			"Fitoschido",
 			"Macofe",
 			"Ryo567",
-			"DiegoAmbrocio"
+			"DiegoAmbrocio",
+			"Pcoombe"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Permite a los usuarios modificar su suscripción a las listas de correo de recaudación de fondos.",
-	"fundraiserunsubscribe": "Darse de baja de la lista de correos de recaudación de fondos de Wikipedia.",
-	"fundraiserunsubscribe-query": "¿Seguro que quieres desuscribir a '''''$1'''''?",
+	"fundraiserunsubscribe": "Darte de baja de los correos electrónicos de recaudación de fondos de Wikimedia",
+	"fundraiserunsubscribe-query": "¿Quieres dar de baja el correo '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Esto le excluirá de los correos electrónicos de la Fundación Wikimedia que se le envíen como donante. Es posible que siga recibiendo correos electrónicos en esta dirección si está asociada a una cuenta en uno de nuestros proyectos. Si tiene alguna pregunta, póngase en contacto con [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Cancelar la suscripción",
 	"fundraiserunsubscribe-cancel": "Cancelar",
 	"fundraiserunsubscribe-errormsg": "Se ha producido un error al intentar procesar tu solicitud. Por favor, contacta con [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Te has dado de baja de la lista de correo correctamente.",
-	"fundraiserunsubscribe-sucesswarning": "Por favor, espere hasta cuatro (4) días para que los cambios surtan efecto. Le pedimos disculpas por los correos electrónicos que reciba durante este tiempo. Si tiene alguna pregunta, póngase en contacto con [mailto:$1 $1].",
+	"fundraiserunsubscribe-sucesswarning": "Este cambio puede tardar hasta cuatro (4) días en hacerse efectivo. Te pedimos disculpas por cualquier correo electrónico que puedas recibir en este periodo. Si tienes alguna pregunta, ponte en contacto con [mailto:$1 $1].",
 	"fundraisersubscribe": "Optar por",
 	"fundraisersubscribe-fail": "Se ha producido un error al intentar procesar su solicitud. Por favor, póngase en contacto con [mailto:$1 $1].",
 	"fundraisersubscribe-success": "Gracias.",
