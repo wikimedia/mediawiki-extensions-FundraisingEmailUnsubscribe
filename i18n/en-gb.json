@@ -3,7 +3,8 @@
 		"authors": [
 			"Chase me ladies, I'm the Cavalry",
 			"Shirayuki",
-			"Bjh21"
+			"Bjh21",
+			"Mako001"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Allows users to unsubscribe from configured fundraising mailing lists",
@@ -15,5 +16,5 @@
 	"fundraiserunsubscribe-errormsg": "An error occurred while attempting to process your request. Please contact [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "You have successfully been removed from our mailing list.",
 	"fundraiserunsubscribe-sucesswarning": "Please allow up to four (4) days for the changes to take effect. We apologise for any emails you receive during this time. If you have any questions, please contact [mailto:$1 $1].",
-	"fundraisersubscribe-photo-license": "All images are licensed under the [$1 Creative Commons Attribution-Share Alike 4.0 International] licence."
+	"fundraisersubscribe-photo-license": "All images are licenced under the [$1 Creative Commons Attribution-Share Alike 4.0 International] licence."
 }
