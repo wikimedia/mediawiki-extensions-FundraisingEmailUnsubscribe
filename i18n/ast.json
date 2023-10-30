@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Permite que los usuarios xestionen la pertenencia a les llistes de collecha de fondos configuraes",
@@ -9,7 +10,7 @@
 	"fundraiserunsubscribe-query": "¿Tas seguru de que quies date de baxa de '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Esto va date de baxa de los correos electrónicos que la Fundación Wikimedia t'unvia como donante. Inda puedes recibir correos nesta dirección de corréu electrónicu si ta asociada con una cuenta d'unu de los nuesos proyectos. Si tienes dalguna entruga, comunícate con [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Date de baxa",
-	"fundraiserunsubscribe-cancel": "Encaboxar",
+	"fundraiserunsubscribe-cancel": "Zarrar",
 	"fundraiserunsubscribe-errormsg": "Hebo un error al intentar procesar la to solicitú. Por favor, comunícate con [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Desaniciósete correutamente de la llista de corréu.",
 	"fundraiserunsubscribe-sucesswarning": "Danos un marxe de cuatro (4) díes pa que los cambeos surtan efectu. Pidimos disculpes polos correos electrónicos que puedas recibir demientres esti tiempu. Si tienes dalguna entruga, comunícate con [mailto:$1 $1].",
