@@ -7,7 +7,7 @@
 		]
 	},
 	"fundraiserunsubscribe-desc": "Umožňuje uživatelům odhlásit se z nakonfigurovaných e-mailových konferencí k financování",
-	"fundraiserunsubscribe": "Odhlásit se od odběru e-mailů o finančních sbírkách Wikimedia",
+	"fundraiserunsubscribe": "Odhlásit se z odběru e-mailů o finančních sbírkách nadace Wikimedia",
 	"fundraiserunsubscribe-query": "Opravdu chcete odhlásit odběr na e-mailovou adresu '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Tímto se odhlásíte z příjmu e-mailů, které vám jako dárci posílala Wikimedia Foundation. I nadále můžete dostávat další e-maily na tuto e-mailovou adresu, pokud je přiřazena k účtu na některém z našich projektů. Pokud máte jakékoli otázky, napište na [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Odhlásit se",

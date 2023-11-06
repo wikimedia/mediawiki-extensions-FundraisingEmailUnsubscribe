@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Justman10000",
 			"Kghbln",
 			"Metalhead64"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Ermöglicht es Benutzern, ihre Mitgliedschaft in konfigurierten Mailinglisten zur Spendensammlung zu verwalten.",
-	"fundraiserunsubscribe": "E-Mails zur Wikimedia Foundation-Spendensammlung abbestellen",
+	"fundraiserunsubscribe": "E-Mails zur Wikimedia-Foundation-Spendensammlung abbestellen",
 	"fundraiserunsubscribe-query": "Bist du sicher, dass du '''''$1''''' abbestellen möchtest?",
 	"fundraiserunsubscribe-info": "Auf diese Weise erhältst du keine E-Mails von der Wikimedia Foundation mehr, die an dich als Spender gesendet werden. Du kannst weiterhin E-Mails an diese E-Mail-Adresse erhalten, wenn sie mit einem Konto bei einem unserer Projekte verbunden ist. Wenn du Fragen hast, wende dich bitte an [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Abbestellen",
