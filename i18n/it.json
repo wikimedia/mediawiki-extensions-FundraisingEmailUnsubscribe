@@ -9,7 +9,7 @@
 	"fundraiserunsubscribe": "Annulla l'iscrizione all'e-mail di raccolta fondi della Wikimedia Foundation",
 	"fundraiserunsubscribe-query": "Sei sicuro di voler annullare l'iscrizione a '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Questa operazione ti disiscriverà dal servizio della Wikimedia Foundation con il quale ti sono periodicamente inviate delle e-mail in quanto donatore. Potrai ancora ricevere e-mail a questa casella se è associata a qualche account su uno dei nostri Progetti. Per qualsiasi migliore informazione, scrivi a [mailto:$1 $1].",
-	"fundraiserunsubscribe-submit": "Annulla l'iscrizione",
+	"fundraiserunsubscribe-submit": "Annulla iscrizione",
 	"fundraiserunsubscribe-cancel": "Annulla",
 	"fundraiserunsubscribe-errormsg": "Si è verificato un errore durante la lavorazione della tua richiesta. Ti preghiamo di contattarci via email [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Sei stato rimosso dalla nostra mailing list.",
