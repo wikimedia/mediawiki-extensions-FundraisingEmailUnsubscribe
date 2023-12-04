@@ -5,7 +5,7 @@
 		]
 	},
 	"fundraiserunsubscribe-desc": "Uporabnikom omogoča upravljanje svojega članstva na konfiguriranih dopisnih seznamih za zbiranje sredstev",
-	"fundraiserunsubscribe": "Odnaročilo e-pošte Wikimedia Fundraising",
+	"fundraiserunsubscribe": "Odjava od e-pošte za zbiranje sredstev Fundacije Wikimedia",
 	"fundraiserunsubscribe-query": "Ali se res želite odnaročiti od '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Izberite to možnost, če od Fundacije Wikimedia ne želite več prejemati e-pošte kot donator. Še vedno pa boste morda na svoj e-poštni naslov prejemali e-pošto, če je ta povezan z računom v enem od naših projektov. Če imate katero koli vprašanje, nam pišite na [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Odnaroči",
