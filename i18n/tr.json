@@ -3,11 +3,12 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Dual",
+			"Joseph",
 			"MuratTheTurkish"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Kullanıcıların yapılandırılmış bağış toplama posta listelerinde üyeliklerini yönetmelerine olanak tanır",
-	"fundraiserunsubscribe": "Wikimedia Bağış Toplama E-posta abonelikten çık",
+	"fundraiserunsubscribe": "Wikimedia Vakfı Bağış Toplama E-posta aboneliğinden ayrıl",
 	"fundraiserunsubscribe-query": "'''''$1''''' aboneliğini çıkmak istediğinizden emin misiniz?",
 	"fundraiserunsubscribe-info": "Bu, size bağışçı olarak gönderilen Wikimedia Vakfı'dan gelen e-postaları devre dışı bırakacaktır. Projelerimizden birinde bir hesapla ilişkilendirilmişse bu e-posta adresine e-postalar almaya devam edebilirsiniz. Herhangi bir sorunuz varsa, lütfen [mailto:$1 $1] ile iletişime geçin.",
 	"fundraiserunsubscribe-submit": "Abonelikten çık",
