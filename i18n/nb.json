@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Pcoombe"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Lar brukere behandle medlemskapet sitt i konfigurerte innsamlingsepostlister",
-	"fundraiserunsubscribe": "Avslutt abonnementet på innsamlingsepost fra Wikimedia Foundation",
+	"fundraiserunsubscribe": "Avslutt abonnementet på e-poster fra Wikimedia Foundation",
 	"fundraiserunsubscribe-query": "Er du sikker på at du vil avslutte abonnementet for '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Dette vil reservere deg mot eposter fra Wikimedia Foundation sendt til deg som donor. Du vil fortsatt kunne motta eposter dersom denne epostadressa er knyttet til en konto på et av prosjektene våre. Kontakt gjerne [mailto:$1 $1] hvis du har noen spørsmål.",
 	"fundraiserunsubscribe-submit": "Avslutt abonnement",
