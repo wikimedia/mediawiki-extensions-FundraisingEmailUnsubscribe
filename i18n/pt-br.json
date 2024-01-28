@@ -8,7 +8,7 @@
 		]
 	},
 	"fundraiserunsubscribe-desc": "Permite que os usuários gerenciem sua associação em listas de discussão de captação de recursos configuradas",
-	"fundraiserunsubscribe": "Cancelar a subscrição do e-mail de angariação de fundos da Wikimedia Foundation",
+	"fundraiserunsubscribe": "Descadastrar-se do e-mail de arrecadação de fundos da Wikimedia Foundation",
 	"fundraiserunsubscribe-query": "Tem a certeza de que pretende cancelar a subscrição de '''''$1'''''?",
 	"fundraiserunsubscribe-info": "Essa opção exclui-o dos correios eletrónicos que a Wikimedia Foundation envia a benfeitores. Pode continuar a receber mensagens neste endereço de correio eletrónico se o endereço estiver associado a uma conta num dos nossos projetos. Se tiver alguma pergunta, entre em contacto connosco no endereço [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Cancelar inscrição",

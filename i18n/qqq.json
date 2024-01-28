@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Pcoombe",
 			"Robby",
 			"Shirayuki",
 			"Umherirrender"
 		]
 	},
 	"fundraiserunsubscribe-desc": "{{desc|name=Fundraising Email Unsubscribe|url=https://www.mediawiki.org/wiki/Extension:FundraiserUnsubscribe}}",
-	"fundraiserunsubscribe": "Unsubscribe page title",
+	"fundraiserunsubscribe": "Unsubscribe page title. Please leave \"Wikimedia Foundation\" untranslated",
 	"fundraiserunsubscribe-query": "Ask if the user wants to remove email address:$1 from the fundraising mail lists. Leave email as is; a different templating engine is being used.",
 	"fundraiserunsubscribe-info": "Unused at this time.\n\nInformation on how the unsubscribe request will be processed.\n\nParameters:\n* $1 - email address",
 	"fundraiserunsubscribe-submit": "Label for button which will unsubscribe them from the fundraising email list.\n{{Identical|Unsubscribe}}",
