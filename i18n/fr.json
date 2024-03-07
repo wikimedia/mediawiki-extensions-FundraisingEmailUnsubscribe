@@ -3,6 +3,7 @@
 		"authors": [
 			"Cquoi",
 			"Gomoko",
+			"MacOS Weed",
 			"Metroitendo",
 			"Pcoombe",
 			"Urhixidur",
@@ -12,7 +13,7 @@
 		]
 	},
 	"fundraiserunsubscribe-desc": "Autorise les utilisateurs à gérer leur abonnement dans les listes de diffusion configurées pour les collectes de fonds.",
-	"fundraiserunsubscribe": "Se désabonner des courriels de collecte de fonds de la Fondation Wikimedia",
+	"fundraiserunsubscribe": "Se désabonner des courriels de collecte de fonds de Wikimedia",
 	"fundraiserunsubscribe-query": "Êtes-vous sûr{{GENDER:||e}} de vouloir vous désabonner de '''''$1''''' ?",
 	"fundraiserunsubscribe-info": "Cela vous désabonnera des courriels que la Fondation Wikimedia vous envoie en tant que donateur. Vous pourriez néanmoins continuer à recevoir d’autres types de courriels si votre adresse demeure associée à un compte de contributeur sur un de nos projets. Si vous avez des questions, veuillez contacter [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Se désabonner",
