@@ -484,7 +484,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 				if ( is_a( $function, Closure::class ) ) {
 					$raw = $function( $reqParamValues );
 				} else {
-					list( $class, $funcName ) = explode( '::', $function );
+					[ $class, $funcName ] = explode( '::', $function );
 					$raw = call_user_func( [ $class, $funcName ], $reqParamValues );
 				}
 
