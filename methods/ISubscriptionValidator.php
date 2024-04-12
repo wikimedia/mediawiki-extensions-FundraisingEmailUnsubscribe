@@ -25,8 +25,8 @@
 interface ISubscriptionValidator {
 	/**
 	 * Get the URI parameter names required to be passed to validateRequest()
-	 * @abstract
-	 * @return array Key/value part of URI parameter name => validation regex that shall be used to
+	 *
+	 * @return array<string,string> Key/value part of URI parameter name => validation regex that shall be used to
 	 * clean the input before passing to this function.
 	 */
 	public function getRequiredValidationParameters();
@@ -35,7 +35,6 @@ interface ISubscriptionValidator {
 	 * Validates that an (un)subscribe request is valid and able to be processed. Should not perform
 	 * any API calls (esp. ones that could cost money). The parameters required for this call, and
 	 * regex for cleaning should be obtained from getRequiredValidationParameters().
-	 * @abstract
 	 *
 	 * @param array $params Key/value map of URI parameter names => cleaned values
 	 *

@@ -7,7 +7,7 @@
  */
 class FundraiserEmailQueue {
 	/** @var PHPQueue\Interfaces\FifoQueueStore[] */
-	static $instances = [];
+	private static $instances = [];
 
 	/**
 	 * @param string $queueName name of the queue to fetch

@@ -31,10 +31,12 @@ class FundraiserSubscribe
 		$this->addRequiredParameter( 'email', '/.*@.*/' );
 	}
 
+	/** @inheritDoc */
 	public function getRequiredValidationParameters() {
 		return $this->mRequiredParameters;
 	}
 
+	/** @inheritDoc */
 	public function validateRequest( array $params ) {
 		Logger::pushLabel( 'OptIn' );
 
@@ -46,6 +48,7 @@ class FundraiserSubscribe
 		return $result;
 	}
 
+	/** @inheritDoc */
 	public function update( $requestID, $process, array $params ) {
 		Logger::pushLabel( 'OptIn' );
 

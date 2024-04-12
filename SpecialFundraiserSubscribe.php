@@ -6,6 +6,7 @@ class SpecialFundraiserSubscribe extends FundraiserSubscriptionPage {
 		parent::__construct( 'FundraiserSubscribe' );
 	}
 
+	/** @return string */
 	protected function getQueryTemplate() {
 		$basename = 'optin';
 		$variant = $this->mVariant;
@@ -21,10 +22,12 @@ class SpecialFundraiserSubscribe extends FundraiserSubscriptionPage {
 		return 'optin.html';
 	}
 
+	/** @return string */
 	protected function getSuccessTemplate() {
 		return 'optinSuccess.html';
 	}
 
+	/** @return string */
 	protected function getErrorTemplate() {
 		return 'optinError.html';
 	}

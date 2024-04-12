@@ -27,14 +27,17 @@ class SpecialFundraiserUnsubscribe extends FundraiserSubscriptionPage {
 		parent::__construct( 'FundraiserUnsubscribe' );
 	}
 
+	/** @return string */
 	protected function getQueryTemplate() {
 		return 'query.html';
 	}
 
+	/** @return string */
 	protected function getSuccessTemplate() {
 		return 'unsubscribeSuccess.html';
 	}
 
+	/** @return string */
 	protected function getErrorTemplate() {
 		return 'error.html';
 	}

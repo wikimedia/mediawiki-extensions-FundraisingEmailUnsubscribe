@@ -46,7 +46,6 @@ class Logger {
 
 	/**
 	 * Log a message string to Syslog
-	 * @static
 	 *
 	 * @param string $message The string to log
 	 * @param int $priority The syslog priority to log this message at
@@ -62,7 +61,6 @@ class Logger {
 
 	/**
 	 * Log an exception to Syslog. The stack trace will be included as a JSON string.
-	 * @static
 	 *
 	 * @param Exception $ex The exception
 	 * @param string $additionalText Any string to also log as context, default is empty
@@ -94,7 +92,6 @@ class Logger {
 	/**
 	 * Set the process Syslog thinks this is. This is just a string that gets prepended to the log
 	 * message by the Syslog utility. Can be used for very cheap bucketing of logs.
-	 * @static
 	 *
 	 * @param string $bucket
 	 */
@@ -105,7 +102,6 @@ class Logger {
 	/**
 	 * A string that will be added to the front of every log message regardless of the current
 	 * label. Use it for things like request IDs.
-	 * @static
 	 *
 	 * @param string $context
 	 */
@@ -116,7 +112,6 @@ class Logger {
 	/**
 	 * By pushing a label, you change the sub identifier string for each message logged after the
 	 * string was pushed.
-	 * @static
 	 *
 	 * @param string $label
 	 */
@@ -126,7 +121,6 @@ class Logger {
 
 	/**
 	 * Go back to the last label.
-	 * @static
 	 */
 	public static function popLabel() {
 		array_pop( static::$label );

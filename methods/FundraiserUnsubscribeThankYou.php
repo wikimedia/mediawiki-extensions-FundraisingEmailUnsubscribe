@@ -34,10 +34,12 @@ class FundraiserUnsubscribeThankYou
 		$this->addRequiredParameter( 'contribution-id', '/-?[0-9]*/' );
 	}
 
+	/** @inheritDoc */
 	public function getRequiredValidationParameters() {
 		return $this->mRequiredParameters;
 	}
 
+	/** @inheritDoc */
 	public function validateRequest( array $params ) {
 		global $wgFundraisingEmailUnsubscribeHashSecretKey;
 
@@ -63,6 +65,7 @@ class FundraiserUnsubscribeThankYou
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function update( $requestID, $process, array $params ) {
 		Logger::pushLabel( 'UnsubThankYou' );
 
@@ -90,7 +93,6 @@ class FundraiserUnsubscribeThankYou
 
 	/**
 	 * The ThankYou module URL encodes emails; so we need to decode the parameter to get the result
-	 * @static
 	 *
 	 * @param array $params Expects 'e' - a URL encoded email
 	 *

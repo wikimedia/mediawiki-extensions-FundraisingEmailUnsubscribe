@@ -25,9 +25,13 @@
  * bulk email service.
  */
 abstract class SubscriptionMethod {
-	/** @var string[] */
+	/** @var array<string,string> */
 	protected $mRequiredParameters = [];
 
+	/**
+	 * @param string $name
+	 * @param string $regex
+	 */
 	protected function addRequiredParameter( $name, $regex ) {
 		$this->mRequiredParameters[$name] = $regex;
 	}
@@ -35,7 +39,7 @@ abstract class SubscriptionMethod {
 	/**
 	 * Get the URI parameter names required to be passed to update()
 	 *
-	 * @return string[] Key/value part of URI parameter name => validation regex that shall be used to
+	 * @return array<string,string> Key/value part of URI parameter name => validation regex that shall be used to
 	 * clean the input before passing to this function.
 	 */
 	public function getRequiredParameters() {

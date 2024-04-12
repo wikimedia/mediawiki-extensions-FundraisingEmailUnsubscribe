@@ -69,16 +69,21 @@ class MediaWikiTwig {
  * All exposed MW functions to Twig Templates
  */
 class MediaWikiTwigCallbacks extends Twig_Extension {
+	/** @var IContextSource */
 	protected $mContext;
 
 	public function __construct( IContextSource $context ) {
 		$this->mContext = $context;
 	}
 
+	/** @return string */
 	public function getName() {
 		return 'MediaWiki Twig Handler';
 	}
 
+	/**
+	 * @return array<string,Twig_Function_Method>
+	 */
 	public function getFunctions() {
 		return [
 			'wfMessage' => new Twig_Function_Method( $this, 'twig_wfMessage' ),

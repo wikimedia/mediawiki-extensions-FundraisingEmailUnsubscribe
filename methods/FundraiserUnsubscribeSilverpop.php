@@ -66,6 +66,7 @@ class FundraiserUnsubscribeSilverpop
 		$this->addRequiredParameter( 'email', '/.*@.*/' );
 	}
 
+	/** @inheritDoc */
 	public function update( $requestID, $process, array $params ) {
 		global $wgFundraisingEmailUnsubscribeSilverpopUsername, $wgFundraisingEmailUnsubscribeSilverpopPassword;
 		global $wgFundraisingEmailUnsubscribeSilverpopTimeout, $wgFundraisingEmailUnsubscribeSilverpopURL;

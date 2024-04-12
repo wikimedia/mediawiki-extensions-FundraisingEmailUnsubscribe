@@ -46,14 +46,14 @@ use MediaWiki\Session\SessionManager;
 
 abstract class FundraiserSubscriptionPage extends SpecialPage {
 
-	const KEY_PROCESS = 'p';
-	const FILT_PROCESS = '/[a-zA-Z0-9]*/';
+	private const KEY_PROCESS = 'p';
+	private const FILT_PROCESS = '/[a-zA-Z0-9]*/';
 
-	const KEY_EXECUTE = 'execute';
-	const FILT_EXECUTE = '/[a-zA-Z0-9]*/';
+	private const KEY_EXECUTE = 'execute';
+	private const FILT_EXECUTE = '/[a-zA-Z0-9]*/';
 
-	const KEY_VARIANT = 'v';
-	const FILT_VARIANT = '/[a-zA-Z0-9_-]*/';
+	private const KEY_VARIANT = 'v';
+	private const FILT_VARIANT = '/[a-zA-Z0-9_-]*/';
 
 	/** @var array[] */
 	private $mObjects = [];
@@ -70,12 +70,16 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	/** @var int */
 	private $mID = 0;
 
+	/** @return string */
 	abstract protected function getQueryTemplate();
 
+	/** @return string */
 	abstract protected function getSuccessTemplate();
 
+	/** @return string */
 	abstract protected function getErrorTemplate();
 
+	/** @return string */
 	protected function getTemplateDir() {
 		return __DIR__ . '/templates';
 	}
@@ -86,8 +90,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * @param string $sub
 	 */
 	public function execute( $sub ) {
-		global $wgFundraisingEmailUnsubscribeProcesses;
-		global $wgFundraisingEmailUnsubscribeCancelUri;
+		$processes = $this->getConfig()->get( 'FundraisingEmailUnsubscribeProcesses' );
 
 		// Initiate logging. Although we generate the ID every time, we will reset to a stashed ID
 		// in loadSessionData() if it exists.
@@ -101,13 +104,14 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		// Walk through the steps of the process. If we have a 'p' parameter we're just starting,
 		// If we have data in the session, and the 'execute' parameter, we're finishing
 		$outContent = '';
-		$this->mProcess = $this->getFilteredValue( static::KEY_PROCESS, static::FILT_PROCESS );
-		$this->mVariant = $this->getFilteredValue( static::KEY_VARIANT, static::FILT_VARIANT );
-		$execute = $this->getFilteredValue( static::KEY_EXECUTE, static::FILT_EXECUTE );
+		$this->mProcess = $this->getFilteredValue( self::KEY_PROCESS, self::FILT_PROCESS );
+		$this->mVariant = $this->getFilteredValue( self::KEY_VARIANT, self::FILT_VARIANT );
+		$execute = $this->getFilteredValue( self::KEY_EXECUTE, self::FILT_EXECUTE );
 		$errorTemplate = $this->getErrorTemplate();
 
-		if ( array_key_exists( $this->mProcess, $wgFundraisingEmailUnsubscribeProcesses ) ) {
+		if ( array_key_exists( $this->mProcess, $processes ) ) {
 			// Stage 1: Asking if they really mean to do this. But we do have some setup to do first
+			// phpcs:ignore MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals
 			Logger::log( "Starting process '$this->mProcess' with URI variables: " . json_encode( $_GET + $_POST ) );
 			$template = $this->getQueryTemplate();
 
@@ -141,7 +145,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 				// Apparently they decided not to cancel, redirect somewhere else
 				Logger::log( 'User decided to cancel action!' );
 				$this->clearData();
-				$this->getOutput()->redirect( $wgFundraisingEmailUnsubscribeCancelUri );
+				$this->getOutput()->redirect( $this->getConfig()->get( 'FundraisingEmailUnsubscribeCancelUri' ) );
 				return;
 			}
 		} else {
@@ -159,10 +163,10 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		$this->getOutput()->addHTML( $outContent );
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function getTemplateParams() {
-		global $wgFundraisingEmailUnsubscribeHelpEmail;
-		global $wgDonationInterfacePolicyURL;
-
 		$languageCode = $this->getLanguage()->getCode();
 
 		// $wgDonationInterfacePolicyURL has $language and $country variables
@@ -171,7 +175,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		$policyUrl = str_replace(
 			'$country',
 			'',
-			$wgDonationInterfacePolicyURL
+			$this->getConfig()->get( 'DonationInterfacePolicyURL' )
 		);
 
 		$policyUrl = str_replace(
@@ -181,7 +185,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 		);
 		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
 		return [
-			'help_email' => $wgFundraisingEmailUnsubscribeHelpEmail,
+			'help_email' => $this->getConfig()->get( 'FundraisingEmailUnsubscribeHelpEmail' ),
 			'uselang' => $languageCode,
 			'email' => $this->mEmail,
 			'token' => $this->mID,
@@ -197,9 +201,9 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * @throws MWException
 	 */
 	private function instantiateObjects() {
-		global $wgFundraisingEmailUnsubscribeProcesses;
+		$processes = $this->getConfig()->get( 'FundraisingEmailUnsubscribeProcesses' );
 
-		foreach ( $wgFundraisingEmailUnsubscribeProcesses[$this->mProcess] as $className ) {
+		foreach ( $processes[$this->mProcess] as $className ) {
 			if ( class_exists( $className, true ) ) {
 
 				$instance = new $className();
@@ -300,8 +304,8 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * @return bool Returns true if operation was a success. False if something was missing.
 	 */
 	private function stashData() {
-		global $wgFundraisingEmailUnsubscribeVarMap;
-		global $wgFundraisingEmailUnsubscribeSessionKey;
+		$varMap = $this->getConfig()->get( 'FundraisingEmailUnsubscribeVarMap' );
+		$sessionKey = $this->getConfig()->get( 'FundraisingEmailUnsubscribeSessionKey' );
 
 		// This variable will store, at the end, all the parameters that passed through the
 		// variable map. This helps us process annoyingly derived parameters.
@@ -330,7 +334,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$expectedParams = array_merge( $classObj->getRequiredParameters(), $expectedParams );
 
 			// Now get the parameters from the URI; then filter
-			$paramMap = $wgFundraisingEmailUnsubscribeVarMap[$this->mProcess];
+			$paramMap = $varMap[$this->mProcess];
 			foreach ( $expectedParams as $paramName => $filtString ) {
 				// Variable in the variable map?
 				if ( array_key_exists( $paramName, $paramMap ) ) {  // Yes
@@ -410,16 +414,16 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			return false;
 		}
 
-		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['process'] = $this->mProcess;
-		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['variant'] = $this->mVariant;
-		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['email'] = $this->mEmail;
-		$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['id'] = $this->mID;
+		$_SESSION[$sessionKey]['process'] = $this->mProcess;
+		$_SESSION[$sessionKey]['variant'] = $this->mVariant;
+		$_SESSION[$sessionKey]['email'] = $this->mEmail;
+		$_SESSION[$sessionKey]['id'] = $this->mID;
 
 		foreach ( $this->mObjects as &$classObjArray ) {
 			$classObj = $classObjArray['instance'];
 			$params = $classObjArray['params'];
 
-			$_SESSION[$wgFundraisingEmailUnsubscribeSessionKey]['class-data'][get_class( $classObj )] = $params;
+			$_SESSION[$sessionKey]['class-data'][get_class( $classObj )] = $params;
 		}
 
 		return true;
@@ -519,8 +523,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * @return bool True if session could be successfully restored.
 	 */
 	private function loadSessionData() {
-		global $wgFundraisingEmailUnsubscribeSessionKey;
-		$skey = $wgFundraisingEmailUnsubscribeSessionKey;
+		$skey = $this->getConfig()->get( 'FundraisingEmailUnsubscribeSessionKey' );
 
 		// For ease of code; we're going to assume that if the session key exists, everything else
 		// will as well. This might come back to bite me in the ass later...
@@ -548,11 +551,8 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 * Clears subscription request data from the session
 	 */
 	private function clearData() {
-		global $wgFundraisingEmailUnsubscribeSessionKey;
-
-		if ( isset( $_SESSION[$wgFundraisingEmailUnsubscribeSessionKey] ) ) {
-			unset( $_SESSION[$wgFundraisingEmailUnsubscribeSessionKey] );
-		}
+		$sessionKey = $this->getConfig()->get( 'FundraisingEmailUnsubscribeSessionKey' );
+		unset( $_SESSION[$sessionKey] );
 	}
 
 	/**
