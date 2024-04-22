@@ -135,6 +135,7 @@ class Logger {
 	private function logString( $msgText, $pri, $label = null ) {
 		global $wgFundraisingEmailUnsubscribeLogFacility;
 
+		$msg = [];
 		if ( static::$context != '' ) {
 			$msg[] = '(' . static::$context . ')';
 		}

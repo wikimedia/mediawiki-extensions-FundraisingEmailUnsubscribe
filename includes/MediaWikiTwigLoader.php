@@ -66,6 +66,7 @@ class MediaWikiTwigLoader implements LoaderInterface {
 		$langVariants = [ $lang->getCode() ];
 		$langVariants = array_merge( $langVariants, $lang->getFallbackLanguages() );
 
+		$paths = [];
 		foreach ( $langVariants as $langCode ) {
 			$localParts = $parts;
 			array_splice( $localParts, -1, 0, $langCode );

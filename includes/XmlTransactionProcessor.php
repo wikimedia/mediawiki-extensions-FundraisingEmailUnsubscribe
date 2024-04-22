@@ -177,6 +177,7 @@ class XmlTransactionProcessor {
 	 * @return bool|string
 	 */
 	protected function doHttpTransaction( $data, $timeout = 'default' ) {
+		$options = [];
 		$options['method'] = 'POST';
 		$options['timeout'] = $this->mTimeout;
 
@@ -184,7 +185,7 @@ class XmlTransactionProcessor {
 			->create( $this->mURL, $options );
 		if ( !is_array( $data ) ) {
 			$req->setHeader( 'Content-Type', 'text/xml; charset=utf8' );
-			$req->setHeader( 'Content-Length', strlen( $data ) );
+			$req->setHeader( 'Content-Length', (string)strlen( $data ) );
 		}
 		$req->setData( $data );
 		$status = $req->execute();
@@ -192,7 +193,7 @@ class XmlTransactionProcessor {
 		if ( $status->isOK() ) {
 			return $req->getContent();
 		} else {
-			$errors = json_encode( [ 'curl' => $status->errors, 'request' => $req->status->getErrorsArray() ] );
+			$errors = json_encode( [ 'curl' => $status->errors, 'request' => $status->getErrorsArray() ] );
 			Logger::log( "Communications failed with : $errors", LOG_ERR, 'XMLTransaction' );
 			return false;
 		}
