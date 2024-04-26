@@ -7,7 +7,7 @@
 		]
 	},
 	"fundraiserunsubscribe-desc": "允許使用者在籌款郵寄名單裡管理他們的成員。",
-	"fundraiserunsubscribe": "取消訂閱維基媒體籌款電子郵件",
+	"fundraiserunsubscribe": "取消訂閱維基媒體基金會籌款電子郵件",
 	"fundraiserunsubscribe-query": "您確認要取消訂閱'''''$1'''''嗎？",
 	"fundraiserunsubscribe-info": "這會取消訂閱維基媒體基金會與捐款者有關的郵件。若您任何維基媒體項目用戶，您仍然會收到有關的電郵。如有任何疑問，請聯絡[mailto:$1 $1]。",
 	"fundraiserunsubscribe-submit": "取消訂閱",
