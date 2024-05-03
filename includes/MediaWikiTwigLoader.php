@@ -1,6 +1,6 @@
 <?php
 /**
- * Mediawiki and Twig templating. It's... beautiful?
+ * MediaWiki and Twig templating. It's... beautiful?
  *
  * -- License --
  * This program is free software; you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 use Twig\Loader\LoaderInterface;
 
 /**
- * Provides methods for Twig templates to integrate with Mediawiki.
+ * Provides methods for Twig templates to integrate with MediaWiki.
  *
  * Twig Templates can in fact be localized! If the original file name is a.b; then this class will
  * look for files named a.lang.b where lang is every language code in the current languages fallback
