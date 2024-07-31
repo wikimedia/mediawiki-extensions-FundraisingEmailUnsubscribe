@@ -13,5 +13,7 @@
 	"fundraiserunsubscribe-cancel": "Cancelar",
 	"fundraiserunsubscribe-errormsg": "Produciuse un erro ao intentar procesar a túa solicitude. Ponte en contacto co enderezo [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Eliminamos correctamente o teu nome da lista de correo.",
-	"fundraiserunsubscribe-sucesswarning": "Pode levar ata catro (4) días que os cambios se fagan efectivos. Pedimos desculpas polos correos electrónicos que poidas recibir estes días. Se tes algunha pregunta, ponte en contacto con nós no enderezo [mailto:$1 $1]."
+	"fundraiserunsubscribe-sucesswarning": "Pode levar ata catro (4) días que os cambios se fagan efectivos. Pedimos desculpas polos correos electrónicos que poidas recibir estes días. Se tes algunha pregunta, ponte en contacto con nós no enderezo [mailto:$1 $1].",
+	"fundraisersubscribe-success": "Grazas!",
+	"fundraisersubscribe-photo-credit": "por $1"
 }
