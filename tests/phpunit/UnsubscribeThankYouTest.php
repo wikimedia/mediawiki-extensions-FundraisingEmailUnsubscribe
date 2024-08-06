@@ -16,14 +16,14 @@ class UnsubscribeThankYouTest extends MediaWikiIntegrationTestCase {
 
 	public function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
-			'wgFundraisingEmailUnsubscribeQueueParameters' => [
+		$this->overrideConfigValues( [
+			'FundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
+			'FundraisingEmailUnsubscribeQueueParameters' => [
 				'unsubscribe' => [
 					'connection_string' => 'sqlite::memory:',
 				],
 			],
-			'wgFundraisingEmailUnsubscribeHashSecretKey' => 'Red/Fl4nn3l/#',
+			'FundraisingEmailUnsubscribeHashSecretKey' => 'Red/Fl4nn3l/#',
 		] );
 		$this->unsubscriber = new FundraiserUnsubscribeThankYou();
 	}

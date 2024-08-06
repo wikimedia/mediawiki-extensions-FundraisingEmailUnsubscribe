@@ -16,9 +16,9 @@ class SubscribeTest extends MediaWikiIntegrationTestCase {
 
 	public function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( [
-			'wgFundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
-			'wgFundraisingEmailUnsubscribeQueueParameters' => [
+		$this->overrideConfigValues( [
+			'FundraisingEmailUnsubscribeQueueClass' => \PHPQueue\Backend\PDO::class,
+			'FundraisingEmailUnsubscribeQueueParameters' => [
 				'opt-in' => [
 					'connection_string' => 'sqlite::memory:',
 					'queue' => 'opt_in', // this backend needs a valid table name
