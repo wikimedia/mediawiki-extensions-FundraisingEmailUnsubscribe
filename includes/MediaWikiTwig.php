@@ -30,7 +30,7 @@
  * NOTE: Twig autoescaping is DISABLED! It plays havock with MW template autoexpansion.
  */
 class MediaWikiTwig {
-	/** @var Twig_Environment */
+	/** @var \Twig\Environment */
 	protected $mTwig;
 	/** @var array */
 	protected $mCallbacks;
@@ -44,7 +44,7 @@ class MediaWikiTwig {
 		global $wgTwigCachePath;
 
 		$loader = new MediaWikiTwigLoader( $templatePath, $context );
-		$this->mTwig = new Twig_Environment( $loader, [
+		$this->mTwig = new \Twig\Environment( $loader, [
 			'cache' => $wgTwigCachePath . '/' . md5( $templatePath ),
 			'auto_reload' => true,
 			'autoescape' => false,
@@ -68,7 +68,7 @@ class MediaWikiTwig {
 /**
  * All exposed MW functions to Twig Templates
  */
-class MediaWikiTwigCallbacks extends Twig_Extension {
+class MediaWikiTwigCallbacks extends \Twig\Extension\AbstractExtension {
 	/** @var IContextSource */
 	protected $mContext;
 
@@ -82,13 +82,13 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	}
 
 	/**
-	 * @return array<string,Twig_Function_Method>
+	 * @return array<string,\Twig\TwigFunction>
 	 */
 	public function getFunctions() {
 		return [
-			'wfMessage' => new Twig_Function_Method( $this, 'twigCallbackWfMessage' ),
-			'wfText' => new Twig_Function_Method( $this, 'twigCallbackWfText' ),
-			'wfWikiText' => new Twig_Function_Method( $this, 'twigCallbackWfWikiText' ),
+			'wfMessage' => new \Twig\TwigFunction( 'wfMessage', [ $this, 'twigCallbackWfMessage' ] ),
+			'wfText' => new \Twig\TwigFunction( 'wfText', [ $this, 'twigCallbackWfText' ] ),
+			'wfWikiText' => new \Twig\TwigFunction( 'wfWikiText', [ $this, 'twigCallbackWfWikiText' ] ),
 		];
 	}
 

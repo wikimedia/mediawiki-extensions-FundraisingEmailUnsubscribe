@@ -92,7 +92,7 @@ class MediaWikiTwigLoader implements LoaderInterface {
 	 *
 	 * @return string
 	 */
-	public function getCacheKey( $name ) {
+	public function getCacheKey( string $name ): string {
 		return $name . '-' . $this->mContext->getLanguage()->getCode();
 	}
 
@@ -103,8 +103,27 @@ class MediaWikiTwigLoader implements LoaderInterface {
 	 *
 	 * @return bool
 	 */
-	public function isFresh( $name, $time ) {
+	public function isFresh( string $name, int $time ): bool {
 		global $wgTwigCacheExpiry;
 		return ( time() < ( $time + $wgTwigCacheExpiry ) );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSourceContext( string $name ): \Twig\Source {
+		return new Twig\Source( $this->getSource( $name ), $name, $this->mTwigTemplatePath );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function exists( string $name ) {
+		try {
+			$this->getSource( $name );
+		} catch ( MWException $e ) {
+			return false;
+		}
+		return true;
 	}
 }
