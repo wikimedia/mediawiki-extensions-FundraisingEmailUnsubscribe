@@ -86,9 +86,9 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 */
 	public function getFunctions() {
 		return [
-			'wfMessage' => new Twig_Function_Method( $this, 'twig_wfMessage' ),
-			'wfText' => new Twig_Function_Method( $this, 'twig_wfText' ),
-			'wfWikiText' => new Twig_Function_Method( $this, 'twig_wfWikiText' ),
+			'wfMessage' => new Twig_Function_Method( $this, 'twigCallbackWfMessage' ),
+			'wfText' => new Twig_Function_Method( $this, 'twigCallbackWfText' ),
+			'wfWikiText' => new Twig_Function_Method( $this, 'twigCallbackWfWikiText' ),
 		];
 	}
 
@@ -100,7 +100,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string Parsed HTML string
 	 */
-	public function twig_wfMessage( $message, $params = [] ) {
+	public function twigCallbackWfMessage( $message, $params = [] ) {
 		return wfMessage( $message, $params )->parse();
 	}
 
@@ -112,7 +112,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string HTML string
 	 */
-	public function twig_wfText( $message, $params = [] ) {
+	public function twigCallbackWfText( $message, $params = [] ) {
 		return wfMessage( $message, $params )->text();
 	}
 
@@ -124,7 +124,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string Fully parsed HTML string
 	 */
-	public function twig_wfWikiText( $wikiText ) {
+	public function twigCallbackWfWikiText( $wikiText ) {
 		return $this->mContext->getOutput()->parseInlineAsInterface( $wikiText );
 	}
 }

@@ -573,7 +573,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	private function getFilteredValue( $key, $filter, $expected = '' ) {
 		return $this->filterValue(
 			// $this->getRequest()->getVal( $key, $expected ), <--switch these back out when the mangled links stop
-			$this->getRequestVal_CleanKeys( $key, $expected ),
+			$this->getRequestValCleanKeys( $key, $expected ),
 			$filter,
 			$expected
 		);
@@ -590,7 +590,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	private function getRequestVal_CleanKeys( $key, $expected ) {
+	private function getRequestValCleanKeys( $key, $expected ) {
 		static $vals = null;
 		if ( $vals === null ) {
 			$vals = $this->getRequest()->getValues();
