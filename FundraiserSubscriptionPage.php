@@ -343,7 +343,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$paramMap = $varMap[$this->mProcess];
 			foreach ( $expectedParams as $paramName => $filtString ) {
 				// Variable in the variable map?
-				if ( array_key_exists( $paramName, $paramMap ) ) {  // Yes
+				if ( array_key_exists( $paramName, $paramMap ) ) {
 					$keyMapObject = $paramMap[$paramName];
 
 					if ( is_array( $keyMapObject ) || ( strpos( $keyMapObject, '!' ) !== false ) ) {
@@ -371,7 +371,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 						}
 					}
 
-				} else { // not in the variable map
+				} else {
 					$keyValue = $this->getFilteredValue( $paramName, $filtString );
 
 					if ( $keyValue == '' ) {
@@ -452,10 +452,14 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	private function reduceStandaside( $standasideParam, &$solvedParams ) {
 		$solved       = false;
 		$value        = '';
-		$paramName    = $standasideParam['paramName'];      // What we're solving for
-		$keyMapObject = $standasideParam['keyMapObject'];   // What info we have on it
-		$filtString   = $standasideParam['filtString'];     // How we have to filter it
-		$arrayRef     = &$standasideParam['arrayRef'];      // Reference to where do we store it
+		// What we're solving for
+		$paramName = $standasideParam['paramName'];
+		// What info we have on it
+		$keyMapObject = $standasideParam['keyMapObject'];
+		// How we have to filter it
+		$filtString = $standasideParam['filtString'];
+		// Reference to where do we store it
+		$arrayRef = &$standasideParam['arrayRef'];
 
 		// Now do actual work; we have two options; a lambda expression or a remap
 		if ( is_array( $keyMapObject ) ) {
@@ -598,7 +602,8 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			foreach ( $vals as $vk => $vv ) {
 				if ( strpos( $vk, 'amp;' ) !== false ) {
 					$mangled = true;
-					$rekey = str_replace( 'amp;', '', $vk ); // some have multiples.
+					// some have multiples.
+					$rekey = str_replace( 'amp;', '', $vk );
 					$vals[$rekey] = $vv;
 					unset( $vals[$vk] );
 				}

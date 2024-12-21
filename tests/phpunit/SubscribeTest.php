@@ -21,7 +21,8 @@ class SubscribeTest extends MediaWikiIntegrationTestCase {
 			'FundraisingEmailUnsubscribeQueueParameters' => [
 				'opt-in' => [
 					'connection_string' => 'sqlite::memory:',
-					'queue' => 'opt_in', // this backend needs a valid table name
+					// this backend needs a valid table name
+					'queue' => 'opt_in',
 				],
 			],
 		] );
