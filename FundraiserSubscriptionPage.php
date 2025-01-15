@@ -168,14 +168,20 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 */
 	protected function getTemplateParams() {
 		$languageCode = $this->getLanguage()->getCode();
+		$config = $this->getConfig();
 
 		// $wgDonationInterfacePolicyURL has $language and $country variables
 		// to replace. We know language but not country.
 
+		$copiedDonationInterfacePolicyURL = $config->has( 'DonationInterfacePolicyURL' )
+			? $config->get( 'DonationInterfacePolicyURL' )
+			// If DonationInterface isn't loaded; fall back to blank.
+			: '';
+
 		$policyUrl = str_replace(
 			'$country',
 			'',
-			$this->getConfig()->get( 'DonationInterfacePolicyURL' )
+			$copiedDonationInterfacePolicyURL
 		);
 
 		$policyUrl = str_replace(
@@ -183,9 +189,9 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$languageCode,
 			$policyUrl
 		);
-		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
+		$scriptPath = $config->get( 'ScriptPath' );
 		return [
-			'help_email' => $this->getConfig()->get( 'FundraisingEmailUnsubscribeHelpEmail' ),
+			'help_email' => $config->get( 'FundraisingEmailUnsubscribeHelpEmail' ),
 			'uselang' => $languageCode,
 			'email' => $this->mEmail,
 			'token' => $this->mID,
