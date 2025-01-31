@@ -182,7 +182,7 @@ class XmlTransactionProcessor {
 		$options['timeout'] = $this->mTimeout;
 
 		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
-			->create( $this->mURL, $options );
+			->create( $this->mURL, $options, __METHOD__ );
 		if ( !is_array( $data ) ) {
 			$req->setHeader( 'Content-Type', 'text/xml; charset=utf8' );
 			$req->setHeader( 'Content-Length', (string)strlen( $data ) );
