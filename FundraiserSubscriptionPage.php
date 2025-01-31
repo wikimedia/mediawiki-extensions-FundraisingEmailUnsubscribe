@@ -499,7 +499,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 					$raw = $function( $reqParamValues );
 				} else {
 					[ $class, $funcName ] = explode( '::', $function );
-					$raw = call_user_func( [ $class, $funcName ], $reqParamValues );
+					$raw = $class::$funcName( $reqParamValues );
 				}
 
 				$value = $this->filterValue( $raw, $filtString );
