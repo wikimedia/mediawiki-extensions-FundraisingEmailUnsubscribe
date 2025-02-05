@@ -30,7 +30,7 @@
  * NOTE: Twig autoescaping is DISABLED! It plays havock with MW template autoexpansion.
  */
 class MediaWikiTwig {
-	/** @var Twig_Environment */
+	/** @var \Twig\Environment */
 	protected $mTwig;
 	/** @var array */
 	protected $mCallbacks;
@@ -44,7 +44,7 @@ class MediaWikiTwig {
 		global $wgTwigCachePath;
 
 		$loader = new MediaWikiTwigLoader( $templatePath, $context );
-		$this->mTwig = new Twig_Environment( $loader, [
+		$this->mTwig = new \Twig\Environment( $loader, [
 			'cache' => $wgTwigCachePath . '/' . md5( $templatePath ),
 			'auto_reload' => true,
 			'autoescape' => false,
@@ -68,7 +68,7 @@ class MediaWikiTwig {
 /**
  * All exposed MW functions to Twig Templates
  */
-class MediaWikiTwigCallbacks extends Twig_Extension {
+class MediaWikiTwigCallbacks extends \Twig\Extension\AbstractExtension {
 	/** @var IContextSource */
 	protected $mContext;
 
@@ -82,13 +82,13 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	}
 
 	/**
-	 * @return array<string,Twig_Function_Method>
+	 * @return array<string,\Twig\TwigFunction>
 	 */
 	public function getFunctions() {
 		return [
-			'wfMessage' => new Twig_Function_Method( $this, 'twig_wfMessage' ),
-			'wfText' => new Twig_Function_Method( $this, 'twig_wfText' ),
-			'wfWikiText' => new Twig_Function_Method( $this, 'twig_wfWikiText' ),
+			'wfMessage' => new \Twig\TwigFunction( 'wfMessage', [ $this, 'twigCallbackWfMessage' ] ),
+			'wfText' => new \Twig\TwigFunction( 'wfText', [ $this, 'twigCallbackWfText' ] ),
+			'wfWikiText' => new \Twig\TwigFunction( 'wfWikiText', [ $this, 'twigCallbackWfWikiText' ] ),
 		];
 	}
 
@@ -100,7 +100,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string Parsed HTML string
 	 */
-	public function twig_wfMessage( $message, $params = [] ) {
+	public function twigCallbackWfMessage( $message, $params = [] ) {
 		return wfMessage( $message, $params )->parse();
 	}
 
@@ -112,7 +112,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string HTML string
 	 */
-	public function twig_wfText( $message, $params = [] ) {
+	public function twigCallbackWfText( $message, $params = [] ) {
 		return wfMessage( $message, $params )->text();
 	}
 
@@ -124,7 +124,7 @@ class MediaWikiTwigCallbacks extends Twig_Extension {
 	 *
 	 * @return string Fully parsed HTML string
 	 */
-	public function twig_wfWikiText( $wikiText ) {
+	public function twigCallbackWfWikiText( $wikiText ) {
 		return $this->mContext->getOutput()->parseInlineAsInterface( $wikiText );
 	}
 }

@@ -168,14 +168,20 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 */
 	protected function getTemplateParams() {
 		$languageCode = $this->getLanguage()->getCode();
+		$config = $this->getConfig();
 
 		// $wgDonationInterfacePolicyURL has $language and $country variables
 		// to replace. We know language but not country.
 
+		$copiedDonationInterfacePolicyURL = $config->has( 'DonationInterfacePolicyURL' )
+			? $config->get( 'DonationInterfacePolicyURL' )
+			// If DonationInterface isn't loaded; fall back to blank.
+			: '';
+
 		$policyUrl = str_replace(
 			'$country',
 			'',
-			$this->getConfig()->get( 'DonationInterfacePolicyURL' )
+			$copiedDonationInterfacePolicyURL
 		);
 
 		$policyUrl = str_replace(
@@ -183,9 +189,9 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$languageCode,
 			$policyUrl
 		);
-		$scriptPath = $this->getContext()->getConfig()->get( 'ScriptPath' );
+		$scriptPath = $config->get( 'ScriptPath' );
 		return [
-			'help_email' => $this->getConfig()->get( 'FundraisingEmailUnsubscribeHelpEmail' ),
+			'help_email' => $config->get( 'FundraisingEmailUnsubscribeHelpEmail' ),
 			'uselang' => $languageCode,
 			'email' => $this->mEmail,
 			'token' => $this->mID,
@@ -337,7 +343,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			$paramMap = $varMap[$this->mProcess];
 			foreach ( $expectedParams as $paramName => $filtString ) {
 				// Variable in the variable map?
-				if ( array_key_exists( $paramName, $paramMap ) ) {  // Yes
+				if ( array_key_exists( $paramName, $paramMap ) ) {
 					$keyMapObject = $paramMap[$paramName];
 
 					if ( is_array( $keyMapObject ) || ( strpos( $keyMapObject, '!' ) !== false ) ) {
@@ -365,7 +371,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 						}
 					}
 
-				} else { // not in the variable map
+				} else {
 					$keyValue = $this->getFilteredValue( $paramName, $filtString );
 
 					if ( $keyValue == '' ) {
@@ -446,10 +452,14 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	private function reduceStandaside( $standasideParam, &$solvedParams ) {
 		$solved       = false;
 		$value        = '';
-		$paramName    = $standasideParam['paramName'];      // What we're solving for
-		$keyMapObject = $standasideParam['keyMapObject'];   // What info we have on it
-		$filtString   = $standasideParam['filtString'];     // How we have to filter it
-		$arrayRef     = &$standasideParam['arrayRef'];      // Reference to where do we store it
+		// What we're solving for
+		$paramName = $standasideParam['paramName'];
+		// What info we have on it
+		$keyMapObject = $standasideParam['keyMapObject'];
+		// How we have to filter it
+		$filtString = $standasideParam['filtString'];
+		// Reference to where do we store it
+		$arrayRef = &$standasideParam['arrayRef'];
 
 		// Now do actual work; we have two options; a lambda expression or a remap
 		if ( is_array( $keyMapObject ) ) {
@@ -489,7 +499,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 					$raw = $function( $reqParamValues );
 				} else {
 					[ $class, $funcName ] = explode( '::', $function );
-					$raw = call_user_func( [ $class, $funcName ], $reqParamValues );
+					$raw = $class::$funcName( $reqParamValues );
 				}
 
 				$value = $this->filterValue( $raw, $filtString );
@@ -567,7 +577,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	private function getFilteredValue( $key, $filter, $expected = '' ) {
 		return $this->filterValue(
 			// $this->getRequest()->getVal( $key, $expected ), <--switch these back out when the mangled links stop
-			$this->getRequestVal_CleanKeys( $key, $expected ),
+			$this->getRequestValCleanKeys( $key, $expected ),
 			$filter,
 			$expected
 		);
@@ -584,7 +594,7 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	private function getRequestVal_CleanKeys( $key, $expected ) {
+	private function getRequestValCleanKeys( $key, $expected ) {
 		static $vals = null;
 		if ( $vals === null ) {
 			$vals = $this->getRequest()->getValues();
@@ -592,7 +602,8 @@ abstract class FundraiserSubscriptionPage extends SpecialPage {
 			foreach ( $vals as $vk => $vv ) {
 				if ( strpos( $vk, 'amp;' ) !== false ) {
 					$mangled = true;
-					$rekey = str_replace( 'amp;', '', $vk ); // some have multiples.
+					// some have multiples.
+					$rekey = str_replace( 'amp;', '', $vk );
 					$vals[$rekey] = $vv;
 					unset( $vals[$vk] );
 				}
