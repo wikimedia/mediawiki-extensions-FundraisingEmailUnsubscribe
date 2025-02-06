@@ -7,7 +7,6 @@
 	"fundraiserunsubscribe-desc": "Permisas uzeri administrar lia membreso en listi qui kolektas pekunio",
 	"fundraiserunsubscribe-submit": "Desabonar",
 	"fundraiserunsubscribe-cancel": "Anular",
-	"fundraisersubscribe": "Abonar",
 	"fundraisersubscribe-fail": "Eventis eroro kande la sistemo probis atendar vua demando. Voluntez kontaktar [mailto:$1 $1].",
 	"fundraisersubscribe-success": "Danko!"
 }

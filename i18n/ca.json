@@ -5,8 +5,6 @@
 			"Fitoschido"
 		]
 	},
-	"fundraiserunsubscribe": "Cancel·la la subscripció al correu electrònic de recaptació de fons de la Wikimedia Foundation",
 	"fundraiserunsubscribe-query": "Confirmes que vols donar-te de baixa '''''$1'''''?",
-	"fundraiserunsubscribe-sucesswarning": "Si us plau, espereu fins a quatre (4) dies perquè els canvis tinguin efecte. Demanem disculpes pels correus electrònics que rebeu durant aquest temps. Si teniu cap pregunta, poseu-vos en contacte amb [mailto:$1 $1].",
-	"fundraisersubscribe-appeal-headline-001": "Us agrada el que veieu?"
+	"fundraiserunsubscribe-sucesswarning": "Si us plau, espereu fins a quatre (4) dies perquè els canvis tinguin efecte. Demanem disculpes pels correus electrònics que rebeu durant aquest temps. Si teniu cap pregunta, poseu-vos en contacte amb [mailto:$1 $1]."
 }
