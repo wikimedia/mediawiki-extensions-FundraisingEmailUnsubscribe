@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Erlaabt et Benotzer sech aus de Mailinglëschte vun de Spendenaktiounen eraushuelen ze loossen",
 	"fundraiserunsubscribe": "E-Mailen iwwer Wikimedia-Spendenaktiounen ofbestellen",
-	"fundraiserunsubscribe-query": "Sidd dir sécher datt Dir keng Maile vun '''''$1''''' méi kréie wëllt?",
+	"fundraiserunsubscribe-query": "Sidd dir sécher, datt Dir '''''$1''''' desabonéiere wëllt?",
 	"fundraiserunsubscribe-submit": "Ofbestellen",
 	"fundraiserunsubscribe-cancel": "Ofbriechen",
 	"fundraiserunsubscribe-errormsg": "Beim Versuch Är Ufro ze verschaffen ass ee Feeler geschitt. Kontaktéiert wgl. [mailto:$1 $1].",
