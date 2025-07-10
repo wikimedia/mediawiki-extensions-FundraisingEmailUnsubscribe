@@ -5,5 +5,7 @@
 		]
 	},
 	"fundraiserunsubscribe-submit": "Йаздалар дӀадаккха",
-	"fundraiserunsubscribe-cancel": "Йухайаккхар"
+	"fundraiserunsubscribe-cancel": "Йухайаккхар",
+	"fundraisersubscribe-success": "Баркалла!",
+	"fundraisersubscribe-photo-credit": "кху $1"
 }
