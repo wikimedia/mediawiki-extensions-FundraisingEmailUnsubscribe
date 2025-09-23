@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Hakimi97"
 		]
 	},
 	"fundraiserunsubscribe-desc": "Membolehkan pengguna untuk berhenti melanggan senarai mel tabung derma yang dikonfigurasikan.",
@@ -11,6 +12,6 @@
 	"fundraiserunsubscribe-submit": "Berhenti melanggan",
 	"fundraiserunsubscribe-cancel": "Batalkan",
 	"fundraiserunsubscribe-errormsg": "Berlakunya ralat ketika cubaan untuk memproses pemohonan anda. Sila hubungi [mailto:$1 $1].",
-	"fundraiserunsubscribe-success": "Anda telah digugurkan dari senarai mel kami.",
+	"fundraiserunsubscribe-success": "Anda telah digugurkan daripada senarai mel kami.",
 	"fundraiserunsubscribe-sucesswarning": "Sila berikan sehingga (4) hari untuk perubahan dilaksanakan. Kami memohon maaf atas sebarang e-mel yang anda terima dalam jangka masa ini. Jika anda ada sebarang soalan, sila hubungi [mailto:$1 $1]."
 }
