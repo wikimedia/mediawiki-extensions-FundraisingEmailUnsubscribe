@@ -2,18 +2,41 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
+	"fundraiserunsubscribe-desc": "Tillåter användare att hantera sitt medlemskap i konfigurerade e-postlistor för insamlingar",
 	"fundraiserunsubscribe": "Avsluta prenumeration av Wikimedia Fundraising Email",
 	"fundraiserunsubscribe-query": "Är du säker på att du vill avsluta prenumeration för '''''$1'''''?",
+	"fundraiserunsubscribe-info": "Detta kommer att avregistrera dig från e-postmeddelanden från Wikimedia Foundation som skickas till dig som donator. Du kan fortfarande få e-postmeddelanden till den här e-postadressen om den är kopplad till ett konto i ett av våra projekt. Om du har några frågor, vänligen kontakta [mailto:$1 $1].",
 	"fundraiserunsubscribe-submit": "Avsluta prenumeration",
 	"fundraiserunsubscribe-cancel": "Avbryt",
 	"fundraiserunsubscribe-errormsg": "Ett fel uppstod vid försöket att bearbeta din begäran. Vänligen kontakta [mailto:$1 $1].",
 	"fundraiserunsubscribe-success": "Du har framgångsrikt tagits bort från vår sändlista.",
 	"fundraiserunsubscribe-sucesswarning": "Det kan ta upp till fyra (4) dagar för att ändringarna ska börja gälla. Vi ber om ursäkt för alla e-postmeddelanden som du får under denna tid. Om du har några frågor, vänligen kontakta [mailto:$1 $1].",
+	"fundraisersubscribe-fail": "Ett fel uppstod vid försöket att bearbeta din begäran. Vänligen kontakta [mailto:$1 $1].",
 	"fundraisersubscribe-success": "Tack!",
+	"fundraisersubscribe-opt-in-continue-001": "Ja, jag väljer att delta",
+	"fundraisersubscribe-page-title-001": "Wiki älskar jorden",
+	"fundraisersubscribe-page-subtitle-001": "Upptäck hemligheterna i vår naturliga värld som finns på Wikimedia Commons. Utforska de 15 bästa fotona från 2018, tagna, delade och utvalda av Wikimedias volontärer.",
 	"fundraisersubscribe-appeal-headline-001": "Gillar du vad du ser?",
+	"fundraisersubscribe-privacy-text-001": "Varje e-postmeddelande du får kommer att innehålla ett enkelt alternativ för att avsluta prenumerationen. Din information hanteras i enlighet med vår <a href=\"$1\">givares integritetspolicy</a>.",
 	"fundraisersubscribe-photo-credit": "av $1",
+	"fundraisersubscribe-photo-caption-M69961168": "Valrossar som ligger på Northbrook Island. Rysk arktisk nationalpark. Bilden togs som en del av expeditionen I två kapteners fotspår av Maritime Heritage Associations.",
+	"fundraisersubscribe-photo-caption-M69960916": "Kolumnär basalt efter solnedgången vid Cape Stolbchaty, Kunashirön, Kurilerna naturreservat, Ryssland",
+	"fundraisersubscribe-photo-caption-M68724727": "Meteoraklippformationen med kloster ovanpå dem",
+	"fundraisersubscribe-photo-caption-M68822431": "Tassili n'Ajjer nationalpark, Algeriet",
+	"fundraisersubscribe-photo-caption-M69954711": "Stranden av Saltsjön Elton, Volgograd oblast, Ryssland",
+	"fundraisersubscribe-photo-caption-M69692176": "Gypaetus barbatus i flykt. Gran Paradiso nationalpark",
+	"fundraisersubscribe-photo-caption-M69116544": "Hösten i sin blomstrande dalen i Hunza Altit-dalen, Gilgit Baltistan",
+	"fundraisersubscribe-photo-caption-M69591978": "Skogsnäppan (Tringa glareola) är en liten vadarfågel vid Bangabandhu Sheikh Mujib Safari Park",
+	"fundraisersubscribe-photo-caption-M69594652": "Satchari nationalpark",
+	"fundraisersubscribe-photo-caption-M69924253": "Träskcypress (Taxodium distichum) nära Sukko, Krasnodar Krai, Ryssland",
+	"fundraisersubscribe-photo-caption-M69595567": "Kastanjesvansad stare, Sturnia malabarica, Satchari nationalpark",
+	"fundraisersubscribe-photo-caption-M70051605": "Hoggar National Park, Assekrem, Tamanrasset, Algeriet",
+	"fundraisersubscribe-photo-caption-M70155469": "Solnedgång i Baixa Grande, en oas mitt i nationalparken Lençóis Maranhenses",
+	"fundraisersubscribe-photo-caption-M69609122": "Phoenicopterus roseus vid Tunisjön",
+	"fundraisersubscribe-photo-caption-M69961161": "Bell Island i Franz Josef Land och Eira Lodge från Benjamin Leigh Smith-expeditionen, Rysk arktisk nationalpark. Bilden togs som en del av expeditionen I två kapteners fotspår av Maritime Heritage Associations.",
 	"fundraisersubscribe-photo-license": "Alla bilder är licensierade under licensen [$1 Creative Commons Attribution-Share Alike 4.0 International]."
 }
