@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"fundraiserunsubscribe-desc": "Waxay u oggolaanaysaa isticmaalayaasha inay maamulaan xubinnimadooda liisaska iimaylka ee ururinta deeqaha ee la habeeyay",
+	"fundraiserunsubscribe-query": "Ma hubtaa inaad rabto inaad iska baxdo '''''$1''''?",
+	"fundraiserunsubscribe-info": "Tani waxay kaa saaraysaa iimaylada Wikimedia Foundation ee laguugu soo diro adigoo deeq bixiye ah. Weli waxaa laga yaabaa inaad hesho iimaylo loo diro cinwaankan haddii uu ku xiran yahay akoon ka mid ah mashaariicdeena. Haddii aad wax su’aalo ah qabto, fadlan la xiriir [mailto:$1 $1].",
+	"fundraiserunsubscribe-submit": "Ka bax is-diiwaangelinta",
+	"fundraiserunsubscribe-cancel": "Jooji",
+	"fundraiserunsubscribe-errormsg": "Khalad ayaa dhacay markii la isku dayayay in la farsameeyo codsigaaga. Fadlan la xiriir [mailto:$1 $1].",
+	"fundraiserunsubscribe-success": "Si guul leh ayaa lagaa saaray liiska iimaylka.",
+	"fundraiserunsubscribe-sucesswarning": "Fadlan ogow in isbeddellada ay qaadan karaan ilaa afar (4) maalmood si ay u hirgalaan. Waan ka raalli nahay iimaylasha aad heli karto inta lagu jiro waqtigan. Haddii aad wax su’aalo ah qabto, fadlan la xiriir [mailto:$1 $1].",
+	"fundraisersubscribe-fail": "Khalad ayaa dhacay markii la isku dayayay in la farsameeyo codsigaaga. Fadlan la xiriir [mailto:$1 $1].",
+	"fundraisersubscribe-success": "Mahadsanid!",
+	"fundraisersubscribe-opt-in-continue-001": "Haa, waan oggolaanayaa in la igu daro",
+	"fundraisersubscribe-page-title-001": "Wiki Loves Earth",
+	"fundraisersubscribe-page-subtitle-001": "Soo hel siraha dunida dabiiciga ah ee laga helo Wikimedia Commons. Eeg 15-ka sawir ee ugu sarreeya ee 2018, oo ay qaadeen, wadaageen, isla markaana doorteen mutadawiciinta Wikimedia.",
+	"fundraisersubscribe-privacy-text-001": "Iimayl kasta oo aad hesho wuxuu yeelan doonaa ikhtiyaar fudud oo aad iska bixi karto. Macluumaadkaaga waxaa loo maareeyaa si waafaqsan [$1 siyaasadda asturnaanta ee deeq bixiyeyaasha].",
+	"fundraisersubscribe-photo-credit": "ee $1",
+	"fundraisersubscribe-photo-caption-M69961168": "Walrusyo jiifa Jasiiradda Northbrook. Beerta Qaranka ee Arctic-ka Ruushka. Sawirkan waxaa la qaaday intii lagu jiray safarka “Raadkii laba kabtan” ee ay qabatay Ururada Dhaxalka Badda.",
+	"fundraisersubscribe-photo-caption-M69960916": "Basalt tiirar ah kadib qorrax-dhac Cape Stolbchaty, Jasiiradda Kunashir, Kaydka Dabeecadda Kurils, Ruushka",
+	"fundraisersubscribe-photo-caption-M68724727": "Dhismayaasha dhagaxa ee Meteora oo leh monasteriyo ku yaal korkooda",
+	"fundraisersubscribe-photo-caption-M68822431": "Beerta Qaranka ee Tassili n'Ajjer, Aljeeriya",
+	"fundraisersubscribe-photo-caption-M69954711": "Xeebta Harada Salt Lake Elton, Gobolka Volgograd, Ruushka",
+	"fundraisersubscribe-photo-caption-M69692176": "Gypaetus barbatus oo duulaya. Beerta Qaranka Gran Paradiso",
+	"fundraisersubscribe-photo-caption-M69116544": "Dayrta oo si buuxda u qurux badan dooxada Hunza, Dooxada Altit, Gilgit Baltistan",
+	"fundraisersubscribe-photo-caption-M69591978": "Shimbirta wood sandpiper waa shimbir yar oo ku nool meelaha biyo mareenka ah oo ku taal Bangabandhu Sheikh Mujib Safari Park",
+	"fundraisersubscribe-photo-caption-M69594652": "Beerta Qaranka Satchari",
+	"fundraisersubscribe-photo-caption-M69924253": "Geedka swamp cypress (Taxodium distichum) oo ku dhow Sukko, Krasnodar Krai, Ruushka",
+	"fundraisersubscribe-photo-caption-M69595567": "Shimbir xiddig leh oo dabo-bunni ah, Beerta Qaranka Satchari",
+	"fundraisersubscribe-photo-caption-M70051605": "Beerta Qaranka Hoggar, Assekrem, Tamanrasset, Aljeeriya",
+	"fundraisersubscribe-photo-caption-M70155469": "Qorrax dhac Baixa Grande, oo ah oasis ku yaal bartamaha Beerta Qaranka Lençóis Maranhenses",
+	"fundraisersubscribe-photo-caption-M69609122": "Shimbir flamingo oo ku taal harada Tunis",
+	"fundraisersubscribe-photo-caption-M69961161": "Jasiiradda Bell ee Franz Josef Land iyo Eira Lodge ee safarkii Benjamin Leigh Smith, Beerta Qaranka Arctic-ka Ruushka. Sawirkan waxaa la qaaday intii lagu jiray safarka “Raadkii laba kabtan” ee ay qabteen Ururada Dhaxalka Badda",
+	"fundraisersubscribe-photo-license": "Dhammaan sawirradu waxay ku jiraan shatiga [$1 Creative Commons Attribution-Share Alike 4.0 International]."
+}
