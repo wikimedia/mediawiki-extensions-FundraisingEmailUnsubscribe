@@ -6,7 +6,8 @@
 			"Liuxinyu970226",
 			"Qiyue2001",
 			"Yfdyh000",
-			"夢蝶葬花"
+			"夢蝶葬花",
+			"沈澄心"
 		]
 	},
 	"fundraiserunsubscribe-desc": "允许用户在配置的筹款邮件列表中管理器成员身份",
@@ -18,5 +19,6 @@
 	"fundraiserunsubscribe-success": "您已经成功从我们的邮件列表中移除。",
 	"fundraiserunsubscribe-sucesswarning": "请静候此更改生效，可能需要四（4）天时间。我们对于在此期间您收到的任何电邮表示歉意。如果您还有任何问题，请联系[mailto:$1 $1]。",
 	"fundraisersubscribe-fail": "尝试处理您的请求时出现错误。请联络[mailto:$1 $1]。",
-	"fundraisersubscribe-success": "谢谢您！"
+	"fundraisersubscribe-success": "谢谢您！",
+	"fundraisersubscribe-page-title-001": "维基爱地球"
 }
