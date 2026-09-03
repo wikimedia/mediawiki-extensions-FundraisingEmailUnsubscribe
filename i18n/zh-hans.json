@@ -7,7 +7,8 @@
 			"Qiyue2001",
 			"Yfdyh000",
 			"夢蝶葬花",
-			"沈澄心"
+			"沈澄心",
+			"Shizhao"
 		]
 	},
 	"fundraiserunsubscribe-desc": "允许用户在配置的筹款邮件列表中管理器成员身份",
@@ -20,5 +21,20 @@
 	"fundraiserunsubscribe-sucesswarning": "请静候此更改生效，可能需要四（4）天时间。我们对于在此期间您收到的任何电邮表示歉意。如果您还有任何问题，请联系[mailto:$1 $1]。",
 	"fundraisersubscribe-fail": "尝试处理您的请求时出现错误。请联络[mailto:$1 $1]。",
 	"fundraisersubscribe-success": "谢谢您！",
-	"fundraisersubscribe-page-title-001": "维基爱地球"
+	"fundraisersubscribe-opt-in-continue-001": "是的，我选择加入",
+	"fundraisersubscribe-page-title-001": "维基爱地球",
+	"fundraisersubscribe-page-subtitle-001": "在维基共享资源中探索我们自然世界的奥秘。浏览由维基共享资源志愿者拍摄、分享和评选出的2018年最佳15张照片。",
+	"fundraisersubscribe-privacy-text-001": "您收到的每封邮件都将包含便捷的退订选项。我们将根据我们的[$1 捐赠者隐私政策]处理您的信息。",
+	"fundraisersubscribe-photo-credit": "由$1拍摄",
+	"fundraisersubscribe-photo-caption-M69961168": "海象躺在俄罗斯北极国家公园北布鲁克岛上。这张照片是海洋遗产协会“追寻两位船长的足迹”探险活动的一部分。",
+	"fundraisersubscribe-photo-caption-M69960916": "俄罗斯千岛群岛自然保护区库纳希尔岛斯托尔布恰蒂角日落后的柱状玄武岩",
+	"fundraisersubscribe-photo-caption-M68724727": "迈泰奥拉岩层，顶部有修道院",
+	"fundraisersubscribe-photo-caption-M68822431": "阿尔及利亚塔西利阿杰尔国家公园",
+	"fundraisersubscribe-photo-caption-M69954711": "俄罗斯伏尔加格勒州埃尔顿盐湖岸边",
+	"fundraisersubscribe-photo-caption-M69692176": "飞翔中的胡兀鹫。格兰帕拉迪索国家公园",
+	"fundraisersubscribe-photo-caption-M69116544": "吉尔吉特-巴尔蒂斯坦地区罕萨阿尔蒂特山谷的秋季正值鼎盛时期",
+	"fundraisersubscribe-photo-caption-M69591978": "木鹬是邦戈班杜·谢赫·穆吉布野生动物园的一种小型涉禽。",
+	"fundraisersubscribe-photo-caption-M69594652": "萨查里国家公园",
+	"fundraisersubscribe-photo-caption-M69924253": "俄罗斯克拉斯诺达尔边疆区苏科附近的沼泽柏树",
+	"fundraisersubscribe-photo-license": "所有图片均采用[$1 Creative Commons Attribution-Share Alike 4.0 International]许可协议。"
 }
