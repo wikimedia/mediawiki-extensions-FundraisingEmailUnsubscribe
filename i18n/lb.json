@@ -6,12 +6,12 @@
 			"Volvox"
 		]
 	},
-	"fundraiserunsubscribe-desc": "Erlaabt et Benotzer sech aus de Mailinglëschte vun de Spendenaktiounen eraushuelen ze loossen",
+	"fundraiserunsubscribe-desc": "Erlaabt et Benotzer, fir hir Memberschaft bei konfiguréierte Mailing-Lëschte fir Spendenaktiounen ze geréieren",
 	"fundraiserunsubscribe-query": "Sidd dir sécher, datt Dir '''''$1''''' desabonéiere wëllt?",
 	"fundraiserunsubscribe-submit": "Ofbestellen",
 	"fundraiserunsubscribe-cancel": "Ofbriechen",
 	"fundraiserunsubscribe-errormsg": "Beim Versuch Är Ufro ze verschaffen ass ee Feeler geschitt. Kontaktéiert wgl. [mailto:$1 $1].",
-	"fundraiserunsubscribe-success": "Dir gouft vun eiser Mailinglëscht erofgeholl.",
+	"fundraiserunsubscribe-success": "Dir gouft erfollegräich vun eiser Mailing-Lëscht erofgeholl.",
 	"fundraiserunsubscribe-sucesswarning": "Gitt eis véier (4) Deeg, bis d'Ännerunge gemaach sinn. Mir entschëllegen eis, wann Dir bis dohin nach E-maile sollt kréien. Wann Dir eng Fro hutt, kontaktéiert wgl. [mailto:$1 $1].",
 	"fundraisersubscribe-success": "Merci!",
 	"fundraisersubscribe-page-title-001": "Wiki Loves Earth",
